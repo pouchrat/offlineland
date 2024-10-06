@@ -2136,7 +2136,9 @@ const handleFetchEvent = async (event: FetchEvent): Promise<Response> => {
 
             // Special pages (TODO)
             if ( url.pathname.startsWith("/info") ) {
-                const res = url.pathname.lastIndexOf(".") > -1 ? await fetch(url.pathname.slice(0,url.pathname.lastIndexOf(".")) + ".html?cachebust=" + Date.now()) : await fetch(url.pathname + ".html?cachebust=" + Date.now());
+                const res = url.pathname.lastIndexOf(".") > -1 ? 
+                    await fetch(url.pathname.slice(0,url.pathname.lastIndexOf(".")) + ".html?cachebust=" + Date.now()) : 
+                    await fetch(url.pathname + ".html?cachebust=" + Date.now());
                 return res;
             }
             if ( url.pathname.startsWith("/support")
