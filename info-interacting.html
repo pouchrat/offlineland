@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  Interacting</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1>
+
+<p><strong class="important">The Interacting type</strong> lets you create dynamic livings or things of any sort! They can speak lines, accept things and give back in return, and have a bit of mind of their own!</p>
+
+<h3><a name="conversations"></a>Conversations</h3>
+
+<p>A basic way to let the Interacting speak some lines when a manyzen is near and says something, or hits space/ presses the action button, is to just write down a few sentences after hitting the
+<img src="/static/media/interacting-help/button-textual.png" alt="Text"/>
+button &#8211; they will be picked from at random:</p>
+
+<div class="interactingSample"><pre>Hello there!
+
+Nice day isn't it?
+
+A cozy house here!</pre></div>
+
+<p>When one replies or hits action, a new line will be picked. To have the Interacting speak several lines immediately in succession, use a double space:</p>
+
+<div class="interactingSample"><pre>Hello there!  Nice to meet you.  Sit down please.</pre></div>
+
+
+<p>Want to react to a word being said? Try this:</p>
+
+<div class="interactingSample"><pre><strong>Hears clock:</strong> Oh yeah, a nice clock on the wall there!
+<strong>Hears bye:</strong> See you later!
+</pre></div>
+
+
+<p>Above will work on any sentence containing the sub part "clock". Multiple words work as well:</p>
+
+<div class="interactingSample"><pre><strong>Hears clock or time:</strong> Oh yeah, a nice clock on the wall there!</pre></div>
+
+<p>You can also add emphasis by using ** like this... it will show as if someone used caps when typing:</p>
+
+<div class="interactingSample"><pre>A <strong>**very**</strong> nice hat you're wearing!</pre></div>
+
+
+<p class="footnote">Note the characters # / : &gt; @ can't be used in normal sentences, but precede them with a backslash to say them anyway, like \#</p>
+
+
+<h3><a name="giving"></a>Giving</h3>
+
+<p>What if you want the Interacting to give something in return? Use an action at the end of the line, preceded by a slash:</p>
+
+<div class="interactingSample"><pre>Hi there! Here's some gold. <strong>/gives gold</strong></pre></div>
+
+<p>For above to work, include the item Gold with your Interacting by hitting the
+<img src="/static/media/interacting-help/button-thing-references.png" alt="References"/>
+button, then picking the respective item from your collection or creation panel.</p>
+
+<p>If the interacting should get something first, use this, say for a soda machine:</p>
+
+<div class="interactingSample"><pre>Please insert coin.
+<strong>Gets coin or gold:</strong> *plonk* /gives soda
+</pre></div>
+
+<p>You can also give one of several items at random:</p>
+
+<div class="interactingSample"><pre>Gets coin: *plonk* <strong>/gives soda or candy bar or peanuts</strong></pre></div>
+
+<p>To give something quietly, use:</p>
+
+<div class="interactingSample"><pre>Hi there! Here's some gold. /gives <strong>audio-free</strong> gold</pre></div>
+
+
+<h3><a name="motions"></a>Motions and Dynamics</h3>
+
+<p>Use the Interacting Motion type to change the appearance of the Interacting at any time. (It can be created by hitting the Change button after selecting Interacting.)
+Please add the created motion item to the list by clicking the <img src="/static/media/interacting-help/button-thing-references.png" alt="References"/> button. Then start the motion anywhere during interactions by preceding with a slash like this:
+</p>
+
+<div class="interactingSample"><pre>Gets ice: Yay! <strong>/jumps</strong>
+
+Gets gold: Wow! <strong>/happy gasp</strong>
+</pre></div>
+
+<p>You can also have multiple actions of a different type, say a motion and giving:</p>
+
+<div class="interactingSample"><pre>Gets ice: Yay! <strong>/jumps /gives gold</strong></pre></div>
+
+<p>Just the same works for things of type <a href="/info-dynamic">Dynamic</a> that you've made and included. For instance, if your Dynamic is named "spinning wheel", you'd start it
+once with /SPINNING WHEEL. If you want the Dynamic to fully replace the Interacting for the time it's running, tick the Replaces attribute when creating it.</p>
+
+
+<h3><a name="contexts"></a>Contexts</h3>
+
+<p>Want the living or thing linger on something for a while? Add further lines starting with a "-":</p>
+
+<div class="interactingSample"><pre>Want to hear about my life?
+<strong>-</strong> I grew up in the house to your right.
+<strong>-</strong> I went to school in the house to your left.
+<strong>-</strong> Hears school: School was fun!
+<strong>-</strong> Hears no or bye: Ok then, let's switch topic! &gt;
+</pre></div>
+
+<p>The &gt; above means the context will be left again. Even if a context is said, global events will be checked if the current choices don't yield a result.</p>
+
+<p>If you want the list of a context to be immediately picked from after its introduction, use &gt; like this:</p>
+
+<div class="interactingSample"><pre>Today I feel like... <strong>&gt;</strong>
+- swimming. &gt;
+- eating. &gt;
+</pre></div>
+
+
+<h3><a name="reacting"></a>Reacting</h3>
+
+<p>Interactings can react to a variety of things and states, and also set states:</p>
+
+<div class="interactingSample"><pre><strong>Hears hello:</strong> Hi there!
+
+<strong>Gets apple or orange or fruit:</strong> Tasty, thanks! <strong>/is friendly</strong>
+
+<strong>Touches hammer:</strong> Ouch! <strong>/isn't friendly</strong>
+
+<strong>Sees waves or waving:</strong> Oh hi! /waves</strong>
+
+<strong>They wave:</strong> Oh hi! /waves</strong>
+
+<strong>Has apple and hasn't water:</strong> Now I need some water please.
+
+<strong>Isn't friendly:</strong> Give me fruit and I'll be your friend.
+
+<strong>Is friendly:</strong> There's treasures in the basement!
+
+<strong>Hits beach ball:</strong> *boink*
+</pre></div>
+
+<p>HEARS reacts to speech being said,<br/>
+GETS to things given,<br/>
+SEES to motions, verb typing or possession thing selecting,<br/>
+THEY is synonymous to SEES here,<br/>
+TOUCHES to equipment being used (or if you just uses "TOUCHES:", a non equipped action too, including the item being clicked/ selected in a <a href="/info-holder">holder</a>),<br/>
+HAS or HASN'T will check if the item has been given before,<br/>
+IS and ISN't will check for a state,<br/>
+HITS will react to an item being thrown at it, provided the Interacting has the attribute Solid ticked (use just "HITS:" to react to any item at all).<br/>
+LINE-TOUCHES reacts to a Liner-line being started on it.<br/>
+A match is found for word parts too, so "GETS GOLD" would also trigger when the Interacting is handed a "SATURN GOLD BAR".
+</p>
+
+<p class="footnote">(Note that important interactions will be dealt with immediately even when outside the current context, so e.g. GETS COIN on a global level will even be triggered when in a sub context. The order is that first, the interacting looks for HEARS, GETS, SEES and TOUCHES in the local context; then, for HEARS, GETS, SEES and TOUCHES globally; then for any other line in the local context, or if not currently in a context, globally.)
+</p>
+
+<p class="footnote">Note for negations using and/ or: While you can use "has salt and sugar", you can't use "hasn't salt and sugar", but need to expand
+to e.g. "hasn't salt and hasn't sugar" (same with "isn't..."). This clarifies whether the meaning is "has neither one of salt and sugar" or "hasn't both salt and sugar".</p>
+
+<p>The following trigger upon moving towards the Interacting or entering it:</p>
+
+<div class="interactingSample"><pre><strong>Approaches:</strong> Hi!
+
+<strong>Nears:</strong> Hi!
+
+<strong>Reaches:</strong> /bumps 270 40
+
+<strong>Entered:</strong> /to subway
+
+<strong>Viewed:</strong> Hi!
+</pre></div>
+
+<p>
+APPROACHES can be used if you want the interaction to start when someone starts to get into medium range even if they don't stop and press controls or keyboard.<br/>
+NEARS is similar to approaches, but for a shorter range, just near-by.<br/>
+REACHES is similar but triggered when one overlaps the Interacting.<br/>
+ENTERED (or ENTERS) triggers on a jump motion indicating one wants to take a portal or enter a door and such, useful in combination with the /to keyword for areas.<br/>
+VIEWED reacts when someone stands still over an Interacting, similar to how Medium or Viewable blocks are triggered.<br/>
+</p>
+
+<p>You can also split longer chains by using either -and- or -or-:</p>
+
+<div class="interactingSample"><pre><strong>gets apple and orange -or- gets big orange:</strong> That'll do!</pre></div>
+
+<p>You can also provide a reaction to being touched by anything, hearing anything at all and so on:</p>
+
+<div class="interactingSample"><pre><strong>Touches:</strong> Ouch.
+
+<strong>Hears:</strong> Hi.</pre></div>
+
+<p>You can set multiple states like this:</p>
+
+<div class="interactingSample"><pre>Gets apple: Tasty! <strong>/is friendly /is full</strong></pre></div>
+
+<p>Interactings remember their belongings and states, except if a area hasn't been interacted in for a week.
+By default, "is" and "has" states are the same for everyone who's around during the interaction,
+but will not affect people who may stumble on the interacting at a later time.
+To set an "is" or "isn't" state which should only relate to one person and not the bystanders, use an underscore like this:</p>
+
+<div class="interactingSample"><pre>Gets cherry: Thanks! <strong>/_is friendly</strong>
+Hears go away: Oh! <strong>/_isn't friendly</strong></pre></div>
+
+
+<h3><a name="quotingNames"></a>Quoting item names</h3>
+
+<p>By default if you write e.g. GETS APPLE, partial matches will work too, so in this case if the Interacting receives an item named "Red Apple" it will match.
+This is useful in many cases, but can lead to issues if say you want to differentiate between getting "sugar" and "sugar glaze" (as the word "sugar" is contained in "sugar glaze").
+To avoid allowing a partial match and use a full comparison, use quotes around the name:</p>
+
+<div class="interactingSample"><pre><strong>Gets "sugar":</strong> Thanks for the sugar!</strong>
+Gets sugar glaze: Thanks for the sugar glaze!</pre></div>
+
+<p class="footnote">Note as a special case, HEARS HI will always be considered HEARS "HI" and not allow sub matches. Special characters like "!" are excluded though and don't need to be matched even with quoted matching.</p>
+
+
+<h3><a name="moreActions"></a>More actions</h3>
+
+<!--
+<p class="extraSpace">To have the Interacting activate the activatables in the surrounding, use /activate:</p>
+
+<div class="interactingSample"><pre>Ok then, you can pass through the door. <strong>/activates</strong></pre></div>
+-->
+
+<p class="extraSpace">This will start and show a timer:</p>
+
+<div class="interactingSample"><pre>Hears start: Starting timer now. <strong>/timer</strong>
+Hears timer: The time since start is <strong>[timer]</strong>!</pre></div>
+
+
+<p class="extraSpace">This will handle a 5 second countdown in editor-based areas:</p>
+
+<div class="interactingSample"><pre>REACHED: STARTED! <strong>/COUNTDOWN 5</strong>
+HEARS STOP: STOPPED! <strong>/CLEARS COUNTDOWN</strong>
+<strong>SOMEONE AT COUNTDOWN 3:</strong> 3 SECONDS LEFT!
+<strong>SOMEONE FINISHES COUNTDOWN</strong>: /HARMS 100</pre></div>
+
+<p>Optionally, you can use e.g. "/countdown invisible 5" to not have the seconds be displayed. You can also add or subtract seconds by using
+"/countdown +10", "/countdown -5" and similar. (The Someone event may fare best in
+an <a href="#areaGlobal">area-global interacting</a>.)</p>
+
+
+<p class="extraSpace">You can also open media from location snapshots, YouTube and SoundCloud (try the Paste dialog from the bottom left menu to test how the medium will display):</p>
+
+<div class="interactingSample"><pre>Hears show: <strong>https\:\/\/www.youtube.com\/watch?v=g0BcvjYZ3xg</strong></pre></div>
+
+<p class="extraSpace"><img src="/static/media/degrees.png" alt=""/></p>
+
+
+<p>To throw someone use a direction in degrees and a force from 0 to 100%:</p>
+
+<div class="interactingSample"><pre>I'll throw you over the gap. <strong>/bumps 315 70</strong></pre></div>
+
+<p>By default the bumps value will be added to the current velocity, but if you want to use an absolute velocity, you can write:</p>
+
+<div class="interactingSample"><pre>I'll throw you over the gap. <strong>/bumps absolute 270 50</strong></pre></div>
+
+
+<p class="extraSpace">To transport someone use a direction in degrees and a distance from 0 to 100%:</p>
+
+<div class="interactingSample"><pre>I'll transport you over the gap. <strong>/transports 315 70</strong></pre></div>
+
+
+<p class="extraSpace">To transport someone to the location of the Interacting:</p>
+
+<div class="interactingSample"><pre>I'll transport you here. <strong>/transports here</strong></pre></div>
+
+
+<p class="extraSpace">To throw an item use the direction in degrees, a force from 0 to 100%, and the item name:</p>
+
+<div class="interactingSample"><pre>I'm strong, wanna see? <strong>/throws 315 70 heavy rock</strong></pre></div>
+
+<p>You can also throw up to 10 different items at once by separating with a comma:</p>
+
+<div class="interactingSample"><pre>Catch! <strong>/throws 270 20 gold coin, 250 20 silver coin</strong></pre></div>
+
+<p>To rumble and shake things (similar to the rumbling environment), from 1-15 seconds:</p>
+
+<div class="interactingSample"><pre>Maybe I shouldn't have pressed this button. <strong>/rumbles 5</strong></pre></div>
+
+
+<p class="extraSpace">You can also harm with a strength value of 1 to 100:</p>
+
+<div class="interactingSample"><pre>Hears I stole your gold: Oh no! <strong>/harms 25</strong></pre></div>
+
+
+<p class="extraSpace">Reversely, you can heal with a strength from 1 to 100:</p>
+
+<div class="interactingSample"><pre>I put a healing spell on you! <strong>/heals 100</strong></pre></div>
+
+<p class="extraSpace">To show a Writable, Readable, Medium or Holder, include it with the Interacting and use (this can also be used together with <a href="#areaGlobal">area-global Interactings</a>):</p>
+
+<div class="interactingSample"><pre>Someone says help!:<strong> /shows help scroll</strong></pre></div>
+
+<p class="extraSpace">You can also lock to a specific Holder page:</p>
+
+<div class="interactingSample"><pre>Touches:<strong> /SHOWS ONLY-HOLDER-PAGE 2 CHEST</strong></pre></div>
+
+<p class="extraSpace">To play a Sound or Music block, add it to your object reference list and use its name (you can currently find Sound objects on the Item Repo board's Sound category):</p>
+
+<div class="interactingSample"><pre>Someone says a horse enters a bar:<strong> /plays laughter</strong></pre></div>
+
+<p>For Music, you can also stop the playback by using:</p>
+
+<div class="interactingSample"><pre><strong>/stops</strong></pre></div>
+
+<p>You can also check if Music is currently playing:</p>
+
+<div class="interactingSample"><pre>HEARS TOGGLE AND <strong>CURRENTLY PLAYING</strong>: /STOPS
+HEARS TOGGLE AND <strong>NOT CURRENTLY PLAYING</strong>: /PLAYS SCHUMANN</strong></pre></div>
+
+<p>In editor-list based created areas, you can do a 15 minutes (or 1 day) area lock on someone who's not an editor:</p>
+
+<div class="interactingSample"><pre><strong>/lock 15 minutes</strong>
+<strong>/lock 1 day</strong></pre></div>
+
+<p class="extraSpace">By default, a double space between two commands or lines of texts creates a 2-seconds delay in-between. This gives actions or speech enough time.
+To decrease or increase this time, use the /waits command and pass a number of seconds (you can use any value from 0.25 to 60, and optionally add an "s"):</p>
+
+<div class="interactingSample"><pre>HEARS HI: WELL... <strong>/WAITS 4.5S</strong>  ...HI!</strong></pre></div>
+
+<p>For created areas, to have someone exit an area to the base areas:</p>
+
+<div class="interactingSample"><pre>Congratulations, and bye! <strong>/to elsewhere</strong></pre></div>
+
+<p>Or to let them go back to the previous area they were in:</p>
+
+<div class="interactingSample"><pre>Bye! <strong>/to last</strong></pre></div>
+
+<p class="footnote">(Note Creator will turn /bump into /bumps and so on to help avoid issues. Also note, wearing a Wearable with the "Transport resist." attribute avoids teleports.)</p>
+
+
+<h3><a name="markers"></a>Markers</h3>
+
+<p>Markers are added by preceding with # and can be jumped to by using &gt; marker name (marker contexts will otherwise not be picked at random):
+<p>
+
+<div class="interactingSample"><pre>I'm your waiter today. How can I help you?
+- hears menu: Oh sure! <strong>&gt; menu</strong>
+- Nice weather outside.
+- Great table you picked, next to the window!
+- hears bye: Ok, see you! &gt;
+
+<strong>#Menu</strong> I can suggest chocolate carrots or soup.
+- hears soup: Excellent choice, I'm back in a minute! &gt;
+- hears chocolate or carrot: Coming up, thank you! &gt;
+- Hmm, we don't seem to have that...</pre></div>
+
+
+<h3><a name="someone"></a>Reacting to Someone not at arm's length</h3>
+
+<p>Use the Someone keyword to react to things happening nearby even if the person isn't over your Interacting. For instance:</p>
+
+<div class="interactingSample"><pre><strong>Someone wears green hat</strong>: Our latest hat, isn't it nice?
+
+<strong>Someone mounts DeLorean</strong>: {I can pick 1955 or 2014}
+
+<strong>Someone swims</strong>: {Too cold!} /bumps 270 70
+
+<strong>Someone consumes fries</strong>: {A coin in my fries!} /gives coin
+</pre></div>
+
+<p>These events will trigger the moment something begins to happen, e.g. when one isn't mounting anything, then enters the DeLorean (see <a href="#checking">below</a> for how to check a state). The following verbs are supported:</p>
+
+<table class="properTable">
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">uses</td><td>[name of equipment, Liner, or actionable Dynamic, like axe]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">takes</td><td>[name of holdable, like teddy bear]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">throws</td><td>[name of holdable]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">emits</td><td>[name of emitter, aimable or emitting Dynamic, e.g. laser gun]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">mounts<br/>unmounts</td><td>[name of mountable, like car]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">wears<br/>unwears</td><td>[name of wearable, like hat]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">attaches<br/>unattaches</td><td>[name of attachable Dynamic, like parrot]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">embodies<br/>unembodies</td><td>[name of body]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">equips<br/>unequips</td><td>[name of Brain]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">says</td><td>[what is being said, like hi]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">shouts</td><td>[what is being said in all-caps or using a microphone item]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">does</td><td>[a motion word preceded by slash, or any typed word, e.g. wave]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">gathers</td><td>[name of gatherable type or item with gatherable attribute, like egg]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">plays</td><td>[name of instrument, like blue piano]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">plays-notes</td><td>[<a href="#notes">notes sequence</a>]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">consumes</td><td>[name of consumable, like cake]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">sits on</td><td>[name of thing, like chair or *]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">lies on</td><td>[name of thing, like bed or *]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">hard lands on</td><td>[name of thing, like bridge or *]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">reads</td><td>[name of readable or writable opened, like The Board or *]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">writes</td><td>[name of writable a comment is saved to]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">hits</td><td>[name of thrown or emitted item which collides with a person]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">touches</td><td>[name of someone else's equipment that a person is hit by, like hammer or *.]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">catches</td><td>[name of thrown item someone caught]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">kills</td><td>[name of Mover-moved Body that is being killed by one's harmful equiment]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">selects</td><td>[name of area possession thing that was chosen]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">holder-selects</td><td>[name of thing in holder that was chosen]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">crumbles</td><td>[optionally, name of crumbled thing]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">finishes&nbsp;countdown</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">at&nbsp;countdown</td><td>[number of seconds, e.g. 12, that was reached]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">acts*</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">climbs**</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">swims**</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">harmed**</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">transports</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">bounces</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">dies</td><td>-</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">jumps</td><td>-</td></td>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">activates***</td><td>[name of activater, flexible, <a href="/info-dynamic">Dynamic</a>, <a href="/info-multi">Multi</a> or <a href="/info-happening">Happening</a>, like red button]</td></tr>
+<tr><td class="interactingSampleCell">someone</td><td class="interactingSampleCell">arrives****</td><td>-</td></tr>
+</table>
+
+<p class="footnote"><em>*Acts is triggered when e.g. one hits space on desktop, or presses the action button on a tablet, and no other action like throwing or mounting is triggered.</em></p>
+<p class="footnote"><em>**As with other verbs, the event is only triggered once at the start, e.g. if one splashes into the water or just started climbing.</em></p>
+<p class="footnote"><em>***If you want, you can draw the Activater near-invisible and tick its Silent attribute, to be used as a catch-all trigger for Interacting reactions.</em></p>
+<p class="footnote"><em>****Arrives is triggered when someone is first spotted, i.e. when walking towards the broad range of the Interacting, or originally joining Manyland somewhere in its range.</em></p>
+
+
+<h3><a name="checking"></a>Checking and setting of Mountables, Wearables &amp; Holdables</h3>
+
+<p>You can check for the availability of someone's mountable, wearable or holdable using <em>they wear</em>, <em>they mount</em>, <em>they hold</em> and
+<em>they embody</em>, (or <em>they don't wear</em> and so on), followed by the object name:</p>
+
+<div class="interactingSample"><pre>someone mounts horse and <strong>they wear crown</strong>: ...
+someone says hi and <strong>they don't mount delorean</strong>: ...
+someone mounts delorean and <strong>they hold key</strong>: ...
+someone says abracadabra and <strong>they embody magician</strong>: ...
+nears and <strong>they have attached parrot</strong>: ...
+nears and <strong>they have equipped blue brain</strong>: ...
+</pre></div>
+
+<p><em>They have attached</em> and <em>they don't have attached</em> is for Dynamics using the attributes Attached, Follows or Closely Follows.
+<em>They have equipped</em> and <em>they don't have equipped</em> is for checking if they're currently using a <a href="/info-brain">Brain</a>.
+For your checks, note that both bodies and body dynamics can be brought into an area from the outside by non-editors too;
+wearables, mountables and holdables cannot.</p>
+
+<p>You can also omit the object name like this to check against any object:</p>
+
+<div class="interactingSample"><pre>someone mounts horse and <strong>they wear *</strong>: ...
+someone arrives and <strong>they don't embody *</strong>: /gives body1 or body2
+</pre></div>
+
+<p>(Embodying is considered to be when one has put on a body outside the small and big base bodies.)</p>
+
+<p>To have somebody put on a body, mountable or wearable, just use the /gives command as you would for holdable items:</p>
+
+<div class="interactingSample"><pre><strong>/gives crown</strong>
+<strong>/gives glitchbody or glitchbody2</strong>
+<strong>/gives teddy bear</strong>
+<strong>/gives monster truck</strong></pre></div>
+
+<p>To remove these, use:</p>
+
+<div class="interactingSample"><pre><strong>/removes wearable</strong>
+<strong>/removes mountable</strong>
+<strong>/removes holdable</strong>
+<strong>/removes dynamic</strong>
+<strong>/removes brain</strong></pre></div>
+
+<p>To remove all, use:</p>
+
+<div class="interactingSample"><pre><strong>/removes *</strong></pre></div>
+
+<p>The following example has one drop an egg on every jump:</p>
+
+<div class="interactingSample"><pre>someone jumps and they hold egg: {Shaky!} /remove holdable</pre></div>
+
+<p>Another example, the Interacting character bowing when they are greeted by someone dressed as queen or king:</p>
+
+<div class="interactingSample"><pre>Hears hi and they wear crown: I'm not worthy! /bows</pre></div>
+
+<p>Or this:</p>
+
+<div class="interactingSample"><pre>Nears and they hold sword: You're dangerous! /bumps 180 70</pre></div>
+
+
+<h3><a name="checkingSomeonesStates"></a>Checking someone's states via They Are</h3>
+
+<p>While IS and ISN'T check the Interacting's own state, the following check the state of the person who's interacting with it:</p>
+
+<div class="interactingSample"><pre>Hears hi and <strong>they are friendly:</strong> Hi!
+
+Hears hi and <strong>they aren't friendly:</strong> Hmm...</pre></div>
+
+<p>And to set these:</p>
+
+<div class="interactingSample"><pre>Hears I Am Friendly: Gotcha! <strong>/they are friendly</strong>
+
+Hears I Am Unfriendly: Ok! <strong>/they aren't friendly</strong></pre></div>
+
+<p>Or to set/ remove multiple states at once:</p>
+
+<div class="interactingSample"><pre>
+Hears hi: Hi! <strong>/they are friendly /they are smiling</strong>
+Hears no: Oh! <strong>/they aren't friendly /they aren't smiling</strong>
+</pre></div>
+
+<p>The THEY ARE checks only relate to the specific area you are in, so setting /THEY ARE FRIENDLY in area Blue Castle would still be false in area Yellow Ship.
+(Note states fade out if no area state has been set within the last 7 days.)
+</p>
+
+<p>As area editor during testing, you can see your current states and remove certain ones by speaking "mystates!".
+You can also speak e.g. "theyare friendly!" or "theyarent friendly!" to set and unset your states.
+</p>
+
+
+<h3><a name="autoHealing"></a>Toggling auto-healing</h3>
+
+<p>By default, if one steps on a harmful, the energy will restore again over time. To disable or enable this auto-healing you can use e.g.:</p>
+
+<div class="interactingSample"><pre>Someone arrives: <strong>/they don't auto-heal</strong>
+
+Hears heal: <strong>/they auto-heal</strong>
+</pre></div>
+
+<!--
+<h3><a name="spawnpoints"></a>Spawnpoints</h3>
+
+<p>One pattern to create spawnpoint checkpoints is to set auto-healing off, and then use e.g. gatherable healing hearts to refill health.
+Since automatic spawnpoints are only set when one is at full health, it means healing items will double as checkpoints. One can then
+only progress in an area by ensuring to avoid harmfuls.</p>
+
+<p>Alternatively, you can first toggle off spawnpoints in e.g. an area-global interacting:</p>
+
+<div class="interactingSample"><pre>Someone arrives: <strong>/they don't auto-set-spawnpoints</strong></pre></div>
+
+<p>You can then manually set a spawnpoint like this:</p>
+
+<div class="interactingSample"><pre>reaches: <strong>/sets spawnpoint</strong></pre></div>
+
+<p>Auto-spawnpoints are toggled on again after each reload or teleporting to another area, or manually if you use this command:</p>
+
+<div class="interactingSample"><pre><strong>/they auto-set-spawnpoints</strong></pre></div>
+
+<p class="footnote">(Note spawnpoint handling requires a created area, and isn't supported at the welcome areas.)</p>
+-->
+
+
+<h3><a name="checkingMovement"></a>Checking someone's movement direction</h3>
+
+<p>You can use the following to check in which direction someone is going &#8211; for instance, on the "reaches" event:</p>
+
+<div class="interactingSample"><pre>reaches and <strong>they move right</strong>: Going right I see!
+reaches and <strong>they move left</strong>: Going left I see!
+reaches and <strong>they move up</strong>: Going up I see!
+reaches and <strong>they move down</strong>: Going down I see!
+</pre></div>
+
+
+<h3><a name="triggeringMotions"></a>Triggering someone's motions</h3>
+
+<p>You can trigger a body motion for someone like this:</p>
+
+<div class="interactingSample"><pre><strong>... <strong>/they cry</strong></strong></pre></div>
+
+<p>This will first try to use the motion by this name in someone's motion set. If not available, the things reference list provided with your
+Interacting is used and looks for the motion named e.g. "cry".</p>
+
+
+<h3><a name="functionality"></a>Functionality</h3>
+
+<p class="extraSpace">There's some functionality you can include wrapped in square brackets, like to say the name of the person:</p>
+
+<div class="interactingSample"><pre>Hi <strong>[name]</strong>, nice day isn't it!</pre></div>
+
+<p class="extraSpace">Or the name of anyone who's around</p>
+
+<div class="interactingSample"><pre>I'm picking  ... <strong>[someone]</strong> for the next round!</pre></div>
+
+<p class="extraSpace">A random number from 1 to 6:</p>
+
+<div class="interactingSample"><pre>I rolled a <strong>[number 1 6]</strong>...</pre></div>
+
+<p class="extraSpace">A random number from 1 to 6, repeating 3 times:</p>
+
+<div class="interactingSample"><pre>I rolled a <strong>[number 1 6 3]</strong>...</pre></div>
+
+<p class="extraSpace">A random letter:</p>
+
+<div class="interactingSample"><pre>And the letter is <strong>[letter a z]</strong></pre></div>
+
+<p class="extraSpace">5 random letters, each ranging from a to c:</p>
+
+<div class="interactingSample"><pre>And the letters are <strong>[letter a c 5]</strong></pre></div>
+
+<p class="extraSpace">A random pick from a comma-separated selection:</p>
+
+<div class="interactingSample"><pre>In my backyard there's a <strong>[random cat, dog, horse]</strong></pre></div>
+
+<p class="extraSpace">The current Manyland Time:</p>
+
+<div class="interactingSample"><pre>The time is <strong>[time]</strong>!</pre></div>
+
+<p class="extraSpace">A list of 5 random items the interacting has received:</p>
+
+<div class="interactingSample"><pre>I have <strong>[list has 5]</strong>.</pre></div>
+
+<p class="extraSpace">A list of 2 random states the interacting has set:</p>
+
+<div class="interactingSample"><pre>My states are <strong>[list is 2]</strong>.</pre></div>
+
+<p class="extraSpace">The last word being told:</p>
+
+<div class="interactingSample"><pre><strong>[heard]</strong>! Molly wants cracker!</pre></div>
+
+<p class="extraSpace">The last item received:</p>
+
+<div class="interactingSample"><pre>Thanks for the <strong>[received]</strong>!</pre></div>
+
+<p class="extraSpace">And a chance in percent:</p>
+
+<div class="interactingSample"><pre><strong>Is [chance 20]</strong>: You're lucky!</pre></div>
+
+<p class="extraSpace">To check if someone's an editor here (that is, if they may build, remove, and carry their own equipment from the side panel):</p>
+
+<div class="interactingSample"><pre><strong>Is [editor]</strong>: Hi editor!
+<strong>Isn't [editor]</strong>: Hi non-editor!
+</pre></div>
+
+<p class="extraSpace">To check if someone's logged in or not:</p>
+
+<div class="interactingSample"><pre><strong>Is [account]</strong>: Hi logged-in person!
+<strong>Isn't [account]</strong>: Hi non-logged-in person!
+</pre></div>
+
+<p class="extraSpace">The value of a number:</p>
+
+<div class="interactingSample"><pre>You have <strong>[value coins]</strong> coins.</pre></div>
+
+<p class="extraSpace">To see if someone's currently sitting (also see the "someone sits on..." <a href="#someone">event</a>):</p>
+
+<div class="interactingSample"><pre><strong>Is [sitting]</strong>: Relaxing.
+<strong>Isn't [sitting]</strong>: Good to stand up.
+</pre></div>
+
+<p class="extraSpace">To see if someone's currently lying down (also see the "someone lies on..." <a href="#someone">event</a>):</p>
+
+<div class="interactingSample"><pre><strong>Is [lying]</strong>: Very relaxing.
+<strong>Isn't [lying]</strong>: I'm not lying down.
+</pre></div>
+
+<p class="extraSpace">To check the number of people around, use:</p>
+
+<div class="interactingSample"><pre>someone arrives and <strong>[people] &gt;= 10</strong></strong>: {Wow, [people] people here!}</pre></div>
+
+
+<p class="extraSpace">To check a person's age since they first arrived in Manyland, use:</p>
+
+<div class="interactingSample"><pre>someone arrives and <strong>[age in seconds] &lt;= 60</strong>: Hello newcomer!
+
+Hears how old am I: You are <strong>[age in days]</strong> days old!</pre></div>
+
+
+<p class="extraSpace">For the name of the current area or sub-area, use e.g.:</p>
+
+<div class="interactingSample"><pre>Welcome to <strong>[area]</strong>!</pre></div>
+
+
+<p class="extraSpace">If you only want show the name of the main area, even if you're in a sub-area, use:</p>
+
+<div class="interactingSample"><pre>Welcome to <strong>[main area]</strong>!</pre></div>
+
+
+<p class="extraSpace">To have a door go to the currently advertised area, if any:</p>
+
+<div class="interactingSample"><pre>entered: /to <strong>[ad area]</strong></pre></div>
+
+<p class="extraSpace">To show the text that comes with the currently advertised area, if any:</p>
+
+<div class="interactingSample"><pre><strong>[ad text]</strong></pre></div>
+
+
+<h3><a name="affectsBelow"></a>Affecting an object or living below</h3>
+
+<p>If you tick the Affects Below attribute of Interactings, they will take effect on whichever object or living is below it. This way, you can also <a href="#affectsBelowExample">help Body items placed on the ground to come alive</a>.</p>
+
+
+<h3><a name="possessions"></a>Area possessions</h3>
+
+<p>In created areas, Interactings can add to or remove from one's area possessions bar, which is found when they press down. Use "THEY POSSESS ..." and "THEY DON'T POSSESS ..."
+to check, and "/THEY POSSESS ..." and "/THEY DON'T POSSESS ..." to set these, like in these examples:</p>
+
+<div class="interactingSample" style="width: 100%; overflow: auto"><pre>
+Hears hi and <strong>they possess black belt:</strong> Hello guru!
+
+Someone says abracadabra and <strong>they possess magic skill</strong>: /magic skill /transports 315 70
+
+Someone kicks and <strong>they possess kick</strong>: /kick motion
+
+Hears hi and <strong>they don't possess black belt:</strong> Hello apprentice!
+
+Someone arrives and they don't possess guide book: <strong>/they possess guide book</strong>
+
+Nears and <strong>they don't possess *:</strong> Do you want any items?
+</pre></div>
+
+<p>You can also set or remove multiple possessions at once:</p>
+
+<div class="interactingSample" style="width: 100%; overflow: auto"><pre>hears where's my prize: Here... <strong>/they possess crown /they possess sceptre</strong></pre></div>
+
+<p>As usual, add the items you're handing out &#8211; and in this case, also the ones you are removing &#8211; to the object reference panel during creation (and don't delete them from your collection or creation panel later, to ensure they'll be available).</p>
+
+<p>Possessions are useful for equipping more permanent skills, motions, items, awards, priced items, notes, keys and anything else you find necessary.
+You can also use the area-global interacting to, for instance, add a guide book readable or help forum writable for everyone upon arrival.
+Possessions also put emphasis on items someone may need at a later stage, while still keeping inventory management simple for everything else picked up.
+(Whereas states fade out in a week and are different across devices of a person, possessions are permanent and cross-device.)</p>
+
+<p>You can attach custom verbs like 'push', 'use' and so on, by naming a Motion or Thing type as such. When it is now selected in the possession bar (or spoken),
+an interacting nearby checking THEY PUSH or SEES PUSH and so on can react (for Motions, you may want to use the 'invisible' attribute if they are not meant to have a visual effect):</p>
+
+<div class="interactingSample"><pre><strong>They</strong> view:</strong> {This paper has the number 5 on it}
+
+<strong>They</strong> push:</strong> {This can't be pushed...}
+</pre></div>
+
+<p><a href="https://www.youtube.com/watch?v=EHr9e5UXEjA" target="_blank">Here's a video tutorial showing custom verbs</a>.</p>
+
+
+<p>When you add a possession that doesn't exist yet, one will be alerted to it by seeing the area possessions bar show, the new thing placed into it.
+</p>
+
+<p>Note as an area editor, you can speak "dontpossess <em>somename</em>!" in chat to remove something by that name from the possession bar again.
+Speaking "dontpossess *!" will remove everything from the possession bar.
+</p>
+
+
+<h3><a name="numbers"></a>Numbers</h3>
+
+<p>You can set numbers like this:</p>
+
+<div class="interactingSample"><pre>hears add: Ok, adding! <strong>/+1 coins</strong>
+hears subtract: Ok, subtracting! <strong>/-3 coins</strong>
+hears multiply: Ok, multiplying! <strong>/*2 coins</strong>
+hears divide: Ok, dividing! <strong>/:2 coins</strong>
+hears set: Ok, setting! <strong>/=10 coins</strong>
+</pre></div>
+
+<p>These coins are the coins of the Interacting. If you want to set the number for the person who is currently interacting,
+you can do so in areas by using the area possession bar. First add the item, like a Thing named "coins", to the Interacting's object reference list.
+Then use:</p>
+
+<div class="interactingSample"><pre>hears add: Ok, adding! <strong>/+6 their coins</strong>
+hears subtract: Ok, subtracting! <strong>/-3 their coins</strong>
+hears multiply: Ok, multiplying! <strong>/*3 their coins</strong>
+hears divide: Ok, dividing! <strong>/:2 their coins</strong>
+hears set: Ok, setting! <strong>/=22 their coins</strong>
+</pre></div>
+
+<p>All numbers are integers and will be rounded where needed. Note you don't need to use "/they possess coins" first, as that will be automatically handled if the item wasn't already available in the possession bar.
+Anything you want can be a number, for instance:</p>
+
+<div class="interactingSample"><pre><strong>/+5 their magic skill
+/+1 door knocks</strong></pre></div>
+
+<p>You can chain up multiple commands without waiting time in-between. Just use them one after another:</p>
+
+<div class="interactingSample" style="width: 100%"><pre>Let's swap our money! <strong>/-2 their gold /+2 gold /+1 swapping rounds</strong>
+</pre></div>
+
+<p>You can check for a number like this:</p>
+
+<div class="interactingSample"><pre>hears am i rich <strong>and their coins &gt;= 10</strong>: Yes!
+hears am i rich <strong>and their coins &lt; 10</strong>: No!
+</pre></div>
+
+<p>The comparison operators are:</p>
+
+<table class="properTable">
+<tr><td>&lt;</td><td>lower than</td></tr>
+<tr><td>&lt;=</td><td>equal or lower than</td></tr>
+<tr><td>&gt;</td><td>greater than</td></tr>
+<tr><td>&gt;=</td><td>equal or greater than</td></tr>
+<tr><td>==</td><td>equal</td></tr>
+<tr><td>!=</td><td>unequal</td></tr>
+</table>
+
+<p>You can also output a value or use it in calculations:</p>
+
+<div class="interactingSample"><pre>hears how many: You own <strong>[value their coins]</strong> coins!
+hears make me rich: Ok! /=5 factor /+<strong>[value factor]</strong> silver
+</pre></div>
+
+<p>The placeholders [number&nbsp;...], [people], [age&nbsp;in&nbsp;seconds], [age&nbsp;in&nbsp;days] and [ads count] can be used when assigning a number (note the double space after the first "dice"):</p>
+
+<div class="interactingSample"><pre>HEARS ROLL: ROLLING... <strong>/=[NUMBER 1 6] DICE</strong>  ...a [VALUE DICE]!</pre></div>
+
+<p>By default, if one isn't moving, possession number changes result in the possession bar showing along with effects. To avoid this use the "effects-free" keyword:</p>
+
+<div class="interactingSample"><pre>hears give me: ok! /+1 <strong>effects-free</strong> their gold</pre></div>
+
+<p>You can count global events as usual by using an area-global interacting. For instance, the following adds to the diamonds value and uses self-speech to show the overall count (note there's two spaces after the "waits 0.25" command to start a new commands set):</p>
+
+<div class="interactingSample" style="width: 100%; overflow-x: scroll"><pre>Someone gathers diamond: /+1 their diamonds /WAITS 0.25  {[VALUE THEIR diamonds]}</pre></div>
+
+
+<p>By using an area global, you can also manage an area possessions stack to grab items from one by one to then be thrown or used. Note in this
+example, "marbles" is the drawing of several marbles as type Thing, and "marble" is the holdable item that is handed out:</p>
+
+<div class="interactingSample" style="width: 100%; overflow-x: scroll"><pre>Someone selects marbles and their marbles &gt;= 1: /-1 their marbles /gives marble
+</pre></div>
+
+<p>If you want to, you can limit the values range a number can hold, and optionally make it disappear from the possession bar if it reaches zero or below.
+Use e.g. an area-global Interacting with the following command:</p>
+
+<div class="interactingSample" style="width: 100%; overflow-x: scroll"><pre>someone arrives: <strong>/limits their magic skill 0 10 auto-disappears /limits gold 0 20</strong> 
+</pre></div>
+
+<p>Limits accepts the parameters item name, minimum value, maximum value, and the optional "auto-disappears" keyword. You can use several limits commands in one go.</p>
+
+
+<h3><a name="places"></a>Placing things</h3>
+
+<p>The Interacting can place things you added to the object reference list by using the <em>places</em> command:</p>
+
+<div class="interactingSample"><pre>Hears hi: <strong>/places 5.25s crate -2 0, crate -1 0</strong></pre></div>
+
+<p>The first parameter, "5.5s", is a time in seconds from 1 to 15 for which the placement will remain.
+Then follows a comma-separated list each using the object name and x-y offsets. "crate -2 0", for instance, means
+the crate will be placed 2 to the left and 0 vertically (offsets can range from -20 to 20; negative y-values mean higher up).
+</p>
+
+<p>By default, the placing is accompanied by sound and dust effects, but you can turn off either by using
+the keywords <em>audio-free</em> and <em>visual-free</em>:</p>
+
+<div class="interactingSample"><pre>Hears hi: /places <strong>audio-free visual-free</strong> 5s crate -2 0</pre></div>
+
+<p>To remove a block, use the word "nothing" as object name:</p>
+
+<div class="interactingSample"><pre>Hears hi: /places 5s <strong>nothing</strong> 0 1</pre></div>
+
+<p>If you place several of the same things, you can avoid the object name in successive placements like this:</p>
+
+<div class="interactingSample"><pre>Hears hi: /places 3s <strong>crate 1 0, 2 0, 3 0</strong>, water -2 2</pre></div>
+
+
+<h3><a name="solid"></a>Solid and Passable</h3>
+
+<p>You can make the Interacting be solid by ticking the "Solid" attribute after you hit the attributes "..." button.
+To have the path be temporarily passable again, trigger an Interacting Motion for which you picked the attribute Passable.
+For instance, if your Interacting Motion is named "Mechanic Door Opens", you could use:
+</p>
+
+<div class="interactingSample"><pre>Touches key or gets key: <strong>/mechanic door opens</strong></pre></div>
+
+<p>You can also reverse this by making the Interacting passable but its Interacting Motion solid... for instance,
+to create a bridge that appears after a lever is pulled.</p>
+
+
+<h3><a name="selfGuidingSpeech"></a>Self-guiding Speech</h3>
+
+<p>You can let someone say something to themselves as a guiding speech using curly brackets, like this:</p>
+
+<div class="interactingSample"><pre>Eat me!  <strong>{I think this flower looks poisoned.}</strong></pre></div>
+
+
+<h3><a name="interactingsReacting"></a>Interactings reacting to each other</h3>
+
+<p>Interactings can react to motions of other Interactings in the neighborhood via the @ symbol. For example, if the king is unhappy all
+the advisors in the court will start to cry...</p>
+
+<p class="extraSpace">King:</p>
+<div class="interactingSample"><pre>Hears I ate your soup: That makes me sad! <strong>/cries</strong></pre></div>
+
+<p class="extraSpace">Court Advisor (note there's a double space after "waits 1.25"):</p>
+<div class="interactingSample"><pre><strong>Sees @king cries:</strong> /waits 1.25  *bohooo* /cries</pre></div>
+
+<p>This will work on up to 10 other interactings.</p>
+
+<p class="footnote">(Note the king does not necessarily need an Interacting Motion showing for this to work, the /cries will have the effect either way.)</p>
+
+<p class="extraSpace">You can also tune in to what another Interacting says (here we quote the name as it contains a space):</p>
+<div class="interactingSample"><pre><strong>Hears @"queen susan" That makes me sad:</strong> /waits 1.25  Me too!</pre></div>
+
+<p class="extraSpace">Activaters in the world send a special message "activates", which you can react to like this:</p>
+<div class="interactingSample"><pre><strong>Sees @"red button" activates:</strong> /bridge shows</pre></div>
+
+
+<h3><a name="currentlyAndEnds"></a>Checking for current and ended motion, dynamic or music</h3>
+
+<p>You can use the "currently" keyword to test if the Interacting's motion or dynamic of that name is currently running &#8211; in this case, it's called "dancing":</p>
+
+<div class="interactingSample"><pre>HEARS HI AND <strong>CURRENTLY DANCING</strong>: La la la...</pre></div>
+
+<p>This also works with Music you started with /PLAYS if you use "CURRENTLY PLAYING".</p>
+
+<p>Alternatively, to check if it's not running:</p>
+
+<div class="interactingSample"><pre>HEARS HI AND <strong>NOT CURRENTLY DANCING</strong>: ...</pre></div>
+
+
+<p>To do something at the time the motion or dynamic ends, use the "ends" event followed by the motion name, like:</p>
+
+<div class="interactingSample"><pre><strong>ENDS DANCING:</strong> Sorry, I was busy dancing. Hi!</pre></div>
+
+<p class="footnote">(Note the end event is only reacted to if the Interacting isn't currently busy executing other commands of yours, e.g. if it's not in a pause mode using the "waits" command.)</p>
+
+
+<h3><a name="notes"></a>Hearing notes</h3>
+
+<p>The Interacting can listen for a special sequence of instrument-played notes:</p>
+
+<div class="interactingSample"><pre><strong>HEARS-NOTES C D# G C</strong>: WHAT A NICE TUNE!</pre></div>
+
+<p>If the octave is important, you can also use:</p>
+
+<div class="interactingSample"><pre><strong>HEARS-NOTES C3 D#3 G3 C3</strong>: /HEALS 100</pre></div>
+
+<p>To see the notes and octave labels, on desktop, right-click the opened instrument keys.
+(You can also open the browser console to see the current sequence.)</p>
+
+<p class="footnote">By default, a match is also found if one plays a longer sequence which includes the sequence you're checking for.
+For instance, if one plays C D E F and you check for D E F, that would be be triggered. Sequences are restricted to 15 notes maximum,
+and notes older than 10 seconds are fading out. For a more precise match in time, you can also use quotes around the notes sequence
+(though this then requires 10 seconds of silence before one plays the sequence).</p>
+
+
+<h3><a name="focus"></a>Setting focus</h3>
+
+<p>If you want to set the camera focus, like if there's an event with a center stage where people are sitting around, you can use "/they focus here" (this will work only in editor-list based areas). An example block:</p>
+
+<div class="interactingSample"><pre>SOMEONE ARRIVES: <strong>/THEY FOCUS HERE</strong>
+SOMEONE SAYS START FOCUS: <strong>/THEY FOCUS HERE</strong>
+SOMEONE SAYS STOP FOCUS: <strong>/THEY DON'T FOCUS HERE</strong>
+</pre></div>
+
+
+<h3><a name="areaGlobal"></a>Area-global Interactings</h3>
+
+<p>A special type of Interacting is the area-global Interacting. One per area can be included in the area settings, and will then listen to SOMEONE events whereever one may be in this area. For instance, the following would add a magic spell for the whole area, whereever spoken:</p>
+
+<div class="interactingSample"><pre>Someone says Baparada: /they magic motion</pre></div>
+
+<p>In this example, specific Interactings placed in the environment could then react to this spell appropriately, but the visual effects would be consistent for the whole area.</p>
+
+<p>The following would play a song whenever the player joins this area, whereever they may have been:</p>
+
+<div class="interactingSample" style="overflow: auto"><pre>Someone arrives: https\:\/\/soundcloud.com\/fairless\/the-swimming-song</pre></div>
+
+
+<p>The following listener on the other hand area-globally tracks if someone ever picked up an item called keycard:</p>
+
+<div class="interactingSample"><pre>Someone takes keycard: /they possess keycard</pre></div>
+
+<p>Area-global Interactins can also e.g. speak and throw objects. The originating position will be above one.</p>
+
+
+<h3><a name="in"></a>Checking if in an area</h3>
+
+<p>You can use the following to have the Interacting check if it's in a particular area or sub-area:</p>
+
+<div class="interactingSample"><pre>Hears hi and <strong>in beachoria</strong>: Welcome to Beachoria!
+
+Hears hi and <strong>not in beachoria</strong>: Welcome to Somewhere!</pre></div>
+
+<p>By default, "in" checks for word parts too, so above would say "Welcome to Beachoria" even when the area name was "Beachoria Ship".
+To restrict this to a full text comparison only, you can use quotes:</p>
+
+<div class="interactingSample"><pre>Hears hi and <strong>in "room 1"</strong>: Welcome to Room 1!
+
+Hears hi and <strong>in "room 10"</strong>: Welcome to Room 10!</pre></div>
+
+<p>(Please note the in-check compares against the current area or sub-area name, so if you're in e.g. a Beachoria sub-area called "Cave", then a check for "in Beachoria" would return false, and it would be "in Cave".)</p>
+
+
+<h3><a name="settings"></a>Adjusting area settings</h3>
+
+<p>You can adjust the following settings, like in an <a href="#areaGlobal">area-global Interacting</a>
+(you can switch between "can" or "can't", or "don't", like "they don't always see instrument note labels"):</p>
+
+<div class="interactingSample" style="width: 100%; overflow-x: scroll"><pre>Someone Arrives: <strong>/they can't drown</strong>
+Someone arrives: <strong>/they can't open map</strong>
+Someone arrives: <strong>/they can't see name tags</strong>
+Someone arrives: <strong>/they can't paste</strong>
+Someone arrives: <strong>/they always see instrument note labels</strong>
+Someone arrives: <strong>/they can't boost</strong>
+Someone arrives: <strong>/they can use all boosts</strong> // enables e.g. non-editors to use Interacting boosts, default is can't
+Someone arrives: <strong>/they can map-transport</strong> // to allow map-transports for non-editors, default is they can't
+Someone arrives: <strong>/they can use any item</strong> // to allow usage of any item from the collection bar for non-editors (e.g. mountables or aimables), default is they can't
+
+Someone arrives: <strong>/they can't remove dynamic</strong> // to disallow unattaching of dynamics, default is they can
+Someone arrives: <strong>/they can't remove wearable</strong> // to disallow unwearing of wearables, default is they can
+Someone arrives: <strong>/they can't remove holdable</strong> // to disallow unholding of holdables, default is they can
+Someone arrives: <strong>/they can't remove mountable</strong> // to disallow unmounting of mountables, including flying mountables, default is they can
+Someone arrives: <strong>/they can't remove brain</strong> // to disallow unequipping of brains (this also allows down arrow catching, and won't show the dot in the name tag), default is they can
+
+Someone arrives: <strong>/they can be affected by non-logged-ins</strong> // default is can't
+Someone arrives: <strong>/they can be affected by non-friends</strong> // default is can't
+Someone arrives: <strong>/they can't be affected by friends</strong> // default is can
+Someone arrives: <strong>/they can be affected by brain-equippers</strong> // default is can't
+</pre></div>
+
+<h3><a name="relocations"></a> Determining where relocations go</h3>
+
+<p>If an area exceeds its capacities, people will become relocated (at first, this covers newly arrived non-editors). The relocation may go to Elsewhere and others places
+by default, but you can override this setting with your own preference by using e.g.:</p>
+
+<div class="interactingSample"><pre>someone arrives: <strong>/relocations go to myareaname</strong></pre></div>
+
+<p>... where "myareaname" is your area or sub-area name. After the relocation to the new area, relocations will go back to the default (and can't be overridden again for the remainder of the person's sessions). If you want to lower the chance the alternate area goes over capacity again, you can also define a few relocation alternatives and randomize which one is picked (see the <a href="#functionality">Chance command</a>).</p>
+
+
+<h3><a name="comments"></a>Comments</h3>
+
+<p>If you want to add private text that won't be active, wrap it in "/* ... */" or precede it with "//":</p>
+
+<div class="interactingSample"><pre><strong>/*</strong> This is
+a multi-line comment <strong>*/</strong>
+
+<strong>//</strong> This is a single-line comment
+</pre></div>
+
+<p class="footnote">(Note "://" will be interpreted to be part of a URL, not a comment.)</p>
+
+
+<h3><a name="font"></a>Setting a special Font</h3>
+
+<p>You can set the Interacting's speech font using the /FONT command. For instance:</p>
+
+<div class="interactingSample"><pre>SOMEONE ARRIVES: <strong>/FONT WILD</strong></pre></div>
+
+<p>The setting persists for the remainder of the interactions (until another /FONT command is used).
+You can also apply the font only once for what's currently being said using the ONCE keyword, like:
+</p>
+
+<div class="interactingSample"><pre>HELLO /FONT <strong>ONCE</strong> WILD
+HI THERE
+NICE TO MEET YOU
+</pre></div>
+
+
+<p>The following font names are available:</p>
+
+<div style="font-size: 140%; font-weight: bold; margin-left: 20px"><pre>ACTION
+BLACK
+BLACKSMALL
+BLACKWHITE (the default)
+BULKY
+CASUAL
+CUTE
+ELEGANCE
+FAINT
+HIGH
+INVERTED
+LOW
+MELODIC
+SHAPES
+SMOOTH
+STRICT
+WHITE
+WHITESMALL
+WIDE
+WILD<pre></div>
+
+
+
+<h3><a name="examples"></a>Examples</h3>
+
+
+<h4>A soda machine that takes a coin and lets you pick a drink</h4>
+
+<p><img src="/static/media/snapshots/387cdi6s9f.png" style="width: 100%" alt=""/></p>
+
+<div class="interactingSample" style="width: 100%"><pre>*INSERT COIN*
+
+GETS COIN: *CHOOSE MOCA MOLA, MANTA, MOUNTAIN MEW*
+- HEARS MOCA: *PLONK* /GIVES MOCA MOLA /SODA MACHINE SHAKING &gt;
+- HEARS MANTA: *PLONK* /GIVES MANTA /SODA MACHINE SHAKING &gt;
+- HEARS MOUNTAIN: *PLONK* /GIVES MOUNTAIN MEW /SODA MACHINE SHAKING &gt;
+- *WE ARE OUT OF THAT*</pre></div>
+
+
+
+<h4>A machine that only gives items if a button was pressed</h4>
+
+<p><img src="/static/media/snapshots/q7pewkwgcu.png" style="width: 100%" alt=""/></p>
+
+<p>To the left is an item dispenser machine, but it will only give you items if you activated the energy button a few steps to the right first. It will then go into a "glow" motion to indicate that it's on.</p>
+
+<p>The dispenser machine:</p>
+
+<div class="interactingSample" style="width: 100%"><pre>SEES @BUTTON ON: *BRRM* /IS ACTIVE /DISPENSER MACHINE ACTIVATES
+SEES @BUTTON OFF: *FZZLE* /ISN'T ACTIVE
+
+ISN'T ACTIVE AND TOUCHES: *DISPENSER OFF, PLEASE ACTIVATE*
+IS ACTIVE  AND TOUCHES: *DISPENSER ON, TAKE ITEM* /GIVES MOUNTAIN MEW</pre></div>
+
+<p>The button:</p>
+
+<div class="interactingSample"><pre>ISN'T ON: *ENERGY TURNED ON* /IS ON /ON /ENERGY WAVE
+IS ON: *ENERGY TURNED OFF* /ISN'T ON /OFF</pre></div>
+
+
+<h4>A quiz bot</h4>
+
+<p>For instance, if you want to have an Interacting ask a group quiz questions, you could do it like this:</p>
+
+<div class="interactingSample"><pre>Hi I'm a quiz bot, I listen to "next" and "reveal"!
+
+Hears next: What's the first name of actor B. Pitt?
+- Hears reveal: The answer is Brad! &gt;
+
+Hears next: What's the first name of actress T. Hedren?
+- Hears reveal: The answer is Tippi! &gt;
+
+...</pre></div>
+
+<p class="footnote">(There's a 60 character limit for single sentences so try to use double space to split into several where needed.)</p>
+
+
+<h4><a name="unlockedDoor"></a>A door opening if it was unlocked</h4>
+
+<p>In the following example, a door will automatically remember if it was unlocked before by this person, and will then open when one nears it even
+if no key item is being held. "Open door" here is a motion set to attribute Passable, whereas the Interacting is set to Solid:</p>
+
+<div class="interactingSample"><pre>ISN'T UNLOCKED: {I NEED A KEY FOR THIS DOOR}
+
+TOUCHES KEY OR GETS KEY: /OPEN DOOR /IS UNLOCKED
+
+NEARS AND IS UNLOCKED: /OPEN DOOR</pre></div>
+
+
+<h4>A sheep</h4>
+
+<p>This example comes courtesy of Godiva and shows you how to create a sheep (thanks Godiva!):</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/HY4xSZuDHjc?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h4>How to create a poisonous milkshake</h4>
+
+<p>In this tutorial by Godiva, you'll learn how to mix and blend things to create new items:</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/B0USRmLddw4?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h4>Creating a Spinning Wheel</h4>
+
+<p>This Interacting utilizes the <a href="/info-dynamic">Dynamic</a> type to create a spinning wheel.</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/fD30Ow2q9eU?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h4>Creating a Prize Machine</h4>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/4mYxPhxRfEg?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h4>A Smith forging a reward</h4>
+
+<p><img src="/static/media/snapshots/7h6mtdzy2i.png" alt="" style="width: 100%"/></p>
+
+<p>Interactings can <a href="#currentlyAndEnds">check</a> whether a motion/ dynamic runs, and when it ends. Here's an example use. Let's start by what is seen when trying this:</p>
+
+<ul>
+<li>The Smith tells you she needs a hammer when you interact with her</li>
+<li>You can then grab the hammer (of type Equipment) and give to her</li>
+<li>She hammers on the empty Anvil &#8211; nothing happens!</li>
+<li>Now grab the hot iron (of type Item) and put it on the anvil</li>
+<li>Give the hammer to her again... she'll now be able to forge something for you!</li>
+</ul>
+
+<p>How is this done?</p>
+
+<p>1. The Smith Interacting has an associated "Hammering" Dynamic. After she's done hammering, she'll return the hammer to you (but only if you didn't pick up something else in the meantime):</p>
+
+<div class="interactingSample" style="width: 100%"><pre>TOUCHES AND THEY DON'T HOLD HAMMER: WHERE'S MY HAMMER?
+
+TOUCHES HAMMER: THANKS! /REMOVES HOLDABLE /HAMMERING
+
+<strong>ENDS HAMMERING AND THEY DON'T HOLD *:</strong> /GIVES HAMMER</pre></div>
+
+<p>2. The Anvil has a Motion called "Holding Hot Iron", which is triggered when it gets the Hot Iron (we're checking the "Long" attribute for this Motion, so that it displays for a longer time)</p>
+<p>3. When the Anvil sees the Smith hammering, it will check if it's currently holding hot iron to hand out the reward:</p>
+
+<div class="interactingSample" style="width: 100%"><pre>GETS HOT IRON: /PLAYS HITTING METAL /HOLDING HOT IRON
+
+<strong>SEES @SMITH HAMMERING AND CURRENTLY HOLDING HOT IRON</strong>: /GIVES SWORD
+</pre></div>
+
+
+<h4><a name="affectsBelowExample"></a> Making a Body come alive with "Affects Below"</h4>
+
+<p>Here's an example of using the "Affects Below" attribute. First, let's say you remember a Body made by Quirky, so you'd search for
+"by quirky" and drop one of the results onto the ground:</p>
+
+<p><img src="/static/media/interacting-help/affects-below-1.png" alt="References"/></p>
+
+<p>Now, we'd make an Interacting with the following text, but make the drawing itself just some transparent dots:</p>
+
+<div class="interactingSample"><pre>STEP AWAY, HIT ACTION, I'LL THROW A BALL!
+  
+SOMEONE ACTS: /THROWS 315 20 BEACHBALL
+SOMEONE ACTS: /THROWS 305 30 BEACHBALL
+  
+SOMEONE CATCHES BEACHBALL: [NAME] YOU GOT IT! /LOTS OF LOVE
+</pre></div>
+
+<p>Next, we include a beach ball item and a "lots of love" motion into the reference list, and drop
+the resulting Interacting right above the Body &#8211; we can now play beach ball with this person:</p>
+
+<p><img src="/static/media/interacting-help/affects-below-2.png" alt="References"/></p>
+
+
+<h4><a name="randomImage"></a> Imagebot for captioning game</h4>
+
+<p>You can use the following to return a random image for different uses, like a captioning group game:</p>
+
+<div class="interactingSample" style="width: 100%; overflow-x: scroll"><pre>touched or hears help or hears ?: say "image" to get a random image!
+
+hears image: http\:\/\/mlthirdpartycontent.com\/image\/[number 1 2230].jpg</pre></div>
+
+
+
+<h4><a name="customVerbs"></a> Using custom verbs in adventures</h4>
+
+<p>In this example, we're using the custom verbs Move and Break for puzzles
+(the Interactings <a href="/houseonthemountain" target="_blank">in the area</a> are clonable if you want to have a look).</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/EHr9e5UXEjA?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h3><a name="testing"></a>Testing</h3>
+
+<p>To test an Interacting, just place it in the world and talk to it or hit the action button.
+To clear the memory of your interacting for a fresh start, just remove it and place it again.
+(Otherwise things are preserved for a day, separately remembered for each manyzen; note your removal won't clear the
+memory of the Interacting when it faces others.) You can also clear all belongings and states like this:
+</p>
+
+<div class="interactingSample"><pre>Hears forget me: Ok, forgotten! <strong>/isn't * /hasn't *</strong></pre></div>
+
+<p>If you create an Interactive Motion or an Item belonging after having created the Interacting it is for,
+please clone the Interacting by dragging it over the Create button, then
+associate the motion or item via the <img src="/static/media/interacting-help/button-thing-references.png" alt="References"/>
+button and save again.</p>
+
+<p>To see the parse tree that is generated for an Interacting, open the browser console with e.g. F12. Now whenever you edited and Interacting
+text and closed it, the tree is outputted to the console.</p>
+
+
+<div class="helpMore">
+<h3><a name="more"></a>More...</h3>
+
+<p>Also check out the <a href="/info">main introductory help</a> and the <a href="/info-dynamic">Dynamics help</a>.
+Got a question which isn't answered here, or new ideas and feedback? <a href="/support">Have a look here please</a>.</p>
+
+
+</div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>

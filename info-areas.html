@@ -1,0 +1,755 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+    <title>Manyland  - Creatable Areas</title> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <style> 
+    @import url(//fonts.googleapis.com/css?family=VT323); 
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P); 
+     
+    body { 
+        background-color: black; 
+        color: white; 
+        background-image: url(/static/media/background-zoomed.png); 
+        margin: 0; 
+        margin-bottom: 80px; 
+        font-family: 'VT323', monospace; 
+    } 
+    </style> 
+</head> 
+<body id="body">
+ 
+<style>
+ 
+.inlineHtmlHelp { 
+    font-family: 'VT323', monospace; 
+} 
+ 
+.inlineHtmlHelp { 
+    text-align: left; 
+    padding-right: 40px; 
+} 
+ 
+.inlineHtmlHelp p, 
+.inlineHtmlHelp li { 
+    font-size: 20px; 
+    line-height: 1.4em; 
+} 
+ 
+.isFullAccount .ifNotLoggedIn { 
+    display: none; 
+} 
+ 
+h1 { 
+    border-bottom: 2px solid #533; 
+    padding-bottom: 4px; 
+    font-size: 23px; 
+    text-align: center; 
+    margin-bottom: 30px; 
+} 
+ 
+h2 { 
+    text-align: center; 
+    margin-top: 60px; 
+    margin-bottom: 20px; 
+    color: #422; 
+    padding: 2px; 
+    font-size: 30px; 
+    font-weight: bold; 
+    border-top: 2px solid rgb(184,154,139); 
+    padding-top: 50px; 
+} 
+ 
+h2.followsH1 { 
+    margin-top: 0; 
+    border-top: none; 
+} 
+ 
+.titleWord { 
+} 
+ 
+h2 a { 
+    display: block; 
+    height: 20px; 
+} 
+ 
+h2 a.anchor { 
+    display: inline; 
+} 
+ 
+.subtitle { 
+    font-size: 11px; 
+    color: white; 
+    color: #755; 
+    display: block; 
+} 
+ 
+#body .content { 
+    background-color: rgb(208,188,178); 
+    position: relative; 
+    width: 92%; 
+    max-width: 780px; 
+    overflow-x: hidden; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 40px; 
+    color: black; 
+    padding: 30px; 
+    border-radius: 5px; 
+} 
+ 
+a { 
+    color: #755; 
+} 
+ 
+.chartPosition { 
+    margin-bottom: 5px; 
+} 
+ 
+.additionalInfo { 
+    color: #fff; 
+    position: relative; 
+    width: 220px; 
+    float: right; 
+    padding: 20px; 
+    margin-left: 40px; 
+    margin-bottom: 40px; 
+} 
+ 
+p, ul, li { 
+    font-family: 'VT323', monospace; 
+    font-size: 24px; 
+} 
+ 
+ul li { 
+    margin-bottom: 10px; 
+    list-style-type: square; 
+} 
+ 
+ol li { 
+    list-style-type: decimal; 
+} 
+ 
+.twitterName { 
+    text-transform: none; 
+} 
+ 
+.twitter { 
+    width: 220px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 20px; 
+} 
+ 
+.nonEmphasized a, 
+a.nonEmphasized { 
+    color: #555; 
+    text-decoration: none; 
+} 
+ 
+.smallerParagraph { 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center; 
+} 
+ 
+.fullImage { 
+    text-align: center; 
+    width: 100%; 
+} 
+ 
+iframe { 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 780px; 
+    height: 439px; 
+    display: block; 
+} 
+ 
+#soundCredits { 
+    display: none; 
+} 
+ 
+.moreInfo { 
+    display: none; 
+} 
+ 
+.places strong { 
+    font-size: 110%; 
+} 
+ 
+#moreNews { 
+    display: none; 
+} 
+ 
+#showMoreNews { 
+    margin-bottom: 50px; 
+    font-weight: bold; 
+} 
+ 
+.interactingSample, 
+.dynamicSample { 
+    width: 90%; 
+} 
+ 
+.interactingSample pre, 
+.dynamicSample pre, 
+.htmlSample pre { 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    background-color: #444; 
+    color: #eee; 
+    letter-spacing: 1px; 
+    font-size: 10px; 
+    padding: 10px; 
+    line-height: 25px; 
+} 
+ 
+.dynamicSample pre { 
+    color: #000; 
+    background-color: #ddd; 
+} 
+ 
+.htmlSample pre { 
+    font-size: 110%; 
+    font-family: monospace; 
+    text-transform: none; 
+} 
+ 
+.interactingSample strong { 
+    font-weight: normal; 
+    color: #ffa; 
+} 
+ 
+.dynamicSample strong { 
+    font-weight: normal; 
+    color: #080; 
+} 
+ 
+h3 { 
+    color: #322; 
+    font-size: 26px; 
+    margin-top: 40px; 
+    padding-top: 40px; 
+    border-top: 2px solid #555; 
+} 
+ 
+.footnote { 
+    opacity: .7; 
+} 
+ 
+.important { 
+    font-size: 110%; 
+} 
+ 
+p.extraSpace { 
+    margin-top: 35px; 
+    margin-bottom: 5px; 
+} 
+ 
+h4 { 
+    font-size: 24px; 
+    opacity: .8; 
+    margin-top: 50px; 
+} 
+ 
+.properTable { 
+    border-collapse: collapse; 
+} 
+ 
+.properTable td, 
+.properTable th { 
+    font-size: 150%; 
+    border: 2px solid rgba(0,0,0,.3); 
+    padding: 10px; 
+} 
+ 
+.properTable th { 
+    background-color: rgb(185,155,140); 
+} 
+ 
+.properTable td.interactingSampleCell { 
+    font-size: 70%; 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    line-height: 1.9em; 
+} 
+ 
+.timeConverterTable { 
+    margin-top: 30px; 
+    font-size: 125%; 
+    text-transform: uppercase; 
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-collapse: collapse; 
+} 
+ 
+.timeConverterTable th, 
+.timeConverterTable td { 
+    text-align: left; 
+    border: 1px solid rgba(0,0,0,.5); 
+    padding: 3px; 
+} 
+ 
+.timeConverterTable th, 
+.timeConverterNow { 
+    background-color: #fff; 
+} 
+ 
+.timeConverterTable td { 
+    text-align: center; 
+} 
+ 
+td.checkmark { 
+    font-size: 110%; 
+    color: rgb(50,100,50); 
+} 
+ 
+.helpMore { 
+    opacity: .6; 
+} 
+ 
+#adToggler { 
+    display: none; 
+    background-color: white; 
+    border-radius: 10px; 
+    padding: 15px; 
+    text-align: center; 
+} 
+ 
+#adToggler input { 
+    font-family: 'VT323', monospace; 
+    font-size: 100%; 
+} 
+ 
+.supportAnswer { 
+    width: 90%; 
+    display: none; 
+    border-radius: 10px; 
+    background-color: rgb(250,250,250); 
+    padding: 10px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+ 
+.supportQuestion { 
+    text-decoration: underline; 
+    cursor: pointer; 
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent; 
+    color: #755; 
+} 
+ 
+.javaScriptCode, 
+.tree { 
+    background-color: white; 
+    color: black; 
+    font-family: monospace; 
+    font-size: 120%; 
+    padding: 10px; 
+} 
+ 
+.tree, .tree ul, .tree li { 
+     position: relative; 
+     font-family: monospace; 
+     font-size: 16px; 
+     margin-bottom: 0; 
+     padding-bottom: 0; 
+} 
+ 
+.tree ul { 
+    list-style: none; 
+    padding-left: 32px; 
+} 
+ 
+.tree li { 
+    list-style-type: none; 
+    padding-top: 5px; 
+    padding-bottom: 15px; 
+} 
+ 
+.tree li::before, .tree li::after { 
+    content: ""; 
+    position: absolute; 
+    left: -12px; 
+} 
+ 
+.tree li::before { 
+    border-top: 1px solid #000; 
+    top: 9px; 
+    width: 8px; 
+    height: 0; 
+} 
+ 
+.tree li.separator::before { 
+    border-top: none; 
+} 
+ 
+.tree li::after { 
+    border-left: 1px solid #000; 
+    height: 100%; 
+    width: 0px; 
+    top: 2px; 
+} 
+ 
+.tree ul > li:last-child::after { 
+    height: 8px; 
+} 
+ 
+.infoExample { 
+    opacity: .6; 
+} 
+ 
+.infoTip { 
+    opacity: .75; 
+    font-style: italic; 
+} 
+ 
+label { 
+    text-decoration: underline; 
+} 
+ 
+.inlineHtmlHelp h1, 
+.inlineHtmlHelp .anchor, 
+.inlineHtmlHelp .helpMore { 
+    display: none; 
+} 
+ 
+.inlineHtmlHelp h2, 
+.inlineHtmlHelp h3, 
+.inlineHtmlHelp h4 { 
+    margin-top: 80px; 
+    padding: 10px; 
+    background-color: white; 
+    line-height: 1.3em; 
+    font-size: 20px; 
+    border-top: 0; 
+} 
+ 
+.inlineHtmlHelp p { 
+    text-transform: none !important; 
+} 
+ 
+.inlineHtmlHelp .interactingSample, 
+.inlineHtmlHelp .interactingSample { 
+    margin-left: 20px; 
+} 
+ 
+.inlineHtmlHelp h2 { 
+    border-top: none; 
+    text-transform: uppercase; 
+} 
+ 
+.inlineHtmlHelp li { 
+    text-transform: none; 
+} 
+ 
+.backerNames { 
+    color: rgb(100,100,0); 
+    text-align: center; 
+    line-height: 1.5em; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+ 
+.backerName { 
+    display: inline-block; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+} 
+ 
+.backerName img { 
+    padding-right: 5px; 
+} 
+ 
+.steam p { 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase !important; 
+    font-size: 100%; 
+} 
+ 
+</style> 
+ 
+  
+ 
+<div class="content"> 
+ 
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1> 
+ 
+<p><strong class="important">Creatable Areas</strong> can be added soon after logging in, with different settings for who can build, remove, and carry their existing equipment there. 
+Everyone can join an area, even without logging in, by following a link (like "manyland.com/beachoria") or by entering an Interacting (which uses e.g. "entered: /to beachoria"). 
+</p> 
+ 
+<div class="videoWrapper"> 
+<iframe width="700" height="394" src="http://www.youtube.com/embed/sjYYGYJhI9I?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe> 
+</div> 
+ 
+<h2><a name="create"></a><a href="#create" class="anchor">#</a> How do I create an area?</h2> 
+ 
+<p><img src="/static/media/areas-help/create-area-in-menu.png" alt=""/></p> 
+ 
+<p>First, if you're not in one of the base locations, click Elsewhere at the bottom right. Make sure you are logged in and have been exploring for a while, doing some things like collecting, placing and creating in the Elsewhere region. 
+</p> 
+ 
+ 
+<h2><a name="rights"></a><a href="#rights" class="anchor">#</a> Which different editing rights do areas have?</h2> 
+ 
+<img src="/static/media/areas-help/create-area-dialog.png" alt=""/> 
+ 
+<p>There are three different editing levels:</p> 
+ 
+<ul> 
+<li><strong>Everyone (ring rank near center):</strong> Everyone can join this area, and everyone who's logged and not banned in can build, remove, bring equipment and such. Only ring rankers can edit near the center, or amend e.g. the area description later on.</li> 
+<li><strong>Ring Rank only:</strong> Everyone can join, but only ring rank can build, remove, bring outside equipment and such. Everyone else will not have a collection side panel when in this area, and cannot add or remove blocks, or equip any item, mountable, wearable and such... unless you as editor decide to put that item in the world.</li> 
+<li><strong>Only [editor list]:</strong> Everyone can join, but only people listed in the editor list can build, remove, and equip things not placed in the world. On this level, editors can also amend an area-global interacting. Editors in the list can be added to or removed from later by List Editors, which are denoted by an asterisk after their name. (List Editors cannot remove other List Editors, though.)</li> 
+</ul> 
+ 
+ 
+<h2><a name="editLater"></a><a href="#editLater" class="anchor">#</a> Which things can I edit later?</h2> 
+ 
+<p>Description, drift, area-global interacting, and an editors list can be changed later.</p> 
+ 
+<p>The base editing level, title, location, URL and location cannot be changed later.</p> 
+ 
+ 
+<h2><a name="location"></a><a href="#location" class="anchor">#</a> What is the area location I can pick?</h2> 
+ 
+<p class="fullImage"><img src="/static/media/areas-help/structure-map.jpg" alt=""/></p> 
+ 
+<p>The location indicates where in the universe your area is located, and the sum of all areas create the outer ring. 
+Your instinct and personal preference is the only guidance for which location you choose &#8211; since every area is surrounded by minfinity, 
+it will never overlap or cross into any other area. 
+</p> 
+ 
+ 
+<h2><a name="checking"></a><a href="#checking" class="anchor">#</a> How can I check what an area I created looks to non-editors?</h2> 
+ 
+<p>To explore your area as non-editor, on desktop just open an anonymous browser window, or another browser where you are not logged in (or logged in but not an editor for the area), 
+and jump to the area's URL. You should now see no side panel, and will not be able to delete or remove blocks. Items you may have been holding from another area 
+will not be held anymore now.</p> 
+ 
+<p>You can also switch over your current editor account into a test non-editor mode. Type the following command as speech (and type it again to toggle back):</p> 
+ 
+<p><strong>&nbsp;&nbsp;EXPLORIFY!</strong></p> 
+ 
+<p>When entering Explorify and near center, the exact are center and spawn point for newcomers will sparkle.</p> 
+ 
+<p>Provided you're an editor of the area, the following command can be used to clear one item (like an apple) or everything from the possessions bar:</p> 
+ 
+<p><strong>&nbsp;&nbsp;DONTPOSSESS APPLE!</br></br> 
+&nbsp;&nbsp;DONTPOSSESS *! 
+</strong></p> 
+ 
+ 
+<h2><a name="inviting"></a><a href="#inviting" class="anchor">#</a> How can I invite others to an area I created?</h2> 
+ 
+<p>There are different ways people can get into your area, for example:</p> 
+ 
+<ul> 
+<li><strong>You can use an Interacting's /to command</strong>, followed by the title of your area, e.g. "/to crystal palace" (provided no sub-area of that name is available in a current area). Also see <a href="#subAreas">more ways</a> to use this command. You can place the created transporter into fitting places in the base areas, which you can reach by hitting Elsewhere. The top-left outer lobby area is one place especially suited 
+for others to find your entrance (try go a little out of the center, as Interactings cannot be placed near the center of the base areas).</li> 
+<li><strong>You can share the URL</strong> for your area on social news sites, feeds, by email, in forums where people are interested about it, and also in Manyland writable forums where people are interested in it, and any other place you consider fitting.</li> 
+<li><strong>You can share the URL in your status text</strong>. Just hit F1 (on desktop) or tap on yourself, then the My Friends button, to open the friends list. Here, tap the top status box and enter your URL, along with any other information you want.</li> 
+</ul> 
+ 
+ 
+<h2><a name="subAreas"></a><a href="#subAreas" class="anchor">#</a> What are sub-areas?</h2> 
+ 
+<p>Sub-areas are part of a main area. They can created by any editor of that main area by picking "Create Sub-Area" from the menu. 
+They can be an infinite number of things: the insides of a house, a secret cave, a spaceship one enters, a dream sequence, a shift in time 
+on the same location, and anything you can think up!</p> 
+ 
+<p>As opposed to main areas, sub-areas don't have a shareable link on their own, and cannot be directly accessed in any way. The only way 
+to access them is if you as area editor put up an Interacting containing the /to command followed by the sub-area name, like e.g. this:</p> 
+ 
+<div class="interactingSample"><pre>entered: <strong>/to cave of gold</strong> 
+</pre></div> 
+ 
+<p>Entering would now be done by a jump. There's many different ways in interactings allowing you to "lock" this area now, e.g. you might require a key:</p> 
+ 
+<div class="interactingSample"><pre>gets silver key or touches silver key: <strong>/to cave of gold</strong> 
+</pre></div> 
+ 
+<p>Also look into commands like "they possess...", "they hold...", "entered and they are..." etc. In the following example, the entrance will automatically 
+be usable if one has a keycard in their possessions bar:</p> 
+ 
+<div class="interactingSample"><pre>entered and they possess keycard: <strong>/to secret office room</strong> 
+</pre></div> 
+ 
+ 
+<h2><a name="seeAreas"></a><a href="#seeAreas" class="anchor">#</a> What's the easiest way to see all the areas I've been to?</h2> 
+ 
+<p>Open the map (via the bottom left menu or pressing F9 on desktop), and find a dropdown box of all your visited areas 
+on it. Switch to any area, then click into the map to transport there. Alternatively, you can also use Place Names you picked up (or snapshots you've made) 
+to transport to areas.</p> 
+ 
+ 
+<h2><a name="spawnPoint"></a><a href="#spawnPoint" class="anchor">#</a> Where in an area will new people spawn?</h2> 
+ 
+<p>People who are visiting an area for the very first time will spawn right in into its center, which was where you also spawned 
+after creating the area.</p> 
+ 
+ 
+<h2><a name="travel"></a><a href="#travel" class="anchor">#</a> Can non-editors travel around a specific area using the map or snapshots?</h2> 
+ 
+<p>Someone who's a non-editor can open the map or snapshots, and click them to transport, but they will still only spawn where they were last. 
+There may be an area editor setting to toggle this in the future, but it's useful so that a potential puzzle chain is kept working in longer quests (e.g. imagine 
+a subarea inside a bigger area where one is meant to be until a specific item is found, like a key). 
+</p> 
+ 
+ 
+<h2><a name="blockViewing"></a><a href="#blockViewing" class="anchor">#</a> Can I block access to an area even for viewing?</h2> 
+ 
+<p>Every area is publicly visible, provided someone knows the URL (you can make it a little more cryptic if you like), 
+but you can get creative and e.g. build walls or key-protected doors around the center. 
+The center is where everyone will spawn if it's their first visit into the area. 
+Also look into the Interacting commands "is [editor]" (to check if someone's an editor for the current area) and 
+"is [account]" (to check if someone is logged in at the moment) to tune your doors and other mechanisms.</p> 
+ 
+<!-- 
+<h2><a name="areaWritables"></a><a href="#areaWritables" class="anchor">#</a> What are Area writables?</h2> 
+ 
+<p>When in the area you are an editor of, you can create a Writable and select from these attributes 
+by hitting the "..." button: 
+ 
+<ul> 
+<li><strong>Area Editors Have Special Flag Power</strong></li> 
+<li><strong>Only Area Editors Add Threads</strong> [includes all above]</li> 
+<li><strong>Only Area Editors Add Comments</strong> [includes all above]</li> 
+<li><strong>Only Area Editors Read</strong> [includes all above]</li> 
+</ul> 
+ 
+<p>(Special flag power means area editors can hide with a single flagging of theirs.)</p> 
+--> 
+ 
+<h2><a name="drift"></a><a href="#drift" class="anchor">#</a> What is an area drift?</h2> 
+ 
+<p>Areas can drift through the universe into a directon you pick (this drift can be amended later on). 
+Since an area is surrounded by minfinity, even with the drift, it will never cross into another location. 
+</p> 
+ 
+<p>You will notice that some types, like Environment - Stars, are changing based on which drift is picked.</p> 
+ 
+ 
+<h2><a name="blendOutBackground"></a><a href="#blendOutBackground" class="anchor">#</a> How can I blend out the background for my area or sub-area?</h2> 
+ 
+<p>Use the type Light and tick the attribute Thick to make an area or sub-area fully opaque. You can now e.g. have it be a black color and drop a few in the environment.</p> 
+ 
+<p>You can also use the type Fill Light, and e.g. put it in a way that blends in your ground.</p> 
+ 
+<img src="/static/media/areas-help/example-of-using-fill-light.png" alt=""/> 
+ 
+ 
+<h2><a name="areaGlobalInteracting"></a><a href="#areaGlobalInteracting" class="anchor">#</a> What is an area-global Interacting?</h2> 
+ 
+<p><a href="/info-interacting#areaGlobal">Area-global Interactings</a> can be set by clicking the little button at the top during creating or editing of an area, provided it has the editing rights set to 
+the third option, editors list. Adding an Interacting block after clicking this button will now add this Interacting's code, but it's listening to the 
+different events for the whole area. For instance, you could equip every newcomer with a guide book readable like this:</p> 
+ 
+<div class="interactingSample" style="width: 100%"><pre>Someone arrives and they don't possess guide book: /they possess guide book 
+</pre></div> 
+ 
+<p>The following example would make saying a certain spell trigger a motion, which in turn may trigger other reactions from local 
+Interactings placed:</p> 
+ 
+<div class="interactingSample" style="width: 100%"><pre>Someone says abracadabra: /magic spell motion 
+</pre></div> 
+ 
+ 
+<h2><a name="possessionBar"></a><a href="#possessionBar" class="anchor">#</a> What is the area possession bar?</h2> 
+ 
+<img src="/static/media/areas-help/possessions.png" alt=""/> 
+ 
+<p>If someone's not an editor in an area, they don't have a collection side panel and can't collect multiple things. 
+You can, however, emphasize important items, readables, writables, mounts and such by using Interacting code to add 
+them to one's possession bar by using e.g.:</p> 
+ 
+<div class="interactingSample"><pre>Sees forge sword: <strong>/they possess sword</strong> 
+</pre></div> 
+ 
+<p>(You can also combine this with e.g. /gives sword)</p> 
+ 
+<p>The possessions bar can now be expanded by pressing down. Possessions are different for every area (but the same in the group of a main area and its sub-areas). 
+As opposed to Interacting states like "/is friendly", which fade out after a week and don't carry across devices, possessions are permanent and cross-device. 
+</p> 
+ 
+<p>This also allows you to ensure that in quest puzzles you set up, only the important items required for later will be carried around permanently. 
+Everything else can still be picked up and held locally, but won't unnecessarily fill the inventory.</p> 
+ 
+<p>Items in the possession bar react when picked, for instance: 
+ 
+<ul> 
+<li>A Medium will play</li> 
+<li>A Writable or Readable will open</li> 
+<li>A holdable item will be held</li> 
+<li>A Pointer will bring up a finder arrow</li> 
+<li>A Motion will start</li> 
+<li>A Place Name will open the map for that place</li> 
+<li>A Viewable will be viewed</li> 
+</ul> 
+ 
+<p>For possessions where you would prefer no reaction, try the Thing type, for instance.</p> 
+ 
+ 
+<h2><a name="possessionSnapshot"></a><a href="#possessionSnapshot" class="anchor">#</a> Can I show my possession bar to others?</h2> 
+ 
+<p>Yes, you can open it and make a snapshot, then share this snapshot URL or have others see it in your album.</p> 
+ 
+ 
+<h2><a name="collecting"></a><a href="#collecting" class="anchor">#</a> How can I collect a block in an area if I'm not an Explorer?</h2> 
+ 
+<p>If you're logged in, but not an editor in an area, you can right-click on deskto/ long tap on touch devices, then hit the collect button. 
+The block or other item will be available in your collection side panel when you leave the area next time by e.g. clicking Elsewhere.</p> 
+ 
+ 
+<h2><a name="contact"></a><a href="#contact" class="anchor">#</a> How can I solve an issue in an area if I'm not in the editors list?</h2> 
+ 
+<p>Try to look who are the editors for an area (open the bottom left menu and follow the area name link), 
+and contact them. If the editor or editors of the area provided an area board, or help guide, try to read through it 
+and get involved.</p> 
+ 
+<div class="helpMore"> 
+<h3>More</h3> 
+ 
+<p>Also check out the <a href="/info">main introductory help</a> and the <a href="/info-interacting">Interactings help</a>. 
+Got a question which isn't answered here, or new ideas and feedback? <a href="/support">Have a look here please</a>.</p> 
+</div> 
+ 
+</div> 
+ 
+ 
+<script type="text/javascript"> 
+    var _gaq = _gaq || []; 
+    _gaq.push(['_setAccount', 'UA-60595-51']); 
+    _gaq.push(['_trackPageview']); 
+ 
+    (function() { 
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+    })(); 
+</script> 
+ 
+<script> 
+function handleOnLoad() { 
+    if ( isFramed() ) { 
+        var bodyElm = document.getElementById('body'); 
+        if (bodyElm) { 
+            bodyElm.style.backgroundImage = 'none'; 
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)'; 
+        } 
+    } 
+} 
+ 
+function isFramed() { 
+    return window != window.top; 
+} 
+ 
+window.onload = handleOnLoad; 
+</script> 
+ 
+</body> 
+</html>

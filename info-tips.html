@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  Tips, Tricks &amp; References</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a><br/>
+Tips, Tricks &amp; References</h1>
+
+
+<h2 style="border-top: 0"><a name="copyPaste"></a><a href="#copyPaste" class="anchor">#</a> Copy &amp; paste in Creator</h2>
+
+<p>You can toggle horizontal symmetry in the Creator's menu or by hitting S, and vertical symmetry via Shift+S.</p>
+
+<p>Copy &amp; paste with rotation comes can also be used to mirror something. First we draw the top part:</p>
+
+<p><img src="/static/media/tips/copy-paste-1.png" alt=""/></p>
+
+<p>&nbsp;</p>
+
+<p>Now we pick Copy from the menu (or hit C). Then we pick Rotate (or hit R) twice to get this:</p>
+
+<p><img src="/static/media/tips/copy-paste-2.png" alt=""/></p>
+
+<p>&nbsp;</p>
+
+<p>Now we can move this a bit on the canvas if needed by using Ctrl-Arrow, or on tablets, the menu arrows. Then, we pick Paste (P) and get this result:</p>
+
+<p><img src="/static/media/tips/copy-paste-3.png" alt=""/></p>
+
+<p>The general approach of Copying - Moving - Pasting can also be used for many other creations where you want to duplicate things, like for instance the legs of a table.</p>
+
+
+<h2><a name="extendingShortening"></a><a href="#extendingShortening" class="anchor">#</a> Extending or shortening in Creator</h2>
+
+<p>On the desktop, when you place your mouse cursor over an area on the canvas, you can hit Ctrl+Shift+Arrows to expand or shorten the creation from this part onwards.</p>
+
+<p><img src="/static/media/tips/extending-1.png" alt=""/><br/>
+<em>Before</em></p>
+
+<p><img src="/static/media/tips/extending-2.png" alt=""/><br/>
+<em>After hitting Ctrl+Shift+Right 3 times</em>
+</p>
+
+
+<h2><a name="colors"></a><a href="#colors" class="anchor">#</a> Colors</h2>
+
+<p>There are many different ways to mix colors.</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/yUmt2slPJ5E?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h2><a name="gatherables"></a><a href="#gatherables" class="anchor">#</a> Gatherables</h2>
+
+<p>Gatherables are a type you can pick in Creator with an open range of uses. Here's Godiva showing you some of the things you can do with them!</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/wFbJMZYnoz4?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h2><a name="autoPilot"></a><a href="#autoPilot" class="anchor">#</a> Creating taxi-style mountables</h2>
+
+<p>Here Godiva shows you how to create a mountable that takes one to somewhere else on auto pilot:</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/_-rmAKYZemE?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+<h2><a name="bodyMotion"></a><a href="#bodyMotion" class="anchor">#</a> Creating a body and motion</h2>
+
+<p>Here's Godiva showing you how to create a body, and a body motion!</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/gLhBYF4ecyY?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/GP0XBZmK4ho?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h2><a name="autoTriggered"></a><a href="#autoTriggered" class="anchor">#</a> Auto-triggered motions</h2>
+
+<p>You can trigger any motion by typing its name. For instance, you can type "haha" to trigger a motion named "haha".</p>
+
+<p>Wildcards are allowed too, so if you have a special 'raising eyebrow' motion for your body, you can have it be triggered from any question by naming it "*?". Since questions end in the question mark, this motion will triggered whenever you ask something.</p>
+
+<p>On top of that, there are some motion names which are automatically triggered by certain actions in the world:</p>
+
+<table class="properTable">
+    <tr><td><strong>drink</strong></td><td>Triggered when consuming a consumable that has the attributed "drinkable"</td></tr>
+    <tr><td><strong>eat</strong></td><td>Triggered when consuming a consumable that has the attributed "edible"</td></tr>
+    <tr><td><strong>hard landing</strong></td><td>When you land on ground after a longer (than normal jump) fall</td></tr>
+    <tr><td><strong>harmed</strong></td><td>Triggered when being harmed, e.g. touching a harmful item in the world</td></tr>
+    <tr><td><strong>healed</strong></td><td>Triggered when being healed, e.g. touching a healing Gatherable or Interacting</td></tr>
+    <tr><td><strong>lie</strong></td><td>When one starts lying down on a bed and similar</td></tr>
+    <tr><td><strong>map</strong></td><td>Triggered when looking at the map or scrolling it</td></tr>
+    <tr><td><strong>multi activity</strong></td><td>Triggered when using a Multi</td></tr>
+    <tr><td><strong>search</strong></td><td>Triggered when entering search keywords or scrolling the items panel</td></tr>
+    <tr><td><strong>sit</strong></td><td>When one starts sitting down on a chair or similar</td></tr>
+    <tr><td><strong>swim</strong></td><td>When someone starts swimming by entering the item type Liquid</td></tr>
+    <tr><td><strong>shout</strong></td><td>Triggered when typing several letters in caps</td></tr>
+    <tr><td><strong>take</strong></td><td>When you take a holdable item, like hitting space on a placed coffee mug</td></tr>
+    <tr><td><strong>throw</strong></td><td>When throwing an item you held</td></tr>
+    <tr><td><strong>upvote</strong></td><td>When you upvote someone, e.g. by Shift+Clicking them</td></tr>
+    <tr><td><strong>create</strong></td><td>When the Painter opens</td></tr>
+    <tr><td><strong>created</strong></td><td>When the Painter closes</td></tr>
+    <tr><td><strong>read</strong></td><td>When you open a Writable or Readable</td></tr>
+    <tr><td><strong>write</strong></td><td>When you posted or edited a Writable comment</td></tr>
+    <tr><td><strong>boost</strong></td><td>When you started a boost</td></tr>
+    <tr><td><strong>snap</strong></td><td>When you take a snapshot</td></tr>
+    <tr><td><strong>leave</strong></td><td>When you exit to another area or location</td></tr>
+    <tr><td><strong>check friends</strong></td><td>When you open the friends list</td></tr>
+    <tr><td><strong>pass</strong></td><td>When you long-hold down to pass through a One-Way platform with the "Hold to pass" attribute</td></tr>
+    <!-- <tr><td><strong>idle</strong></td><td>When you go <abbr title="Away From Keyboard">AFK</abbr> (no click or input for 2 minutes).</td></tr> -->
+</table>
+
+
+<h2><a name="animalSounds"></a><a href="#animalSounds" class="anchor">#</a> Animal sounds</h2>
+
+<p>Some names giving to your Living type creation have special sounds associated with them. You can also mix and match several into your creature name.
+For instance, create a Living named "Fred the Monkey", place it, and run past it.
+</p>
+
+<p>Among the supported animal names are cat, kitten, cow, horse, bird, lion, liger, monkey, pony, hen...</p>
+
+<!-- Oh hai! The full list is: cat, kitten, cow, horse, bird, lion, tiger, liger, dog, puppy, bear, wolf, monkey, ape, bonobo, chimp, chimpanzee, orang utan,
+elephant, pig, piglet, snake, frog, sheep, lamp, pony, rooster, cock, hen and chick. -->
+
+
+<h2><a name="soundsBoard"></a><a href="#soundsBoard" class="anchor">#</a> Making a sounds board</h2>
+
+<p><img src="/static/media/tips/song-board.jpg" alt=""/></p>
+
+<p>You can use the type Writable to create shared forums, but you can also keep a board unshared to make it private just for you.
+For instance, you can use a board just to collect Soundcloud.com sounds you like, pasting category threads with individual song links.
+This way you can easily play them back at any time later, but also find songs to play for others during parties and such.
+</p>
+
+
+<h2><a name="manylandTime"></a><a href="#manylandTime" class="anchor">#</a> Manyland Time</h2>
+
+<script>
+function pad(v) {
+    if ( String(v).length == 1 ) { v = '0' + v; }
+    return v;
+}
+
+function getTimeConverterTable() {
+    var html = '';
+
+    var now = new Date();
+    html += '<table class="timeConverterTable">';
+    for (var timezone = 1; timezone <= 2; timezone++) {
+        var isLocalTime = timezone == 1;
+
+        if (isLocalTime) {
+            html += '<tr class="localTime"><th>Your time:</th>';
+        }
+        else {
+            html += '<tr class="manylandTimeDisplay"><th>Manyland Time (UTC):</th>';
+        }
+
+        for (var hour = 8; hour <= 24 + 7; hour++) {
+            var normalizedHour = hour <= 24 ? hour : hour - 24;
+            var thisHour = new Date( now.getFullYear(), now.getMonth(), now.getDay(), normalizedHour, 0, 0, 0);
+            var timeDisplay = null;
+            if (isLocalTime) {
+                timeDisplay = pad(normalizedHour);
+            }
+            else {
+                timeDisplay = thisHour.toISOString().substr(11, 2);
+            }
+            var sClass = hour == now.getHours() ? ' class="timeConverterNow"' : '';
+            html += '<td' + sClass + '>' + timeDisplay + '</td>';
+        }
+
+        html += '</tr>';
+    }
+    html += '</table>';
+
+    return html;
+}
+
+document.write( getTimeConverterTable() );
+</script>
+
+<p>The Manyland Time is always shown when you open the bottom left menu. You can see a table converting it to your time above.
+It equals Universal Time (UT/ UTC) or Greenwich Mean Time (GMT), and is useful to coordinate events in the world across different global time zones.
+</p>
+
+<p>If you want, you can set a phone clock of yours to Universal Time as below to always know Manyland Time!</p>
+<p><img src="/static/media/tips/time.jpg" alt=""/></p>
+
+
+<h2><a name="writableCalendar"></a><a href="#writableCalendar" class="anchor">#</a> Writable calendar events</h2>
+
+<p>Every writable forum has a connected calendar that organizes events mentioned in thread-starting comments. To have an event be listed in the calendar,
+use the following format anywhere in your thread-starting comment:
+</p>
+
+<div><pre style="font-size: 120%">2015-02-25 19:00 MT</pre></div>
+
+<p>For instance, this might be your full comment:</p>
+
+<div><pre style="font-size: 120%">
+Everyone, join the birthday party!
+Where: Near green mountain
+When: 2015-02-25 19:00 MT
+Bring: Gifts!
+</pre></div>
+
+<p>Once saved, your event is added to the calendar, which can be accessed by a top right link from the writable's frontpage.
+At the bottom of the calendar, there's also a way to compare your time. The table is also shown above.
+</p>
+
+
+<h2><a name="formatting"></a><a href="#formatting" class="anchor"></a>Text formatting options in Readables and Writables</h2>
+
+<p>Please see <a href="/info-text">this page</a>.</p>
+
+
+<h2><a name="commands"></a><a href="#commands" class="anchor">#</a> Spoken commands</h2>
+
+<p>A few things you say in chat, ended with a "!", have special effects:</p>
+
+<table class="properTable">
+
+<tr><th style="font-size: 140%; width: 30%">to <em>someplace</em></th><td>This transports you to another area, where "someplace" is the name of the area (the exclamation mark is optional here). If you're the editor of an area, it will also transport you to a sub-area of that name.</td></tr>
+
+<tr><th style="font-size: 140%">explorify!</th><td>In a created area where you're an editor, this turns you into an explorer (a non-editor) so you can see what the area would look like to them. It will also briefly sparkle the exact spawn point.</td></tr>
+
+<tr><th style="font-size: 140%">make things slower!</th><td>This will temporarily disable all optimizations that may have been enabled to cater for a potentially low frame rate. For instance, if your refresh rate is low, things like certain gradients or dust effects may stop showing, but once you say "make things slower!" they'll reappear.</td></tr>
+
+<tr><th style="font-size: 140%">mystates!</th><td>If you're an editor of a created area, this shows the states Interactings have set for you.</td></tr>
+
+<tr><th style="font-size: 140%">myspeed!</th><td>This shows your current frame rate and other information.</td></tr>
+
+<tr><th style="font-size: 140%">speedinfo!</th><td>Shows your current frame rate, sector boundaries (neighboring sectors to the one you're in are always preloaded), the number of different items around, and more.</td></tr>
+
+<tr><th style="font-size: 140%">showme <em>sometype</em>!</th><td>
+    Highlights this item in the world. Use for instance "showme light!", "showme top lights!" or "showme people, wearables!". To disable again, type any non-valid item type, e.g. "showme!" or "showme nothing!".
+    To see everything, use "showme all! (the words "*", "every", "any "and "anything" work too).
+</td></tr>
+
+<tr><th style="font-size: 140%">myversion! or myv!</th><td>Shows the current Manyland version you're on (reload if there's a new version you want to get).</td></tr>
+
+<tr><th style="font-size: 140%">theyare <em>somestate</em>!</th><td>As an area editor, this sets your own <a href="/info-interacting#checkingSomeonesStates">state</a> by that name, where "somestate" is the name of the state.</td></tr>
+
+<tr><th style="font-size: 140%">theyarent <em>somestate</em>!</th><td>As an area editor, this unsets your own state by that name, where "somestate" is the name of the state.</td></tr>
+
+<tr><th style="font-size: 140%">dontpossess <em>somename</em>!</th><td>As an area editor, this is a way to remove something by the name of "somename" from your area possession bar. Speaking "dontpossess *!" will remove everything from the possession bar.</td></tr>
+
+<tr><th style="font-size: 140%">firstview!</th><td>This puts you into a pretend rank 1, day 0, no achievements type state, so that you can better understand what a newly registered account would see. For instance, this will show more guidance text on the screen, bring up a welcome message, show a "more" label next to the triangle menu, show the meet button also when in created areas, show your own name tag, and more.</td></tr>
+
+<tr><th style="font-size: 140%">togglejoystick!</th><td>This disables (or reenables) the virtual joystick on mobile, in case you have an external keyboard hooked up.</td></tr>
+
+<tr><th style="font-size: 140%">oldflags!</th><td>Shows your old flag reports alert again (if your relevant flags threshold is over half the flags that would result in an automatic ban).</td></tr>
+
+</table>
+
+
+<h2><a name="search"></a><a href="#search" class="anchor">#</a> Searching</h2>
+
+<p>The search box allows different queries like:</p>
+
+<table class="properTable">
+<tr><td style="width: 40%; text-transform: uppercase">solid</td><td>Would search for the type solid. Other examples are "viewable", "wearable" and so on.</td></tr>
+<tr><td style="width: 40%; text-transform: uppercase">hat wearable</td><td>Searches for any e.g. wearable which includes the word "hat" anywhere in the title. Use other types like "solid", "body", "gatherable" and so on.</td></tr>
+<tr><td style="width: 40%; text-transform: uppercase">chair by me</td><td>Searches for anything named "chair" and created by you.</td></tr>
+<tr><td style="width: 40%; text-transform: uppercase">coin by susan</td><td>Would search for anything named coin created by Susan.</td></tr>
+<tr><td style="width: 40%; text-transform: uppercase">coin in bin</td><td>Searches among your recently deleted creations (you can also hit Ctrl+Z on desktop).</td></tr>
+<tr><td style="width: 40%; text-transform: uppercase">"light green"</td><td>Quotes search for this order of words. Also, instead of a search for the type Light, this would search any type for the text "light green".</td></tr>
+</table>
+
+
+<h2><a name="addingSound"></a><a href="#addingSound" class="anchor">#</a> Adding Sound to creations</h2>
+
+<p>During creation, you can open the upper left menu and choose "Add Sound", then pick a sound block (or any creation which contains a sound).
+Currently, there's a set of ready-made sound
+blocks you can find shared at the Item Repo board, and you can also find a Holder with mostly
+all sounds in the second hut at <a href="/helptown" target="_blank">Helptown</a>.
+Adding sound is available for the following types:</p>
+
+<ul>
+<li><strong>Changing Thing:</strong> Plays when approached in earshot</li>
+<li><strong>Changing on Touch:</strong> Played when turned on to second cell, or when on and going over</li>
+<li><strong>Flipping Living, Changing Living:</strong> Played when touched</li>
+<li><strong>Motion, Interacting Motion:</strong> Played when motion is triggered</li>
+<li><strong>Item, Equipment:</strong> Played when picked up</li>
+<li><strong>Emitter, Consumable:</strong> Played when emitted or consumed</li>
+<li><strong>Transforming</strong>: Played when giving result.</li>
+<li><strong>Gatherable:</strong> Played when gathered</li>
+<li><strong>Mountable, Flying Mountable:</strong> Played when mounted, and randomly every now and then afterwards</li>
+<li><strong>Wearable:</strong> Played when worn</li>
+<li><strong>Holder</strong>: Played when viewed/ opened.</li>
+<li><strong>Environment:</strong> Like other environmental sounds, this plays semi-randomly when in sight. You need to set the attribute "Soundscape" for this to work.</li>
+<li><strong>Dynamic:</strong> Referenced in the Dynamic text via <a href="/info-dynamic#commands">the PLAY SOUND command</a>, e.g. "1s: cell 1 show, play sound"</li>
+<li><strong>Interactings</strong>: For this type, instead of using the top menu, add one or more Sound blocks into the object reference list. You can then play it via the <a href="/info-interacting#moreActions">action</a> /PLAYS SOUNDNAME. (You can also trigger an Interacting Motion that has a sound.)</li>
+<li><strong>Brain</strong>: Played when equipped.</li>
+<li><strong>Changer</strong>: Played when change is performed.</li>
+<li><strong>Mift</strong>: Played when the Mift is first received, and when it's later clicked on the Mifts page.</li>
+<li><strong>Mover</strong>: Played when the Mover body first appears.</li>
+<li><strong>Far Back</strong>: Played once when the center of the Far Back appears.</li>
+</ul>
+
+<p>(If you want to have sound for a creation someone else made in an area you're preparing, look
+into Interacting's <a href="/info-interacting#someone">Someone</a> syntax, and <a href="/info-interacting#areaGlobal">Area-Global Interactings</a>.)</p>
+
+<p>Most of the current Sounds are Creative Commons licensed, and you can find more creator info in the block's context menu.
+A big thanks to the terrific <a href="http://freesound.org/">FreeSound.org</a>, its community,
+and the <a href="http://creativecommons.org/">Creative Commons</a> initiative!</p>
+
+
+<h2><a name="hidingInterface"></a><a href="#hidingInterface" class="anchor">#</a> Hiding interface in screenshots</h2>
+
+<p>When you hit Ctrl+F10, the side panel and other elements will be hidden. This can be useful for taking full-screen screenshots or videos where you don't want the dialogs to appear.</p>
+
+
+<h2><a name="sparkling"></a><a href="#sparkling" class="anchor">#</a> The Sparkling type</h2>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/VVekWq2fDIw?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h2><a name="solidSounds"></a><a href="#solidSounds" class="anchor">#</a> Special solid foot step sounds</h2>
+
+<p>The following words in a Solid's title cause special footstep sounds:</p>
+
+<p><em>metal, grass, snow, sand, wood, energy, mud.</em></p>
+
+<p>For instance, try naming a block "energy bridge", "metal ground", or "muddy puddle".</p>
+
+
+<h2><a name="sittableLieable"></a><a href="#sittableLieable" class="anchor">#</a> Making chairs or beds</h2>
+
+<p>Things you create let people sit if you use one of these words anywhere in your Thing's title:<br/>
+<em>chair, sofa, cushion, bench, stool, couch, seat, bath tub, bathtub, pool, throne, beanbag, toilet, sittable</em>.</p>
+
+<p>To make something liable, use one of these in the name:<br/>
+<em>bed, mattress, lieable</em>.</p>
+
+
+<h2><a name="creatorMotion"></a><a href="#creatorMotion" class="anchor">#</a> Doing a motion while creating</h2>
+
+<p>To trigger a body motion while creating, on desktop press Ctrl+D and enter the name of the motion associated with your current body (like "waves").</p>
+
+
+<h2><a name="findingThings"></a><a href="#findingThings" class="anchor">#</a> Finding hard-to-spot blocks</h2>
+
+<p>Sometimes when there's special weather or lights in an area but you may not immediately know what the block source for this is, you can make things more visible to find it. Click on create, select Wearable, and hit '...' to open the attributes. Check 'Sees all items', save your creation, and wear it.
+Now, the following types start to sparkle whereever they are:</p>
+
+<p><em>Light, Top Light, Environment, Interacting, Harmful, Changing Harmful, Deadly, Moving Deadly, Emerging Deadly, Place Name, Gatherable, Music.</em></p>
+
+<p>Also, if you want to find the placement origin of a Dynamic where the cell positions are moved quite a bit, you can use the Insight boost "Dynamic Origin".</p>
+
+<p>There's also a Happening you can attach as boost to highlight different block types. If you have universe search, search for the word <em>happening</em> and pick the one titled "I can show you the world".</p>
+
+
+<h2><a name="tenMore"></a><a href="#tenMore" class="anchor">#</a> 10 other things you can do...</h2>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/8b8E-jyAYvE?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h2>Interactings</h2>
+
+<p>Interactings can be used to create a wide variety of living, thinking beings, machines, and everything else, so there's a <a href="/info-interacting">full overview page</a> for them.</p>
+
+
+<h2><a name="moreShortcuts"></a><a href="#moreShortcuts" class="anchor">#</a> More Shortcuts</h2>
+
+<p>
+Here are some more shortcuts you can use (the <a href="/info">start help</a> lists the main ones).
+</p>
+
+<p><a name="#painterShortcuts"></a><strong>In Painter:</strong></p>
+<ul>
+    <li><strong>Ctrl+A</strong> toggles the Attributes picker.</li>
+    <li><strong>Shift+G</strong> toggles the grid display showing in front (instead of behind your drawing).</li>
+    <li><strong>Shift+i</strong> opens the Info text input, where you can put additional information about your item, like credits and a credits URL. This description then appears when clicking the (i) on an item's context menu.</li>
+    <li><strong>Shift+Click</strong> a color in your palette boxes to swap it with the currently selected one.</li>
+    <li><strong>Space</strong> stamps a copied part to the cursor position. You can copy from either the canvas by hitting C, or from your collection by right-clicking an item (which needs to be by your or clonable).</li>
+    <li><strong>Ctrl+J</strong> toggles on the left-side Live Preview for many different types (and not just Dynamics, Livelies and Far Backs).</li>
+    <li><strong>Shift + Arrow Keys</strong> moves the left-side Live Preview position.</li>
+    <li><strong>Ctrl-Click</strong> an item in the world or the side panel copies the pixel color.</li>
+    <li><strong>Ctrl-Right-Click</strong> an item in the world or the side panel copies the full item's color palette. (You may want to credit the palette's creator in the Shift+i item info box.)</li>
+    <li><strong>Ctrl+K</strong> Cycles through different strengths of the other animation cell shining through.</li>
+</ul>
+
+<p><strong>Miscellaneous shortcuts:</strong></p>
+
+<ul>
+    <li><strong>Shift+Right-Click</strong> makes a Writable semi-transparent, in cases where you want to still read the chat behind it.</li>
+    <li><strong>Holding Ctrl</strong> while playing an instrument note holds the note back, to be played next time you hit a note normally. This allows playing chords (of up to 5 notes).</li>
+    <li><strong>Shift+Arrows</strong> move your wearable/ attached dynamic so it better fits your body.</li>
+    <li><strong>Shift+Ctrl+Arrows</strong> moves your wearable/ attached dynamic by a larger step.</li>
+</ul>
+
+<div class="helpMore" style="margin-top: 75px; margin-bottom: 75px">
+<h3><a name="more"></a>More...</h3>
+
+<p>Also check out the <a href="/info">main introductory help</a>.
+Got a question which isn't answered here, or new ideas and feedback? <a href="/support">Have a look here please</a>.</p>
+
+</div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  Brains</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1>
+
+<p>
+<img src="/static/media/brain-illustration.png" alt="" style="float: left; margin-right: 15px"/>
+<strong class="important">The Brain type</strong> allows you to program behavior of yourself, explorers you open in anonymous windows, or others who attach the Brain.
+</p>
+
+<p>To get started, just <a href="/">login</a>, hit Create, select Brain, draw something, name the creation, and hit the Save button.
+Leaving the text field empty means you've created an empty Brain, which can be overloaded dynamically when
+putting it on, ideal during development. Now go to an area where you're editor, place the Brain, and walk over it
+and hit Space to put it on. A code editor opens. A bit of sample code should be preloaded.
+</p>
+
+<p><a href="/static/media/brain-screen-big.png" target="_blank"><img src="/static/media/brain-screen.jpg" alt=""/></a></p>
+
+<p class="infoTip">Tip: Others can't bring their own Brains into your area if they're not an editor,
+but you can place an empty Brain there (or one with the attribute "offers editing") to give them a chance to dynamically overload it.</p>
+
+<p class="infoTip">Tip: If you're looking for a good font, try our <a href="/static/media/doid.ttf">Doid.ttf</a>,
+which is a spin on Droid especially suited for programming. After saving locally and installing as font on your machine, you can
+adjust your browser settings to use this as default monospace font.
+</p>
+
+
+<h3><a name="code"></a>What Brain code looks like</h3>
+
+<p>To program Brains, you need to know some JavaScript
+(there's many <a href="https://www.google.de/webhp#q=learn%20javascript" target="_blank">great resources</a> available).
+Here's a sample code structure:</p>
+
+<div class="javaScriptCode"><pre>// An example script
+
+var chanceForMovement = 25;
+
+function update(my) {
+    var reaction = {
+            left: false, right: false, up: false, down: false};
+    
+    if ( chance(chanceForMovement) ) { reaction.left = true; }
+    
+    return reaction;
+}
+</pre></div>
+
+<p>The default <strong>update</strong> routine is called 15 times a second and needs to be present in every script.
+It receives a <strong><a href="#my">my</a></strong> parameter
+which contains a variety of information you're receiving: what the world around you looks like, what other people
+or items are there, what you're currently touching and more.</p>
+
+<p>Using this input, you can then determine what to do and return it as part of a <strong><a href="#reaction">reaction</a></strong> structure.</p>
+
+<p>In above script, we're defining a Brain-global variable called <em>chanceForMovement</em>, set to 25. We're also using the <a href="#nativeFunctions">native</a>
+<em>chance</em> function.
+Whenever the given chance of 25% is true, we're setting the reaction to move <em>left</em>.
+We're finally returning the reaction. When we hit the Start button on this script, we can see ourself moving a bit left randomly.
+Try setting the chanceForMovement value to something higher, like 75, and you find the movement changes when you hit Stop and Start again.
+</p>
+
+<p>Once you're happy with a script, you can copy it from the editor, create a new type Brain, hit the text button at the top, and paste the code into it.
+This Brain is now shareable with others by placing it in the world (its code contents can then be peeked at from the item context menu, but the brain cannot
+be directly overloaded). You can also click it from your panel to use it. While a Brain is attached, everyone sees a little dot
+in the place of your name.</p>
+
+
+<h3><a name="my"></a>The My object <span class="infoExample">with example values</span></h3>
+
+<div class="tree">
+
+my
+<ul>
+    
+    <li>
+        <strong>sight</strong>
+        <ul>
+            <li>placements[x][y] <span class="infoExample">// grid of size my.sight.scope in each direction</span>
+                <ul>
+                    <li>type <span class="infoExample">enumType value // e.g. enumType.solid</span></li>
+                    <li>id <span class="infoExample">"50372a99f5d33dc56f000001" // persistent and unique</span></li>
+                    <li>name <span class="infoExample">"red brick"</span></li>
+                    <li>attributes <span class="infoExample">{hovering: true, fast: true, ...} // an object with optional properties</span></li>
+                    <li>rotation <span class="infoExample">90 // missing, or 90, 180, 360</span></li>
+                    <li>x <span class="infoExample">10 // the horizontal center position</span></li>
+                    <li>y <span class="infoExample">10 // the vertical center position</span></li>
+                    <li>isFlipped <span class="infoExample">undefined // missing, or true if direction horizontally flipped</span></li>
+                    <li>isSolid <span class="infoExample">true // missing, or true for e.g. type solid, flexible...</span></li>
+                    <li>isHarmful <span class="infoExample">undefined // missing, or true for e.g. type deadly, or has harmful attributes</span></li>
+                    <li>isGathered <span class="infoExample">undefined // missing, or true if it's type Gatherable and gathered</span></li>
+                </ul>
+            </li>
+
+            <li>entities[]
+                <ul>
+                    <li>type <span class="infoExample">enumType value // enumType.being, ...emission, or ...item</span></li>
+                    <li>id <span class="infoExample">"50372a99f5d33dc56f000001" // persistent and unique (person ids are anonymized)</span></li>
+                    <li>fromId <span class="infoExample">"abcdefg123" // only for emission or item, the id of the person who emitted or threw it</span></li>
+                    <li>name <span class="infoExample">"[abcdefg123]" // a name placeholder you can use, it will convert back to the actual name</span></li>
+                    <li>attributes <span class="infoExample">{hovering: true, fast: true, ...} // an object with optional properties</span></li>
+                    <li>direction <span class="infoExample">-1 // -1 (left-facing default) or 1 (right-facing)</span></li>
+                    <li>x <span class="infoExample">10</span> // the horizontal center position</li>
+                    <li>y <span class="infoExample">10</span> // the vertical center position</li>
+                    <li>width <span class="infoExample">15</span></li>
+                    <li>height <span class="infoExample">16</span></li>
+                    <li>isMe <span class="infoExample">false</span> // whether or not this is us</li>
+                    <li>velocity <span class="infoExample">{x: 0, y: 0}</span></li>
+                    <li><span class="infoExample">for beings:</span></li>
+                    <li>body <span class="infoExample">undefined // missing or data</span>
+                        <ul>
+                            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+                        </ul>
+                    </li>
+                    <li>wearable <span class="infoExample">undefined // missing or data</span>
+                        <ul>
+                            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+                        </ul>
+                    </li>
+                    <li>mountable <span class="infoExample">undefined // missing or data</span>
+                        <ul>
+                            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+                        </ul>
+                    </li>
+                    <li>holdable <span class="infoExample">undefined // missing or data</span>
+                        <ul>
+                            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+                        </ul>
+                    </li>
+                    <li>brain <span class="infoExample">undefined // missing or data</span>
+                        <ul>
+                            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+                        </ul>
+                    </li>
+                    <li>acts <span class="infoExample">undefined // or true, if person hits action, e.g. uses an equipment</span></li>
+                    <li>does <span class="infoExample">undefined // or name of a motion one does</span></li>
+                    <li>stance <span class="infoExample">enumStance.sitting // missing, or enumStance.swimming, climbing, creating, sitting, lying</span></li>
+                </ul>
+            </li>
+            
+            <li>scope <span class="infoExample">10 // the distance in blocks one sees in each direction</span>
+            </li>
+        </ul>
+    </li>
+    
+    <li>
+        <strong>touch</strong>
+        <ul>
+            <li>left <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>right <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>top <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>bottom <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>center <span class="infoExample">null // null or placement object (see above)</span></li>
+
+            <li>topLeft <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>topRight <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>bottomLeft <span class="infoExample">null // null or placement object (see above)</span></li>
+            <li>bottomRight <span class="infoExample">null // null or placement object (see above)</span></li>
+            
+            <li>forward <span class="infoExample">null // point takes direction into account</span></li>
+            <li>bottomForward <span class="infoExample">null // point takes direction into account</span></li>
+            <li>topForward <span class="infoExample">null // point takes direction into account</span></li>
+        </ul>
+    </li>
+
+    <li>
+        <strong>hearing[]</strong>
+        <ul>
+            <li>content <span class="infoExample">"hello there"</span></li>
+            <li>type <span class="infoExample">enumType value // enumType.speech or enumType.sound</span></li>
+            <li>fromId <span class="infoExample">"abcdefg123" // undefined or for speech, a person's id. Persistent for session only</span></li>
+        </ul>
+    </li>
+    
+    <li><a name="bodyData"></a>
+        <strong>body</strong> <span class="infoExample">undefined // missing or data</span>
+        <ul>
+            <li>type <span class="infoExample"> enumType value // e.g. enumType.body</li>
+            <li>id <span class="infoExample">"abcdefg123" // for body, the id persists for the session only</span></li>
+            <li>name <span class="infoExample">"" // name, or empty for body</span></li>
+            <li>attributes <span class="infoExample">{hovering: true, fast: true, ...} // an object with optional properties</span></li>
+        </ul>
+    </li>
+    <li>
+        <strong>wearable</strong> <span class="infoExample">undefined // missing or data</span>
+        <ul>
+            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+        </ul>
+    </li>
+    <li>
+        <strong>holdable</strong> <span class="infoExample">undefined // missing or data, see body above</span>
+        <ul>
+            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+        </ul>
+    </li>
+    <li>
+        <strong>mountable</strong> <span class="infoExample">undefined // missing or data, see body above</span>
+        <ul>
+            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+        </ul>
+    </li>
+    <li>
+        <strong>brain</strong> <span class="infoExample">undefined // missing or data, see body above</span>
+        <ul>
+            <li><span class="infoExample">[see <a href="#bodyData">body data</a>]</li>
+        </ul>
+    </li>
+    <li>
+        <strong>energy</strong> <span class="infoExample">100 // 0 (dead) to 100</span>
+    </li>
+    <li>
+        <strong>x</strong> <span class="infoExample">10 // the horizontal center position</span>
+    </li>
+    <li>
+        <strong>y</strong> <span class="infoExample">10 // the vertical center position</span>
+    </li>
+    <li>
+        <strong>width</strong> <span class="infoExample">15</span>
+    </li>
+    <li>
+        <strong>height</strong> <span class="infoExample">16</span>
+    </li>    
+    <li>
+        <strong>velocity</strong> <span class="infoExample">{x: 0, y: 0}</span>
+    </li>
+    <li>
+        <strong>direction</strong> <span class="infoExample">-1 // -1 (left-facing default) or 1 (right-facing)</span>
+    </li>
+
+    <li>
+        <strong>status</strong>
+        <ul>
+            <li>isLoggedIn <span class="infoExample">true</span></li>
+            <li>isEditorHere <span class="infoExample">false</span></li>
+        </ul>
+    </li>
+
+    <li>
+        <strong>control</strong>
+        <ul>
+            <li>left <span class="infoExample">true // whether or not it's currently manually pressed</span></li>
+            <li>up <span class="infoExample">false // whether or not it's currently manually pressed</span></li>
+            <li>right <span class="infoExample">false // whether or not it's currently manually pressed</span></li>
+            <li>down <span class="infoExample">false // only available if brains are <a href="/info-interacting#settings">non-removable</a></span></li>
+            <li>action <span class="infoExample">false // whether or not it's currently manually pressed</span></li>
+            
+            <li>leftOnce <span class="infoExample">false // whether or not left was pressed once</span></li>
+            <li>upOnce <span class="infoExample">false // whether or not up was pressed once</span></li>
+            <li>rightOnce <span class="infoExample">false // whether or not right was pressed once</span></li>
+            <li><span class="infoExample">(please note down is used for unequipping a brain, so unavailable here)</span></li>
+            <li>actionOnce <span class="infoExample">false // whether or not action was pressed once</span></li>
+        </ul>
+    </li>
+    
+    <li>
+        <strong>name</strong> <span class="infoExample">"[abcdefg123]" // a name placeholder you can use, it will convert back to the actual name</span>
+    </li>
+    <li>
+        <strong>id</strong> <span class="infoExample">"50372a99f5d33dc56f000001" // persistent and unique</span>
+    </li>
+
+</ul>
+
+</div>
+
+
+<h3><a name="reaction"></a>The Reaction object <span class="infoExample">with example values</span></h3>
+
+<p>Here's a full list of values you can set in the reaction object (all properties are optional to pass):</p>
+
+<div class="tree">
+
+reaction
+
+    <ul>
+        <li><strong>left</strong> <span class="infoExample">true // same as holding the left arrow down until the next update</span></li>
+        <li><strong>up</strong> <span class="infoExample">false // same as holding the up arrow down until the next update</span></span></li>
+        <li><strong>right</strong> <span class="infoExample">false // same as holding the right arrow down until the next update</span></span></li>
+        <li><strong>down</strong> <span class="infoExample">false // same as holding the down arrow down until the next update</span></span></li>
+        <li><strong>action</strong> <span class="infoExample">false // same as holding down space/ action button until the next update</span></li>
+        <li class="separator"></li>
+        <li><strong>leftOnce</strong> <span class="infoExample">true // same as pressing &amp; then releasing the left arrow</span></li>
+        <li><strong>upOnce</strong> <span class="infoExample">false // same as pressing &amp; then releasing the up arrow</span></span></li>
+        <li><strong>rightOnce</strong> <span class="infoExample">false // same as pressing &amp; then releasing the right arrow</span></span></li>
+        <li><strong>downOnce</strong> <span class="infoExample">false // same as pressing &amp; then releasing the down arrow</span></span></li>
+        <li><strong>actionOnce</strong> <span class="infoExample">false // same as pressing &amp; then releasing space/ action button</span></li>        
+        <li class="separator"></li>
+        <li><strong>speech</strong> <span class="infoExample">"hello" // up to 20 characters and once per 1.5 seconds</span></li>
+        <li><strong>motion</strong> <span class="infoExample">"waves" // up to 20 characters and once per 1.5 seconds</span></li>
+        <li class="separator"></li>
+        <li><strong>playInstrument</strong> <span class="infoExample">"d#2" // plays this note on the held instrument. Can also be an array, and values can also be numbers if it's a drum kit. The octave is optional, e.g. "d" works too.</span></li>
+        <li class="separator"></li>
+        <li><strong>unequip</strong> <span class="infoExample">true // unequips the brain (this happens before other remaining reactions are then performed)</span></li>
+    </ul>
+
+</div>
+
+
+<h3><a name="logging"></a>Logging</h3>
+
+<p>You can use the following functions to log debug information when the script editor is opened
+(you can pass as many parameters as you like):</p>
+
+<div class="javaScriptCode"><pre>log('my status', my.status);
+
+logOnce(my.velocity.x); <span class="infoExample">// only logs once per run</span>
+
+logFresh(1 + 1); <span class="infoExample">// clears the log and logs something new</span>
+
+logFresh(); <span class="infoExample">// clears the log</span>
+</span></pre></div>
+
+
+<h3><a name="types"></a>Types</h3>
+
+<p>To check a placement's type, you can use (where someBlock is e.g. my.touch.forward):</p>
+
+<div class="javaScriptCode"><pre>if (someBlock.type == enumType.thingInFront) { ... }</pre></div>
+
+<p>The enumType integer value is persistent and won't ever change.</p>
+
+<p>If you are only interested in whether or not a type is solid, or harmful, you can use these groups instead:</p>
+
+<div class="javaScriptCode"><pre>if (someBlock.isSolid) { ... }
+
+if (someBlock.isHarmful) { ... }</pre></div>
+
+<p>Here are all type names (you can check for them using e.g. enumType.back):</p>
+
+<div class="javaScriptCode"><pre><script>
+
+var enumType = {being:1,emission:2,item:3,speech:4,solid:5,slope:6,back:7,thing:8,sound:9,backAndFront:10,slidey:11,slideySlope:12,sticky:13,bouncy:14,pushing:15,climbable:16,oneWay:17,deadly:18,moving:19,deadlyMoving:20,movingLiving:21,activator:91,openOnActivate:22,transporting:23,directionalTransporting:24,ringPortal:25,crumbling:26,itemThrower:27,deadlyEmerging:28,flippingLiquid:29,liquid:30,harmful:31,changingHarmful:32,medium:33,environment:34,living:35,interacting:36,interactingMotion:37,changingLiving:38,flippingDecorative:39,changingThing:40,sparkling:41,flexible:42,pointer:43,placeName:44,writable:45,readable:46,bigThing:47,livelyThing:48,viewable:49,dynamic:50,brain:51,liner:52,thingInFront:53,bouncyTilt:54,light:55,topLight:56,surroundLight:57,holder:58,fillLight:59,lightGlow:60,musical:61,music:62,musicSheet:63,emitter:65,interactiveEnvironment:66,equipment:67,consumable:68,swingLine:69,wearable:70,body:71,mountable:72,flyingMountable:73,instrument:74,motion:75,changingOnActivator:76,gatherable:77,changingOnTouch:78,changer:79,happening:80,mover:81,helper:82,mift:83,walkable:84,aimable:85,farBack:86,veryBigThing:87,multi:88,pushingDiagonal:89,passableSlope:90,furry:92};
+
+function getEnumTypeSortedString() {
+    var s = '';
+    var deprecated = ['flippingLiquid'];
+    var arr = [];
+    for (var key in enumType) {
+        if ( deprecated.indexOf(key) === -1 ) {
+            arr.push(key);
+        }
+    }
+    arr.sort();
+    return arr.join("\n");
+}
+
+document.write( getEnumTypeSortedString() );
+
+</script></pre></div>
+
+
+<h3><a name="rights"></a>Allowing any brain-equipped person to affect others</h3>
+
+<p>By default, only people in one's friend list can affect someone with e.g. a harmful emitter. If you want to create brain-equipped enemies in an area,
+you can allow them to affect others by including the following in e.g. an area-global interacting:</p>
+
+<div class="interactingSample"><pre>Someone Arrives: <strong>/they can be affected by brain-equippers</strong></pre></div>
+    
+<p><a href="/info-interacting#settings">Here's some more rights</a> you can set.</p>
+
+
+<h3><a name="sound"></a>Sound</h3>
+
+<p>You can <a href="/info-tips#addingSound">add a sound</a> to Brains.</p>
+
+
+<h3><a name="limits"></a>Limits</h3>
+
+<p>You may use up to 3 brain-equipped sessions at once.</p>
+
+
+<h3><a name="shortcuts"></a>Fullscreen</h3>
+
+<p>Note you can enter fullscreen mode at any time, also when the Brain editor is opened, by pressing F11.</p>
+
+
+<h3><a name="nativeFunctions"></a>Native functions</h3>
+
+<p>The following functions are available in addition to JavaScript's native functions:</p>
+
+<div class="javaScriptCode"><pre><span class="infoExample">// True or false, depending on a chance of 0 - 100%</span>
+chance(percent);
+
+<span class="infoExample">// Returns a random integer from minInt to maxInt.
+// The value is deterministic for Happenings and Generators so
+// that everyone sees the same (same for Math.random()).</span>
+getRandomInt(minInt, maxInt);
+
+<span class="infoExample">// For use with the <a href="/info-changer">Changer</a>,
+// converts pixels from palette indexes to rgba:</span>
+convertToFullColor(creation);
+
+<span class="infoExample">// Returns a copy of the object so that
+// changes won't affect the original:</span>
+cloneObject(object);
+
+<span class="infoExample">// Limits a value into the numbers,
+// sets to minimum if not numeric:</span>
+toLimit(value, min, max);</pre></div>
+
+
+<h2><a name="examples"></a>Examples</h2>
+
+<h3><a name="exampleSight"></a>Example: Sight</h3>
+
+<p>Here, we are converting what we see around us as we move into log output letter art:</p>
+
+<div class="javaScriptCode"><pre>function update(my) {    
+    var reaction = {}; 
+
+    showMap(my.sight.placements, my.sight.scope);
+
+    return reaction;
+}    
+ 
+function showMap(placements, scope) {
+    var s = '';
+    var scopeY = Math.round(scope / 3);
+
+    for (var y = -scopeY; y &lt;= scopeY; y++) {
+        for (var x = -scope; x &lt;= scope; x++) {
+            if (x == 0 &amp;&amp; y == 0) {
+                s += '&#9635;';
+            }
+            else {
+                var block = placements[x + scope][y + scope];
+                s += block &amp;&amp; block.isSolid ? '&#9632;' : '&#9633;';
+            }
+        }
+        s += "\n";
+    }
+
+    logFresh(s);
+}</pre></div>
+
+
+<h3><a name="touchExample"></a>Example: Touch</h3>
+
+<p>In this example, we're moving left or right. When there's a solid or harmful obstacle we change direction by going left or right. If there's
+a gap in the ground we're jumping. Randomly in-between we're hitting the action button (if we're holding an equipment),
+so if say we have a hammer equipped, it would swing every now and then. We're also printing something to the log when that happens.
+On the side, we're looking for a coin item to pick up (we check for the occurrence of the string "coin" in the item's name; note all item names are lower-case).
+</p>
+
+<div class="javaScriptCode"><pre>var reaction = {};
+var foundCoinTimer = null;
+
+function update(my) {   
+    reaction = {};
+    var direction = my.direction; 
+   
+    if ( my.touch.forward &amp;&amp;  
+            (my.touch.forward.isSolid || my.touch.forward.isHarmful) ) {  
+        direction *= -1;   
+    }   
+  
+    if (!my.touch.bottomForward || !my.touch.bottomForward.isSolid) {  
+        reaction.up = true; 
+    }  
+      
+    if ( my.holdable &amp;&amp; my.holdable.type == enumType.equipment &amp;&amp; chance(5) ) {
+        reaction.actionOnce = true;
+        log('Action time!'); 
+    }
+    
+    if (direction == -1) { reaction.left = true; }   
+    else                 { reaction.right = true; }  
+
+    handleCoinFinding(my);
+   
+    return reaction;
+}   
+
+function handleCoinFinding(my) {
+    if (!my.holdable) {
+    
+        if (!foundCoinTimer) {
+            if ( !my.holdable &amp;&amp;
+                    my.touch.center &amp;&amp; my.touch.center.type == enumType.item &amp;&amp;
+                    my.touch.center.name.indexOf('coin') &gt;= 0 ) {
+                foundCoinTimer = new Timer();
+                reaction.speech = 'i found a coin!';
+                stopMoving();
+            }
+            
+        }
+        else {
+            reaction.left = false;
+            reaction.right = false;
+            if ( foundCoinTimer.seconds() &gt;= 1 ) {
+                reaction.actionOnce = true;
+                foundCoinTimer = null;  
+                stopMoving();
+            }
+            
+        }
+        
+    }
+}
+
+function stopMoving() {
+    reaction.left = false;
+    reaction.right = false;
+    reaction.up = false;
+}
+   
+function Timer() {
+    this.timeAtStart = Date.now();
+    
+    this.seconds = function() {
+        return ( Date.now() - this.timeAtStart ) / 1000;
+    }
+    
+    this.reset = function() {
+        this.timeAtStart = Date.now();
+    }
+}</pre></div>
+
+
+<h3><a name="exampleHearing"></a>Example: Hearing</h3>
+
+<p>This time, we react to when others say "jump", "left" or "right".
+There are different ways to go about this, e.g. you could create a function that accepts a list like {jump: 'up', ...} and applies
+reaction[mappingFound] = true, and instead of a for-loop there may be a my.hearing.forEach() and so on.
+Note in below we don't check for the hearing.type "speech", so this may later also react to a sound effect named e.g. "jump".
+</p>
+
+<div class="javaScriptCode"><pre>function update(my) {    
+    var reaction = {}; 
+
+    for (var i = 0; i &lt; my.hearing.length; i++) {
+        var hearing = my.hearing[i];
+        var isMe = hearing.fromId == my.id;
+        if (!isMe) {
+            switch (hearing.content) {
+                case 'jump':  reaction.up = true; break;
+                case 'left':  reaction.left = true; break;
+                case 'right': reaction.right = true; break;
+            }
+        }
+    }
+
+    return reaction;
+}</pre></div>
+
+
+<h3><a name="exampleGold"></a>Example: Looking for gold</h3>
+
+<p><img src="/media/brain-find-gold.jpg" alt=""/></a></p>
+
+<p>Here we try to find gold!</p>
+
+<div class="javaScriptCode"><pre>var memory = {didFindGold: false};
+
+function update(my) {
+    var reaction = {};
+
+    if (!memory.didFindGold) {
+        lookForGold(my, reaction);
+    }
+
+    return reaction;
+}
+
+function lookForGold(my, reaction) {
+    var touchType = my.touch.center ? my.touch.center.type : '';
+    var touchName = my.touch.center ? my.touch.center.name : '';
+
+    if (touchType == 'climbable') {
+        reaction.up = true;
+    }
+    else if ( touchName.indexOf('gold') &gt;= 0 ) {
+        reaction.speech = 'i found gold!';
+        memory.didFindGold = true;
+    }
+    else {
+        moveLeftAndRightAndAvoidGaps(my, reaction);
+    }
+}
+
+function moveLeftAndRightAndAvoidGaps(my, reaction) {
+    var direction = my.direction;
+ 
+    if ( my.touch.forward &amp;&amp;    
+            (my.touch.forward.isSolid || my.touch.forward.isHarmful) ) {    
+        direction *= -1;
+    }     
+    
+    reaction.up = !my.touch.bottomForward || !my.touch.bottomForward.isSolid;
+
+    if (direction == -1) { reaction.left = true; }   
+    else                 { reaction.right = true; }  
+}</pre></div>
+
+
+
+<div class="helpMore">
+<h3><a name="more"></a>More...</h3>
+
+<p>Also check out the <a href="/info">main introductory help</a> and the <a href="/info-interacting">Interacting help</a>.
+Got a question which isn't answered here, or new ideas and feedback? <a href="/support">Have a look here please</a>.</p>
+
+</div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+    <title>Manyland  - Mover</title> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <style> 
+    @import url(//fonts.googleapis.com/css?family=VT323); 
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P); 
+     
+    body { 
+        background-color: black; 
+        color: white; 
+        background-image: url(/static/media/background-zoomed.png); 
+        margin: 0; 
+        margin-bottom: 80px; 
+        font-family: 'VT323', monospace; 
+    } 
+    </style> 
+</head> 
+<body id="body">
+ 
+<style> 
+ 
+.inlineHtmlHelp { 
+    font-family: 'VT323', monospace; 
+} 
+ 
+.inlineHtmlHelp { 
+    text-align: left; 
+    padding-right: 40px; 
+} 
+ 
+.inlineHtmlHelp p, 
+.inlineHtmlHelp li { 
+    font-size: 20px; 
+    line-height: 1.4em; 
+} 
+ 
+.isFullAccount .ifNotLoggedIn { 
+    display: none; 
+} 
+ 
+h1 { 
+    border-bottom: 2px solid #533; 
+    padding-bottom: 4px; 
+    font-size: 23px; 
+    text-align: center; 
+    margin-bottom: 30px; 
+} 
+ 
+h2 { 
+    text-align: center; 
+    margin-top: 60px; 
+    margin-bottom: 20px; 
+    color: #422; 
+    padding: 2px; 
+    font-size: 30px; 
+    font-weight: bold; 
+    border-top: 2px solid rgb(184,154,139); 
+    padding-top: 50px; 
+} 
+ 
+h2.followsH1 { 
+    margin-top: 0; 
+    border-top: none; 
+} 
+ 
+.titleWord { 
+} 
+ 
+h2 a { 
+    display: block; 
+    height: 20px; 
+} 
+ 
+h2 a.anchor { 
+    display: inline; 
+} 
+ 
+.subtitle { 
+    font-size: 11px; 
+    color: white; 
+    color: #755; 
+    display: block; 
+} 
+ 
+#body .content { 
+    background-color: rgb(208,188,178); 
+    position: relative; 
+    width: 92%; 
+    max-width: 780px; 
+    overflow-x: hidden; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 40px; 
+    color: black; 
+    padding: 30px; 
+    border-radius: 5px; 
+} 
+ 
+a { 
+    color: #755; 
+} 
+ 
+.chartPosition { 
+    margin-bottom: 5px; 
+} 
+ 
+.additionalInfo { 
+    color: #fff; 
+    position: relative; 
+    width: 220px; 
+    float: right; 
+    padding: 20px; 
+    margin-left: 40px; 
+    margin-bottom: 40px; 
+} 
+ 
+p, ul, li { 
+    font-family: 'VT323', monospace; 
+    font-size: 24px; 
+} 
+ 
+ul li { 
+    margin-bottom: 10px; 
+    list-style-type: square; 
+} 
+ 
+ol li { 
+    list-style-type: decimal; 
+} 
+ 
+.twitterName { 
+    text-transform: none; 
+} 
+ 
+.twitter { 
+    width: 220px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 20px; 
+} 
+ 
+.nonEmphasized a, 
+a.nonEmphasized { 
+    color: #555; 
+    text-decoration: none; 
+} 
+ 
+.smallerParagraph { 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center; 
+} 
+ 
+.fullImage { 
+    text-align: center; 
+    width: 100%; 
+} 
+ 
+iframe { 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 780px; 
+    height: 439px; 
+    display: block; 
+} 
+ 
+#soundCredits { 
+    display: none; 
+} 
+ 
+.moreInfo { 
+    display: none; 
+} 
+ 
+.places strong { 
+    font-size: 110%; 
+} 
+ 
+#moreNews { 
+    display: none; 
+} 
+ 
+#showMoreNews { 
+    margin-bottom: 50px; 
+    font-weight: bold; 
+} 
+ 
+.interactingSample, 
+.dynamicSample { 
+    width: 90%; 
+} 
+ 
+.interactingSample pre, 
+.dynamicSample pre, 
+.htmlSample pre { 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    background-color: #444; 
+    color: #eee; 
+    letter-spacing: 1px; 
+    font-size: 10px; 
+    padding: 10px; 
+    line-height: 25px; 
+} 
+ 
+.dynamicSample pre { 
+    color: #000; 
+    background-color: #ddd; 
+} 
+ 
+.htmlSample pre { 
+    font-size: 110%; 
+    font-family: monospace; 
+    text-transform: none; 
+} 
+ 
+.interactingSample strong { 
+    font-weight: normal; 
+    color: #ffa; 
+} 
+ 
+.dynamicSample strong { 
+    font-weight: normal; 
+    color: #080; 
+} 
+ 
+h3 { 
+    color: #322; 
+    font-size: 26px; 
+    margin-top: 40px; 
+    padding-top: 40px; 
+    border-top: 2px solid #555; 
+} 
+ 
+.footnote { 
+    opacity: .7; 
+} 
+ 
+.important { 
+    font-size: 110%; 
+} 
+ 
+p.extraSpace { 
+    margin-top: 35px; 
+    margin-bottom: 5px; 
+} 
+ 
+h4 { 
+    font-size: 24px; 
+    opacity: .8; 
+    margin-top: 50px; 
+} 
+ 
+.properTable { 
+    border-collapse: collapse; 
+} 
+ 
+.properTable td, 
+.properTable th { 
+    font-size: 150%; 
+    border: 2px solid rgba(0,0,0,.3); 
+    padding: 10px; 
+} 
+ 
+.properTable th { 
+    background-color: rgb(185,155,140); 
+} 
+ 
+.properTable td.interactingSampleCell { 
+    font-size: 70%; 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    line-height: 1.9em; 
+} 
+ 
+.timeConverterTable { 
+    margin-top: 30px; 
+    font-size: 125%; 
+    text-transform: uppercase; 
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-collapse: collapse; 
+} 
+ 
+.timeConverterTable th, 
+.timeConverterTable td { 
+    text-align: left; 
+    border: 1px solid rgba(0,0,0,.5); 
+    padding: 3px; 
+} 
+ 
+.timeConverterTable th, 
+.timeConverterNow { 
+    background-color: #fff; 
+} 
+ 
+.timeConverterTable td { 
+    text-align: center; 
+} 
+ 
+td.checkmark { 
+    font-size: 110%; 
+    color: rgb(50,100,50); 
+} 
+ 
+.helpMore { 
+    opacity: .6; 
+} 
+ 
+#adToggler { 
+    display: none; 
+    background-color: white; 
+    border-radius: 10px; 
+    padding: 15px; 
+    text-align: center; 
+} 
+ 
+#adToggler input { 
+    font-family: 'VT323', monospace; 
+    font-size: 100%; 
+} 
+ 
+.supportAnswer { 
+    width: 90%; 
+    display: none; 
+    border-radius: 10px; 
+    background-color: rgb(250,250,250); 
+    padding: 10px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+ 
+.supportQuestion { 
+    text-decoration: underline; 
+    cursor: pointer; 
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent; 
+    color: #755; 
+} 
+ 
+.javaScriptCode, 
+.tree { 
+    background-color: white; 
+    color: black; 
+    font-family: monospace; 
+    font-size: 120%; 
+    padding: 10px; 
+} 
+ 
+.tree, .tree ul, .tree li { 
+     position: relative; 
+     font-family: monospace; 
+     font-size: 16px; 
+     margin-bottom: 0; 
+     padding-bottom: 0; 
+} 
+ 
+.tree ul { 
+    list-style: none; 
+    padding-left: 32px; 
+} 
+ 
+.tree li { 
+    list-style-type: none; 
+    padding-top: 5px; 
+    padding-bottom: 15px; 
+} 
+ 
+.tree li::before, .tree li::after { 
+    content: ""; 
+    position: absolute; 
+    left: -12px; 
+} 
+ 
+.tree li::before { 
+    border-top: 1px solid #000; 
+    top: 9px; 
+    width: 8px; 
+    height: 0; 
+} 
+ 
+.tree li.separator::before { 
+    border-top: none; 
+} 
+ 
+.tree li::after { 
+    border-left: 1px solid #000; 
+    height: 100%; 
+    width: 0px; 
+    top: 2px; 
+} 
+ 
+.tree ul > li:last-child::after { 
+    height: 8px; 
+} 
+ 
+.infoExample { 
+    opacity: .6; 
+} 
+ 
+.infoTip { 
+    opacity: .75; 
+    font-style: italic; 
+} 
+ 
+label { 
+    text-decoration: underline; 
+} 
+ 
+.inlineHtmlHelp h2, 
+.inlineHtmlHelp h3, 
+.inlineHtmlHelp h4 { 
+    margin-top: 80px; 
+    padding: 10px; 
+    background-color: white; 
+    line-height: 1.3em; 
+    font-size: 20px; 
+    border-top: 0; 
+} 
+ 
+.inlineHtmlHelp p { 
+    text-transform: none !important; 
+} 
+ 
+.inlineHtmlHelp .interactingSample, 
+.inlineHtmlHelp .interactingSample { 
+    margin-left: 20px; 
+} 
+ 
+.inlineHtmlHelp h2 { 
+    border-top: none; 
+    text-transform: uppercase; 
+} 
+ 
+.inlineHtmlHelp li { 
+    text-transform: none; 
+} 
+ 
+.backerNames { 
+    color: rgb(100,100,0); 
+    text-align: center; 
+    line-height: 1.5em; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+ 
+.backerName { 
+    display: inline-block; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+} 
+ 
+.backerName img { 
+    padding-right: 5px; 
+} 
+ 
+.steam p { 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase !important; 
+    font-size: 100%; 
+} 
+ 
+</style> 
+ 
+  
+ 
+<div class="content"> 
+ 
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1> 
+ 
+<p><strong class="important">A Mover</strong> can be placed above a body to move it. Here's an example that goes left 4 blocks, climbs a ladder up, waits a bit, then goes down and back right again: 
+</p> 
+ 
+<div class="dynamicSample"><pre>&lt;&lt;&lt;&lt; 
+^^..VV 
+&gt;&gt;&gt;&gt;</pre></div> 
+ 
+<p>Space and newlines can be freely added for formatting Mover texts. The commands you can use are:</p> 
+ 
+<table class="properTable"> 
+<tr><td><strong>&lt;</strong></td><td>move left a block</td></tr> 
+<tr><td><strong>&gt;</strong></td><td>move right a block</td></tr> 
+<tr><td><strong>^</strong></td><td>climb up a block</td></tr> 
+<tr><td><strong>V</strong></td><td>climb down a block</td></tr> 
+<tr><td><strong>.</strong></td><td>pause</td></tr> 
+<tr><td><strong>!</strong></td><td>perform holdable action (if you want the action to harm someone, you can attach equipment that's harmful</td></tr> 
+<tr><td><strong>ATTACH&nbsp;HOLDABLE<br/>UNATTACH&nbsp;HOLDABLE</strong></td><td>carry or put away the holdable (by default, the holdable will be equipped if added to the Mover)</td></tr> 
+<tr><td><strong>ATTACH&nbsp;WEARABLE<br/>UNATTACH&nbsp;WEARABLE</strong></td><td>wear or put away the wearable (by default, the wearable is worn if added to the Mover). Wearable protection is taken into account in addition to a protection percentage you've set for the mover. Wearable invisiblity is taken into account as well.</td></tr> 
+<tr><td><strong>FACE&nbsp;LEFT<br/>FACE&nbsp;RIGHT<br/>FACE&nbsp;NORMAL</strong></td><td>adjusting where the body looks (face normal is default, and will look in the movement direction)</td></tr> 
+<tr><td><strong>SMALL&nbsp;STEPS<br/>NORMAL&nbsp;STEPS</strong></td><td>by default, a single movement like &gt; is the size of a block. Using "small steps" will half the step size, and "normal steps" reverts it again.</td></tr> 
+<tr><td><strong>ROLL</strong></td><td>rolls</td></tr> 
+<tr><td><strong>1-9</strong></td><td>a number from 1 to 9 can be used to inform Interactings (please see below)</em></td></tr> 
+</table> 
+ 
+<p class="footnote">Please note Movers can move up to 12 blocks away.</p> 
+ 
+ 
+<h2><a name="grouping" id="grouping"></a>Grouping</h2> 
+ 
+<p>You can group multiple commands in one go by putting brackets around them. For instance, this rolls two to the right:</p> 
+ 
+<div class="dynamicSample"><pre><strong style="font-size: 140%">(</strong>&gt;&gt; roll<strong style="font-size: 140%">)</strong></pre></div> 
+ 
+<p>The first command defines the direction the body faces towards. For instance, to walk a bit, then walk up a slope towards top-right, then walk some more, you can do:</p> 
+ 
+<div class="dynamicSample"><pre>&gt;&gt;&gt; 
+<strong style="font-size: 140%">(</strong>&gt;^<strong style="font-size: 140%">)</strong> 
+&gt;&gt;&gt;</pre></div> 
+ 
+<p>Action or interacting messages can only be used once per group.</p> 
+ 
+ 
+<h2><a name="interacting" id="interacting"></a>Connecting to Interactings</h2> 
+ 
+<p><a href="/info-interacting">Interactings</a> can receive when the mover command 1-9 is used:</p> 
+ 
+<div class="interactingSample"><pre>SEES @"THE KING" 1: OH HI!</pre></div> 
+ 
+ 
+<p>Interactings can also react to when the moving body is bumped by someone:</p> 
+ 
+<div class="interactingSample"><pre>SOMEONE TOUCHES THE KING: BUMPED!</pre></div> 
+ 
+ 
+<p>They can also react to a Mover being killed (in this case, the Interacting has an item named "gold" added to its object reference list):</p> 
+ 
+<div class="interactingSample"><pre>SOMEONE KILLS NINJA: /+1 THEIR GOLD</pre></div> 
+ 
+ 
+</div> 
+ 
+ 
+<script type="text/javascript"> 
+    var _gaq = _gaq || []; 
+    _gaq.push(['_setAccount', 'UA-60595-51']); 
+    _gaq.push(['_trackPageview']); 
+ 
+    (function() { 
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+    })(); 
+</script> 
+ 
+<script> 
+function handleOnLoad() { 
+    if ( isFramed() ) { 
+        var bodyElm = document.getElementById('body'); 
+        if (bodyElm) { 
+            bodyElm.style.backgroundImage = 'none'; 
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)'; 
+        } 
+    } 
+} 
+ 
+function isFramed() { 
+    return window != window.top; 
+} 
+ 
+window.onload = handleOnLoad; 
+</script> 
+ 
+</body> 
+</html>

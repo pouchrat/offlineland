@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  Help</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<style>
+.supportQuestion {
+    text-align: center;
+}
+
+.nonEmphasized {
+    opacity: .6;
+}
+</style>
+
+<script>
+function clicked(name) {
+    $('#' + name + 'Answer').toggle();
+}
+
+function clickedAddress() {
+    $('#address').toggle();
+    document.location = '#address';
+}
+
+function replaceAll(s, sFind, sReplace) {
+    sFind = sFind.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    return s.replace(new RegExp(sFind, 'g'), sReplace);
+}
+    
+function htmlEscape(s) {
+    s = String(s);
+    s = replaceAll(s, '&', '&amp;');
+    s = replaceAll(s, '"', '&quot;');
+    s = replaceAll(s, "'", '&#39;');
+    s = replaceAll(s, '<', '&lt;');
+    s = replaceAll(s, '>', '&gt;');
+    return s;
+}
+
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+    
+</script>
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-2.png" alt="Manyland"/></a></h1>
+
+<!-- <ignore-if-inline> -->
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/g0BcvjYZ3xg?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- </ignore-if-inline> -->
+
+<p class="intro">
+Welcome to Manyland, an open universe we invent and live together! In an infinite world of abundance, we create new things by drawing them, build new places, hang out and chat, collect, make music, party, script objects, go on adventures... and have fun together in ways none of us can predict.
+</p>
+
+<p>
+&gt;&gt; Please
+<a href="/helptown" style="display: inline-block;background-color: #fff; padding: 3px; border-radius: 4px">visit Helptown</a> for more,
+and post your questions at the help board there!<br/>
+You can also speak "To Helptown" to go there.
+</p>
+
+
+<!-- <ignore-if-inline> -->
+
+<h2><a name="news"></a>What's new?</h2>
+
+<script>
+function showMoreNews() {
+    $('#moreNews').toggle('slow');
+    $('#showMoreNews').hide();
+}
+</script>
+
+<p>February 15 2024: Dear everyone... We're eying February 29th for the budget-related shutdown. More in the Misc forum, and please also check out the Manyland Museum preview. Thanks!</p><p>February 13 2024: We have a preview ready for the Manyland Museum site! Please check out the Misc board for more. Thanks everyone!</p>
+
+
+<p class="supportQuestion" onclick="clicked('news')" style="text-align: left">&#9654; More...</p>
+
+<div class="supportAnswer" id="newsAnswer">
+
+    <p>November 26 2023: Due to budget having run out, Manyland will unfortunately shut down. Please check out the Misc forum for the full news, as well as community-based efforts of downloading area data and more. We're also busy working on a museum site with a selection of snapshots under existing urls. We will announce a more precise shutdown date -- it may be January, but we'll tell as soon as we know, as it's still relying on a couple of factors. There's also plans for a big "Last Manymas" party, more on that in Misc too. Thanks everyone for having been a part of this.</p><p>November 18 2023: The "zoomout!" command is back! Thanks Rose!</p><p>November 17 2023: Hi everyone! Please check the Misc board for an important update on the budget situation. Thanks all!</p><p>May 1 2023: You can now also use "showme all!" to make every block visible, including very transparent ones! Thanks everyone! (You can also use the variants "showme *", "showme everything" and a few more.)</p><p>May 1 2023: There's a new "showme" command, like "showme lights!", "showme writable!" or "showme people!" More in the Misc forum. Thanks everyone!</p><p>April 24 2023: You can now lock someone from open areas for 1 day too (in addition to the existing 1 and 15 minute locks). Thanks everyone!</p><p>April 18 2023: We just fixed a client-side hack that would allow reducing one's own area ban time. Feedback welcome. Thanks to those who pointed this out!</p><p>April 17 2023: We fixed an issue related to creating sub-areas as non-editor! Thanks everyone who noted this!</p><p>April 16 2023: We fixed an issue where in some public centers, one could build after snapshot-teleporting even without required rights. More info in the Misc forum. Please let us know if any issue remains. Thanks everyone!</p><p>September 6 2022: We updated something to help with certain types of lag! Thanks everyone!</p><p>November 23 2021: Thrown items which clear attachments or bump someone are now effects-free in the Elsewhere region! Thanks Skittle &amp; everyone!</p><p>November 22 2021: Throwable Stickies &amp; Transportings are disabled in the Elsewhere region for now! Thanks Skittle &amp; everyone!</p><p>November 22 2021: Bouncies below Doors to make one enter without wanting to are now better guarded against in the Elsewhere region! Thanks Skittle &amp; everyone!</p><p>October 18 2021: Our so-called Content Delivery Network provider has some issues delivering to the US and UK. They are aware of the issue and we hope it's going to be resolved soon!</p><p>October 18 2021: We're aware of the issue of items not appearing for some of you, and are trying to fix it! Thanks everyone!</p><p>September 28 2021: We continue to do upgrades today -- if you run into any issues when creating, you may want to halt that temporarily! More info at <a href="/themiscboard">manyland.com/themiscboard</a> Thanks Rose &amp; everyone!</p><p>July 29 2021: There's a new attachment slot: Wearable+! Find out more on <a href="/themiscboard">manyland.com/themiscboard</a> Thanks everyone!</p><p>July 28 2021: The profile includes a new page for items you have attached! Please check out the Misc board for more. <a href="/themiscboard">manyland.com/themiscboard</a></p><p>July 27 2021: You can now move your held &amp; worn items by hitting Shift-Arrows... or for bigger steps, Shift+Ctrl+Arrows! (We're still looking into supporting this on mobile too.) Thanks everyone!</p><p>July 26 2021: You can now right-click (on mobile: long-tap) the "My Voice" boosts to set a font for the area dialog title!</p><p>July 26 2021: There's a new attribute for Dynamics, Wearables &amp; Flying Mountables: Pass Through Solids! (Like other physically affecting items, you need to be editor to equip it from your panel, otherwise you can only use it when placed in the area.) Thanks Boined!</p><p>July 26 2021: The texts &amp; links of area ads are now editable for as long as the campaign is running! Also, ad campaigns are now pausable! Thanks Rose &amp; Skittle!</p><p>July 25 2021: The Area Dialog saw a complete overhaul to become better organized &amp; contain a bigger editor list! Hat tip to Rose-Woman and The Skittler!</p><p>July 24 2021: Area Generators can now be saved as items, and then added to the area dialog to persist and be seen by others! The syntax changed a bit, so please see the Misc board for more. Thanks everyone!</p><p>July 24 2021: The "Guardto!" command has been replaced by the new setting "To-teleports end with !", and it now persists across devices &amp; deleted cookies! Thanks Skittle!</p><p>July 24 2021: There's a new setting "Guard against some flicker &amp; visuals"! (Please see the Misc board for more.) Thanks Rose!</p><p>July 23 2021: You can now automagically set placements across the minfinity of your area by using Area Generators! <a href="/info-generator">manyland.com/info-generator</a> Please note this is totally alpha and won't save with the area, or be visible to others for now (though both of that is planned). Thanks everyone!</p><p>July 22 2021: You can now press Ctrl+K in Painter to cycle through different strengths of another cell shining through! (We have some ideas on how to support this on mobile too in a future update.) Thanks Tanoshi!</p>
+
+    <p>...</p>
+    <p>September 13th 2013: Manyland is opening for many more people today!</p>
+    <p>July 29th 2013: We're opening the doors for early testing!</p>
+   
+</div>
+
+<!-- </ignore-if-inline> -->
+
+
+<h2><a name="controls"></a>What are the keyboard and mouse controls?</h2>
+<p>
+<strong>Press &uarr; &larr; &darr; &rarr; (or WASD)</strong> = Run and Jump<br/>
+<strong>Typing</strong> = chat<br/>
+<strong>Space or Action button</strong> = Pick up/ Mount/ Wear, and drop/ unmount/ unwear<br/>
+<strong>Down</strong> = Open body motions or area possessions if available<br/>
+<strong>Down</strong> (when holding something) = Drop holdable<br/>
+<br/>
+<a name="rotation"></a><strong>Right-click or Ctrl-R (while dragging)</strong> = Rotate<br/>
+<strong>Ctrl+Click (on a thing)</strong> = Delete thing (Cmd+Click on Mac)<br/>
+<strong>Ctrl+Click (on yourself)</strong> = Remove held item<br/>
+<strong>Shift+drag (a thing)</strong> = Move thing<br/>
+<strong>Shift+Click (on dust)</strong> = Undo deletion<br/>
+<strong>Shift+Click (on person)</strong> = Upvote<br/>
+<strong>ESC</strong> = close dialog<br/>
+<strong>Ctrl+F10</strong> = toggle showing of menus<br/>
+<strong>Ctrl+I</strong> = show my public snapshots in full view<br/>
+<strong>Ctrl+B</strong> = Boosts<br/>
+<strong>Ctrl+H</strong> = Travel Holder<br/>
+<strong>Ctrl+F (during creation)</strong> = Find type<br/>
+<strong>Ctrl+Z</strong> = Undo last block placements and removals<br/>
+<strong>Ctrl+Shift+Z</strong> = Redo undone block placements and removals<br/>
+<a href="/info-tips#moreShortcuts" target="_blank">More...</a>
+</p>
+
+<p><strong>Collecting &amp; building with mouse:</strong> To build something, drag it from one position in the world to a free other position.
+Drag something from your collection and creation panes into the world to place it, or drag it into the pane to collect it.</p>
+
+<script>
+var isOnMac = navigator.userAgent.indexOf('Mac OS') != -1;
+if (isOnMac) {
+    document.write("<a name=\"mac\"></a><p><strong>On a Mac</strong>, please " +
+            "if possible <a href=\"http://www.macinstruct.com/node/66\">configure your mouse</a> to allow for right-clicks.</p>");
+}
+</script>
+
+<p><a name="massPlace"></a><strong>You can quickly place multiple blocks</strong> by placing at the edges of an empty rectangle in clockwise order, starting at the top left, as shown below (this also works mirrored,
+and with removing all-same blocks). You can also auto fill lines by placing as shown.</p>
+
+<p>
+<img src="/static/media/mass-place.png" alt=""/>
+</p>
+
+<p><strong>To clone</strong> an object of yours to change it, drag it onto the create tab or button. Some creations by others are also clonable.</p>
+
+<p><strong>Friending:</strong> If you enjoy someone's company, you can click them and then click the "+My Friends" button.
+They will then appear in your My Friends list, which you can open by clicking on yourself, then "My Friends" (or on desktop, pressing F1).
+You can also ping friends with your location. (Reversely, you can also block someone, which results in their speech not be heard by you anymore, and you not being listed in their friends list.)</p>
+
+<p>
+    <strong style="background-color: white">Shop:</strong> <a href="http://findmanyland.com/shop" target="_blank">Here's Manyland merch</a>,
+    thanks to all designers!
+</p>
+
+<!-- <ignore-if-inline> -->
+
+<p>You can follow the news here or on <a href="https://twitter.com/ManylandNews">Twitter</a> and <a href="https://www.facebook.com/manylandnews">Facebook</a>.</p>
+
+<h2 id="support"><a name="support"></a>Which devices does Manyland support?</h2>
+<p>Manyland should work great on modern desktop browsers like Google Chrome, Firefox and Safari on PC, Mac, and hopefully Linux too.
+There's a <a href="http://store.steampowered.com/app/342280">Steam app</a> for Windows 7/ 8/ 10 (64 bit).
+There's also an <a href="http://itunes.apple.com/us/app/manyland/id657739357">iPad app</a>.
+</p>
+
+
+<h2><a name="etiquette"></a>What's the Manyland behavior etiquette?</h2>
+
+<p>Manyland is proud to have people from all walks of life and all colors of the rainbow. Respect is one of our building blocks. We strive for a peaceful environment for everyone.</p>
+
+<p>Try to be a good citizen and respect the creations of others when they're good, or improve them when they're not.
+You can upvote others when you find they do good, and flag-report them if you find they do something against the terms or etiquette. You can also temporarily or permanently area-lock them as editor of an area.
+You can also report offensive things in the world by right-clicking them, then clicking the flag that shows up.
+Your voice and action matter a lot: upvoting, flagging, helping and guiding, uncluttering and many other things are our powers to maintain and shape this universe for good!
+</p>
+
+<p>When interacting with others, please be respectful. For instance, killing others around you (unless it's part of a voluntary game amongst friends), cursing at them or otherwise showing hate against them, is against the etiquette. Cluttering, littering, impersonation to confuse, deceptive creations outside of voluntary challenges, mass tagging, carelessness in mass removing of structures by others, bullying, strong rudeness in speech or drawings, trolling, spamming, picking of fights, personal attacks, spreading rumors about someone, overly aggressive behavior towards others, homophobia, transphobia, racism, trapping or tricking into doors in the elsewhere region, brigading, flooding with speech or actions, are against the etiquette and thus the terms. You may not reserve area names for future use, or mass create new areas, as everyone should get a chance at the names. Please do not create pixel-by-pixel copies of existing external artwork (unless you can be sure e.g. fair use or public domain rules cover it). If someone doesn't want to participate in something you planned, like a game, try to find like-minded people elsewhere in the world, as there's enough space for everyone in Manyland.
+Please do not publicize videos or screenshots of Manyland with the intention to embarass or ridicule the person being filmed
+(depending on context, you can also let others know you're recording... the more it's not a group situation, the more expectation one would have to privacy).
+</p>
+
+<p>Often, location matters: what people may consider offensive in one area may be accepted, funny and terrific in another more distant location with another group. Try to apply common sense and find the group and location that's right for you and enjoy! Please note area locks from editor-based created areas are mostly under the discretion of
+area editors, whereas spawn area locks should be based on violations of the global etiquette and terms as outlined here. Communication, upvoting and flagging is the basis for how we all self-maintain and this will keep your stats in great shape.</p>
+
+<p>Please note the current welcome points are a special case as far as structures are concerned, as we often clean up together there to give new arrivals a chance to experiment, with some "free air" around.</p>
+
+<p>Please note that it is against the etiquette to post issues specifically related to an account, or one person, on general Writables
+(or Readables, or really any other public place). Account-related issues need to be either discussed in person, or if that's not possible,
+discussed in private with us via email. This helps the privacy of all involved.</p>
+
+<p>Please read the terms below for more.</p>
+
+
+<h2><a name="terms"></a>What are the terms of service?</h2>
+
+<p>We try to keep the terms text short :)</p>
+
+<p><strong>First of all, we take our responsibility very seriously, and
+want to provide a long-term sustainable environment for everyone who joined.</strong> If you join Manyland, you agree to all of these terms of service.</p>
+
+<p><strong>Manyland requires you to be at least 13 years of age, and in some countries older</strong>: See <a href="http://www.google.com/intl/en/policies/terms/">Google's terms</a> and <a href="https://support.google.com/accounts/answer/1350409?hl=en">age requirements</a> and <a href="https://www.facebook.com/legal/terms">Facebook's age requirements</a> for the US requirements and those of other countries. Logging in to Manyland is only possible via either a Google account or a Facebook account, so their respective terms and restrictions apply if you join Manyland, too.</p>
+
+<p><strong>Note we never automatically post to your wall or connect your friends and such when you login with Google or Facebook.</strong></p>
+
+<p>We try to have the world be stable &amp; permanent and have backups and such... but can make no guarantees regarding lost data or availablility of the service. We may block users who we find abuse the service, and cancel, remove or block accounts, creations or areas if they go against the etiquette or terms.
+We may send out emails, but there will be an easy unsubscribe-forever-from-all-emails link with them.</p>
+
+<p><strong>We want the best for Manyland and its citizens</strong>, and to that end reserve the right to amend the world and its rules in any ways we think helps create the best place for all citizens.</p>
+
+<p><strong>By submitting content here you affirm that you have the necessary licenses, rights, trademarks etc. on that content</strong>
+and that you give Manyland the universe-wide, non-exclusive, royalty-free right to do anything with it for all time, and
+to give all Manyzens the universe-wide, non-exclusive, royalty-free rights to access this content
+(community happiness is our <em>top</em> priority to which all other decisions follow).
+Otherwise you are not allowed to use trademarked properties (including in created area names or Multi names) or copy work. (Non-terms sidenote: We personally wish the world would switch to movements like Creative Commons and vastly broaden Fair Use and remixing defense in everyday creative situations.) Please note we will process and investigate all notices of alleged infringements and take appropriate actions as part of the Digital Millenium Copyright Act (DMCA), notifications of claims and counter-notifications should be sent <a href="/info-copyright">in this form</a>.
+It is against the terms to embed, share, upload, create or communicate content which is against the law.
+</p>
+<p>
+Manyland is defined as 12+ in some App Stores, so you agree to not create or share content that would make the app so inappropriate for that age bracket that it could lead to an app ban.
+</p>
+
+<p>If you're not an adult or you don't know if someone else is an adult, don't ask for or provide personal information like address, email, web page, phone number and such. By logging in to Manyland you agree to all of the terms, which may change in the future. You also agree to keep to our etiquette. You agree not to create offensive structures or things in the world, or say offensive things using chat or other communication.
+You agree to keep the <a href="#etiquette">etiquette</a> and <a href="#writableEtiquette">Writable etiquette</a> in all your actions and content.
+If you are under the age of majority where you live (i.e. you are not legally an adult yet) you represent that your parent or legal guardian has also reviewed and agreed to these terms.
+Your parent or legal guardian must also approve and take responsibility for your account for any payments made in Manyland.
+If you are not of legal age, you agree to adhere to any limits or stops put on Manyland usage by your parents or legal guardian.
+We unfortunately can't offer refunds if you paid for something in Manyland and there's a ban resulting from a breach of terms, or if the service is unavailable.
+</p>
+<p>
+You also agree to not share your Manyland account with other people, or let others join Manyland via your Google/ Facebook/ Amazon account (an account must be self-managed, and for communication with us, the associated email needs to be used).
+</p>
+<p>
+We are trying to focus on world health and happiness for all of us. We reserve the right to delete any account and creations at our discretion, and there are automatic blocks based on certain patterns. Automation, redistribution or wrapping of Manyland and its components, or interfacing with them outside of the ones provided, is against the terms.
+</p>
+
+<p>You agree not to circumvent bans in any way, or launch non-logged-in explorers (including brain-equipped explorers or bots of any sort) when your main account is banned or an explorer of yours got banned within the last 30 days.
+Importing of graphics via Changers or other means is against the terms. Client-side code manipulation is against the terms.
+If you discover a security vulnerability or any type of bug that can be abused, it's against the terms to keep using the bug (please just let us know about it via email, it's very much appreciated).
+</p>
+
+<p>It's against the terms to submit untrue or nonsensical flag reports. Area name squatting is against the terms.
+Stalking &#8211; obsessing over another Manyzen for a longer period of time even after they told you to stop, in a way that makes the other person feel threatened and insecure (e.g. through constant writing about them, surveilling, following them for a long time etc.) &#8211; is against the terms.
+Suggestive flirting of an 18+ person with someone below 18 years of age is against the terms.
+</p>
+
+<p>
+Doxing &#8211; public sharing of someone's address or other highly personal information without their consent, on Manyland or elsewhere &#8211; is against the terms. It's against the terms to falsely claim Manyland-officialness for sites, roles, terms etc. Phishing is also against the terms.
+</p>
+
+<p>The terms are only contained on this page, and not in admin creations, admin forum posts, emails etc.</p>
+
+<hr/>
+<p><a name="multipleAccounts" id="multipleAccounts"></a>You agree not to set up <strong>multiple accounts</strong> with Manyland, except where it meets the guidelines below. You agree to not join as new, non-full account Explorer if you as Explorer were just banned.</p>
+
+<p><a name="secondAccount" id="secondAccount"></a>A second account is allowed if one is from the web (Google, Facebook or Amazon) and
+the other is set up with Steam, provided that:</p>
+<ul>
+<li>you don't upvote or flag anything or anyone who you already upvoted or flagged with the other account</li>
+<li>you don't upvote yourself or comment with the alternate account in your own threads</li>
+<li>you have neither of your accounts banned, and you don't enter areas where one of the accounts is locked from</li>
+<li>you don't confuse people by other means of the two accounts interacting</li>
+<li>you don't leave people who know you from your other account vulnerable or strongly confused by deceptive means</li>
+</ul>
+
+<hr/>
+
+<p><a name="privacy" id="privacy"></a><strong>Privacy policy:</strong> Third parties and we may serve and target ads to you and place cookies. We use localStorage to save things too to provide a better experience, e.g. to restore the creation you were working on in case your computer or browser crashes in-between. By continuing to use Manyland, you agree to this cookie policy. We are providing the service on the infamous "as is" basis and cannot guarantee anything and disclaim all warranties.<br/>
+Manyland collects and stores the following information in order to have things working: Your account registration email or identifier as well as your provided account name; the signup date; the IP address; items, areas and forum posts you create, including the creation date and time; votes, area locks and flag reports which are given and received; social network relations of friending; forum post dates and upvotes; the user agent string; the PayPal or Steam Wallet Mift and Minfinity transaction time and amount; your last-visited time and Manyland area, and the location within that Manyland area; whether or not the account is currently auto-banned due to flag reports; the friends list status you entered. Most of these are needed to have Manyland be properly displayed &amp; working for, while other data points are needed for our algorithmic rank checks as well as anti-hack measures (the anti-hack measures are all intended to help with our top priority of having Manyland be a happy and comfy experience for everyone).
+<br/>
+If you want to have some of your data deleted, please <a href="/support">contact us</a>.
+</p>
+
+<hr/>
+
+<p><em>Legal info - Termination: Manyland does not guarantee that it will continue to offer access to the system and services or support the app. Manyland may in its sole discretion cease to provide any or all of the services offered in connection with Manyland (including access to the system and any or all features or components of the app), terminate the EULA, close all accounts and cancel all of the rights granted to you under the EULA. Manyland may communicate such termination to you upon 30 days' notice in any of the following manners: 1) when you log into your account; 2) in a notice on Manyland website; 3) via email; or 4) in another manner that Manyland deems suitable to inform you of the termination. If Manyland terminates the EULA pursuant to this section, you will not receive a refund of any fees.</em></p>
+
+<p><em>Legal info - Account termination: Manyland may immediately, and without notice, discontinue or suspend access to the system through your account, and close your account, if we find a violations of the terms. You will not be entitled to receive a refund of fees for a termination pursuant to this section.</em></p>
+
+<p><a name="availability" id="availability"></a><em>[Please note: Our goal is to offer the Manyland service for as long as it's possible. It's our labor of love and we are very dedicated to it. What if the servers go down though, or we can't pay the costs of running anymore (and the voluntary Minfinity plan doesn't sufficiently help)? What if anything else happens that makes it difficult for us to continue the service? We may then one day consider e.g. mandatory plans, or other additional ways to cover costs to ensure the stability for all of you, or even restrict (or worst case, stop) the service. We hope this won't ever happen, but wanted to put in this cautionary note in any case... we hope you understand!]</em></p>
+
+<hr/>
+
+<p>If you are ever locked and you don't know why, or there's another account-related issue, please feel free to <a href="/support">contact us</a>.</p>
+
+<p><strong>We will do our best to provide a great environment for all of you!</strong></p>
+
+
+<h2><a name="writableEtiquette"></a>Writable etiquette</h2>
+
+<p>The etiquette and terms for Writable forums follow above etiquette and terms &#8211; for instance, to always be respectful.
+In addition:</p>
+
+<ul>
+<li>Please use self-descriptive titles. For instance, the title "Suggestion: Feedable Pets" would be used instead of just "Suggestion".</li>
+
+<li>It is against the etiquette to post issues specifically related to an account, or one person, on general writables (or really, any other public place). Account-related issues need to be either discussed in person, or if that's not possible, discussed in private with us via email. This helps the privacy of all involved.</li>
+
+<li>Please do not share any personal details of others on the board, including their location, their activities, their hobbies, profession, what they do or don't do, what they told you in chat etc. Please do not represent or quote others, but allow them to speak for themselves. Please do not post photos of others. Please do not share what you found out about others on the web or elsewhere. Again, privacy is important.</li>
+
+<li>Complaints about other Manyzens should be written in Flag reports, but not writables. In addition, you can contact us via email for such issues.</li>
+
+<li>Please do not bump your own threads (e.g. adding a follow-up to them if they didn't yet yield a reply). Please contact us via email if you feel something needs to be looked at again.</li>
+
+<li>If a thread was locked or removed, please do not reopen it under a new title or add threads or comments discussing the locking or removal (you can contact us via email if you want to know more about the reasons).</li>
+
+<li>Please do not post very personal information about yourself, like your home address, email address, or phone number on a Writable.</li>
+
+<li>
+Threads posted should be appropriate for the topic of the board, and comments posted should be appropriate for the subject of the thread posted in. On boards with high posting frequency and a bigger audience, please keep comment and thread relevancy high, the message clear, and posting quantity and frequency in proportion.</li>
+</ul>
+
+<p>A big thanks to everyone who participates in writables!</p>
+
+
+<h2><a name="photosensitive"></a>Photosensitive warning</h2>
+
+<p><em>A very small percentage of individuals may experience epileptic seizures when exposed to certain light patterns or flashing lights. Exposure to certain patterns or backgrounds on a computer screen, or while playing games, may induce an epileptic seizure in these individuals. Certain conditions may induce previously undetected epileptic symptoms even in persons who have no history of prior seizures or epilepsy.</em></p>
+
+<p><em>If you, or anyone in your family, have an epileptic condition, consult your physician prior to using Manyland. If you experience any of the following symptoms while playing a video or game &#8211; dizziness, altered vision, eye or muscle twitches, loss of awareness, disorientation, any involuntary movement, or convulsions &#8211; immediately discontinue use and consult your physician before resuming.</em></p>
+
+
+<h2><a name="more"></a>Tips &amp; Tricks</h2>
+
+<p>You can find <a href="/info-tips">more tips &amp; tricks on this help page</a>.</p>
+
+
+<h2><a name="places"></a>What are some other places related to Manyland?</h2>
+
+<ul class="places">
+    <li>Our <a href="https://twitter.com/ManylandNews">Twitter</a> and
+        <a href="https://www.facebook.com/pages/Manyland/448985311806114">Facebook</a></li>
+    <li>Our <a href="/info-newsfeed">RSS feed</a>.</li>
+    <li><a href="http://findmanyland.com/shop">Goodies at the Manyland shop</a></li>
+    <li><a href="/static/media/fonts.zip">A Zip file of fonts</a> (based on the Manyland pixel fonts), created by Oxygen, and available for any use.</li>
+    <li><a href="http://manyunity.com/">Manyunity</a>: Where you can discover new areas and submit your own!</li>
+    <li><a href="http://manyland.wikia.com/">A Wiki</a> started by Mors</li>
+    <li><a href="http://store.steampowered.com/app/342280">Our Steam app</a></li>
+    <li><a href="http://www.flickr.com/photos/111147393@N04/sets/">Flickr sets</a></li>
+    <li><a href="http://itunes.apple.com/us/app/manyland/id657739357">The iPad app</a></li>
+    <li>Manyland Let's Plays and more videos <a href="https://www.youtube.com/results?search_query=manyland">on YouTube</a></li>
+</ul>
+
+
+<h2>More videos</h2>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/KpaUjKlev34?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+<p style="opacity: .5; text-align: center; margin-top: 0; padding-top: 4px">A trailer made by GrimTheReaper</p>
+</div>
+<p>&nbsp;</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/YcPmQb8UwIQ?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>&nbsp;</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="http://www.youtube.com/embed/noK9iWPRukY?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+<p style="opacity: .5; text-align: center; margin-top: 0; padding-top: 4px">Bruce Willakers in Manyland (<a href="https://www.youtube.com/user/BruceWillakers/search?query=manyland">here's more</a>)</p>
+</div>
+<p>&nbsp;</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/BXZ6J_8dM1E?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>&nbsp;</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/8b8E-jyAYvE?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/k-kHTvzRLXQ?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>&nbsp;</p>
+
+<p style="text-align: center; opacity: .6"><a href="https://www.youtube.com/watch?v=4mkkuGTlJR4">And here's the first Manyland video...</a></p>
+
+
+<h2><a name="contact"></a>Who are you and where can I send feedback?</h2>
+
+<p><strong>Manyland developed by Scott Lowe &amp; Philipp Lenssen, with world creation by all of you.</strong></p>
+
+<p class="nonEmphasized">
+Theme music of first video by
+<a href="http://www.drydockaudio.com/" rel="nofollow">Duncan MacKinnon</a> featuring Johann Strauss II's <em>The Blue Danube</em>.
+Additional sound effects via FreeSound.org licensed under <a href="http://creativecommons.org/licenses/sampling+/1.0/">Creative Commons</a>;
+<a href="javascript:toggleSoundCredits()">thanks to all the sound makers</a>. The music for the "In a universe" video is <em>Raindrops and Waterfalls</em>
+by Nicholas Pesci, with narration by Chuck Fresh. 
+<a name="delcoJinx"></a>Thanks to Delco &amp; Jinx for providing additional sounds, originally for Anyland.
+Manyland&trade; is a trademark by Scott Lowe and Philipp Lenssen.
+All our Manyland logos are in the public domain, feel free to use (just please don't make third-party sites etc. look like they're officially by us).
+
+Manyland blocks <a href="/static/media/logo-2-large.png">logo</a> by Korikabu.
+Music for "Somewhere in infinity" is "Where's My Banjo" by Rimsky (Salvador Fornieles &amp; Carla Olaortua).
+Music for "10 things" is My Very Own Hostage by Atomic Pop.
+Music for "Walk right in" is by <a href="http://incompetech.com/" rel="nofollow" target="_blank">Kevin MacLeod</a>
+Music for "We're inventing a universe is "Heavy Traffic", CC-licensed by <a href="http://freemusicarchive.org/music/Three_Chain_Links/The_Happiest_Days_Of_Our_Lives" target="_blank">Three Chain Links</a>.
+
+and <a href="http://publicdomain4u.com/" rel="nofollow">Cannon's Jug Stompers</a>.
+Manyland is copyright by Scott Lowe &amp; Philipp Lenssen. <a href="javascript:clickedAddress()">Address</a>. <a href="/support">Email</a>.
+To export the PNG of your creations for use elsewhere, shift-right-click them.
+Manyland&trade; is a trademark and service mark of Scott Lowe &amp; Philipp Lenssen.
+A <a href="http://findmanyland.com/">press kit</a> is available.
+Thanks to everyone who supports, inhabits, provides feedback to, spreads the word of, and shapes Manyland.
+Thanks to all curators, youtubers and reviewers who visited Manyland. Thanks SalzStange. Thanks Nikolai Kordulla for helping
+with the iOS wrapper. Thanks go out to the makers of Chrome, Firefox and all
+other nice browsers, PhotoPaint, PaintShop Pro, Audacity, Apple and GarageBand, ImpactJS by Dominic Szablewski, NodeJS, MongoDB, JavaScript, HTML, CSS and other cool web technologies. 
+Thanks to the makers of devices we build on. Thanks to civilization whose shoulders we stand on, coffee, tea, and the universe in general.</p>
+
+<div id="address" name="address" style="display: none">Philipp Lenssen, Roteb&uuml;hlstr. 164, 70197 Stuttgart, Germany</div>
+
+<p id="soundCredits"></p>
+
+<p class="smallerParagraph"><strong><a href="/support">We love to hear your feedback or questions!</a></strong></p>
+
+
+<h2 id="backers"><a name="minfinity"></a>Who are the Manyland supporters?</h2>
+
+<script>
+var html = '';
+var backers = ["philipp","qusion","bovine cell","ms cinn ur","amar","cyel","horatio","joongle","teh","nicole","azuros","cow","sir azuresh","sonny","oldman kirbamaite","cypiea","dave potato","c.k.b.","mary l.","sailor-cat","o edward elric","cyan","chron","morsmage","death","mr. handsome cactus","yoyoboy","claire","doneydew","eek","necrology","tara","wander","the doctor","pokemason","madi","richey amigo herpler","sherlocked minfinity","yoshiman716","purple hopper","thanatos","shin","asuna","lexvi","bella","mist","crybaby","ninja","artemis","ender","aikari","rik dreemurr","-steambeastie-","sega saturn","alfredwallace","dianna","g o o"];
+var minfinitySubscribers = ["ant","antonin","ardeneqi","athena","ben","bruujo4k","cheeba","chiccorii","chili","closure","cow","dump","honga!!","ianksquittermikesour","isaacool","jorge firebolt","lanapop","lance","lilaelixithery","maw","mena lum","milo","nano","philipp","radar","roseroserose","shell","sil.","skittle","sockpuppet","squid face","teh le dj de la fin","todd x","todd y","vivi","vortex 360","zenera flame"];
+
+var doTest = false;
+if (doTest) {
+    backers = ['Fred the Fred', 'Foobar', 'Jeremiah Sur Surname', 'Susan Lastname', 'mary', 'john', 'the very long name dinosaur'];
+    minfinitySubscribers = ['Fred Minfinity', 'Foobar Minfinity', 'Jeremiah Sur Surname', 'Susan Lastname', 'mary', 'john', 'the very long name dinosaur', 'abc'];
+    for (var i = 1; i <= 100; i++) {
+        backers.push( backers[ Math.floor( Math.random() * backers.length ) ] );
+    }
+}
+
+html += "<p>When getting Minfinity for a month, you receive unlimited Boosts, can disable the ad, use universe search, freely give Mifts... plus you'll support Manyland!</p>";
+
+html += "<p>Here are all of this month's Minfinitizens... thank you so much for helping to sustain Manyland and its dev + server costs!</p>";
+
+html += '<p class="backerNames">';
+
+if (minfinitySubscribers.length >= 1) {
+    for (var i = 0; i < minfinitySubscribers.length; i++) {
+        var name = minfinitySubscribers[i];
+        if (name) {
+            html += '<span class="backerName">';
+            html += '<img src="/static/media/backer-icon.png" alt=""/>';
+            html += replaceAll( htmlEscape( toTitleCase(name) ), ' ', '&nbsp;');
+            html += '</span> ';
+        }
+    }
+}
+else {
+    html += '(none at the moment)';
+}
+
+html += '</p>';
+
+html += "<p>The following people are Backers who helped with an extra amount during the initial Minfinity launch... thank you for backing Manyland!</p>";
+
+html += '<p class="backerNames">';
+
+if (backers.length >= 1) {
+    for (var i = 0; i < backers.length; i++) {
+        var name = backers[i];
+        if (name) {
+            html += '<span class="backerName">';
+            html += '<img src="/static/media/backer-icon.png" alt=""/>';
+            html += replaceAll( htmlEscape( toTitleCase(name) ), ' ', '&nbsp;');
+            html += '</span> ';
+        }
+    }
+}
+else {
+    html += '(none)';
+}
+
+html += '</p>';
+
+html += "<p>... and you can also support <a href=\"https://www.patreon.com/manyland\">Manyland on Patreon</a>!</p>";
+
+document.write(html);
+
+</script>
+</p>
+
+<p class="footnote" style="opacity: .5">Manyland is made with all of our passion and heart. We're hoping to put it on a stable financial fundament to cover the monthly costs.
+Whether or not you get Minfinity or become a Patreon, thank you for being in Manyland!</p>
+
+
+<h2><a name="short"></a>Short area names</h2>
+<p>
+Want to get an area name below the default minimum of 6 letters (it's a limited resource, so not available normally) and support Manyland at the same time?<br/>
+Then please create a new area with the name of "shorten to <i>somename</i>", where <i>somename</i> is the the name you desire,
+e.g. "bar". Directly afterwards, pay for the shortening below.
+</p>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center;">
+
+    <input type="hidden" name="cmd" value="_s-xclick"/>
+    <input type="hidden" name="hosted_button_id" value="MMGC8V3NSCQSW"/>
+    <input type="hidden" name="on0" value="Area name length:"/>
+
+    <select name="os0" style="font-size: 110%" size="5">
+        <option value="5 Letters">5 Letters &nbsp;&nbsp;&nbsp;&nbsp; $10</option>
+        <option value="4 Letters">4 Letters &nbsp;&nbsp;&nbsp;&nbsp; $20</option>
+        <option value="3 Letters">3 Letters &nbsp;&nbsp;&nbsp;&nbsp; $40</option>
+        <option value="2 Letters">2 Letters &nbsp;&nbsp;&nbsp;&nbsp; $80</option>
+        <option value="1 Letter">1 Letter &nbsp;&nbsp;&nbsp;&nbsp; $160</option>
+    </select>
+
+    
+    <p>
+        <input type="hidden" name="on1" value="Area name:"/>Area name:<br/>
+        <input type="text" name="os1" maxlength="16" value="shorten to " style="font-size: 80%"/>
+    </p>
+    
+    <p>
+        <input type="hidden" name="currency_code" value="USD"/>
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+
+        <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1"/>
+    </p>
+    
+</form>
+
+<p style="opacity: .5">(We'll try process this in 48 hours from Monday-Friday, usually much faster.)</p>
+
+
+
+<div style="height: 400px">&nbsp;</div>
+
+<!-- </ignore-if-inline> -->
+
+
+<!-- <include-if-inline>
+
+<p style="opacity: .4; border-top: 2px solid black; border-bottom: 2px solid black">[<a href="/info" target="_blank">open in new window for more</a>]</p>
+
+<include-if-inline> -->
+
+
+</div>
+
+
+<script>
+var g_inited = false;
+function toggleSoundCredits() {
+    if (!g_inited) {
+        var html = '';
+        html += "<strong>The credit for individual sound blocks can be found in each Sound block's context menu. Below are more sound effects that were used:</strong><br/><br/>";
+        html += getSoundCreditsHtml();
+        $('#soundCredits').html(html);
+        g_inited = true;
+    }
+    
+    $('#soundCredits').toggle('slow');
+}
+
+function getSoundCreditsHtml() {
+    var data = [
+        ["Water Splash", "Dynamicell", "http://www.freesound.org/people/Dynamicell/sounds/17832/"],
+        ["Water Diving", "Digifishmusic", "http://www.freesound.org/people/digifishmusic/sounds/45521/"],
+        ["Energy", "(f)re-sounds", "http://www.freesound.org/people/RunnerPack/sounds/87043/"],
+        ["Water Out Splash", "Daveincamas", "http://www.freesound.org/people/daveincamas/sounds/59104/"],
+        ["cow", "reinsamba", "http://www.freesound.org/people/reinsamba/sounds/57790/"],
+        ["cat", "TheGertz", "http://www.freesound.org/people/TheGertz/sounds/131201/"],
+        ["bird", "Cajo", "http://www.freesound.org/people/cajo/sounds/34207/"],
+        ["dog", "jorickhoofd", "http://www.freesound.org/people/jorickhoofd/sounds/160094/"],
+        ["horse", "Andune", "http://www.freesound.org/people/Andune/sounds/61605/"],
+        ["lion", "pepingrillin", "http://www.freesound.org/people/pepingrillin/sounds/53760/"],
+        ["fire", "Glaneur de sons", "http://freesound.org/people/Glaneur%20de%20sons/sounds/104958/"],
+        ["nature", "jus", "http://freesound.org/people/jus/sounds/73617/"],
+        ["humming", "reacthor", "http://freesound.org/people/reacthor/sounds/130313/"],
+        ["ocean", "rmutt", "http://freesound.org/people/Rmutt/sounds/148283/"],
+        ["ocean", "slanesh", "http://freesound.org/people/Slanesh/sounds/31762/"],
+        ["ocean", "kailietzke", "http://freesound.org/people/KaiLietzke/sounds/185063/"],
+        ["wind", "bosk1", "http://freesound.org/people/Bosk1/sounds/144083/"],
+        ["wind", "klangfabrik", "http://freesound.org/people/klangfabrik/sounds/117513/"],
+        ["wind", "inchadney", "http://freesound.org/people/inchadney/sounds/109115/"],
+        ["wind", "benboncan", "http://freesound.org/people/Benboncan/sounds/84111/"],
+        ["village", "gelo_papas", "http://freesound.org/people/gelo_papas/sounds/49811/"],
+        ["village", "lupalenzuela", "http://freesound.org/people/lupalenzuela/sounds/161659/"],
+        ["city", "inchadney", "http://freesound.org/people/inchadney/sounds/39496/"],
+        ["city", "lth_stp", "http://freesound.org/people/lth_stp/sounds/121299/"],
+        ["city", "clubsound", "http://freesound.org/people/club%20sound/sounds/106839/"],
+        ["city", "robinhood76", "http://freesound.org/people/Robinhood76/sounds/62490/"],
+        ["glimmer", "Soughtaftersounds", "http://freesound.org/people/Soughtaftersounds/sounds/145459/"],
+        ["glimmer", "Dj Chronos", "http://freesound.org/people/DJ%20Chronos/sounds/65981/"],
+        ["glimmer", "alex@vsi.tv", "http://freesound.org/people/alex@vsi.tv/sounds/170523/"],
+        ["glimmer", "robinhood76", "http://freesound.org/people/Robinhood76/sounds/62967/"],
+        ["lightning", "LukeIRL", "http://freesound.org/people/LukeIRL/sounds/176021/"],
+        ["ringportalling", "Benboncan", "http://freesound.org/people/Benboncan/sounds/167563/"],
+        ["night air", "CGEffex", "http://www.freesound.org/people/CGEffex/sounds/97788/"],
+        ["night air", "Sengjinn", "http://www.freesound.org/people/sengjinn/sounds/175020/"],
+        ["night air", "Patobottos", "http://www.freesound.org/people/patobottos/sounds/178504/"],
+        ["bubbles", "Glaneur de sons", "http://www.freesound.org/people/Glaneur%20de%20sons/sounds/104950/"],
+        ["bubbles", "BMacZero", "http://www.freesound.org/people/BMacZero/sounds/96125/"],
+        ["bubbles", "Kijjaz", "http://www.freesound.org/people/kijjaz/sounds/16737/"],
+        ["bubbles", "MurraySortz", "http://www.freesound.org/people/murraysortz/sounds/192497/"],
+        ["bubbles", "Oneirophile", "http://www.freesound.org/people/Oneirophile/sounds/185071/"],
+        ["bubbles", "BMacZero", "http://www.freesound.org/people/BMacZero/sounds/96124/"],
+        ["dripping", "Sclolex", "http://www.freesound.org/people/Sclolex/sounds/177958/"],
+        ["bongo", "Menegass", "http://www.freesound.org/search/?q=menegass+bongo"],
+        ["bongo", "Seidhepriest", "http://www.freesound.org/people/Seidhepriest/sounds/173025/"],
+        ["bongo", "Csmag", "http://www.freesound.org/people/csmag/sounds/203610/"],
+        ["glass", "cmusounddesign", "http://www.freesound.org/people/cmusounddesign/sounds/85168/"],
+        ["glass", "cmusounddesign", "http://www.freesound.org/people/cmusounddesign/sounds/84702/"],
+        ["bear", "husky70", "http://www.freesound.org/people/husky70/sounds/170454/"],
+        ["wolf", "adrilahan", "http://www.freesound.org/people/adrilahan/sounds/172652/"],
+        ["monkey", "missozzy", "http://www.freesound.org/people/missozzy/sounds/169987/"],
+        ["elephant", "y89312", "http://www.freesound.org/people/y89312/sounds/139875/"],
+        ["pig", "yottasounds", "http://www.freesound.org/people/yottasounds/sounds/174614/"],
+        ["snake", "qubodup", "http://www.freesound.org/people/qubodup/sounds/182789/"],
+        ["frog", "Benboncan", "http://www.freesound.org/people/Benboncan/sounds/67261/"],
+        ["sheep", "Erdie", "http://www.freesound.org/people/Erdie/sounds/34538/"],
+        ["pony", "Acclivity", "http://www.freesound.org/people/acclivity/sounds/19494/"],
+        ["shatter", "C_Rogers", "http://www.freesound.org/people/C_Rogers/sounds/203377/"],
+        ["shatter", "Q.K.", "http://www.freesound.org/people/Q.K./sounds/56262/"],
+        ["piglet", "Digitopia", "http://www.freesound.org/people/digitopia/sounds/76468/"],
+        ["rooster", "Setuniman", "http://www.freesound.org/people/Setuniman/sounds/134049/"],
+        ["hen", "Dobroide", "http://www.freesound.org/people/dobroide/sounds/120587/"],
+        ["chick", "Gb01", "http://www.freesound.org/people/GB01/sounds/150298/"],
+        ["car", "Jorickhoofd", "http://www.freesound.org/people/jorickhoofd/sounds/176635/"],
+        ["quake", "Smidoid", "http://www.freesound.org/people/smidoid/sounds/49145/"],
+        ["metal footsteps", "Jaredi", "http://www.freesound.org/people/jaredi/sounds/215308/"],
+        ["grass footsteps", "Gum_12", "http://www.freesound.org/people/Gum_12/sounds/140124/"],
+        ["snow footsteps", "32Cheeseman32", "http://www.freesound.org/people/32cheeseman32/sounds/175940/"],
+        ["sand footsteps", "Cornwallis89", "http://www.freesound.org/people/Cornwallis89/sounds/244590/"],
+        ["energy footsteps", "NickRave", "http://www.freesound.org/people/nickrave/sounds/145233/"],
+        ["mud footsteps", "MWLandi", "http://www.freesound.org/people/MWLANDI/sounds/85865/"],
+        ["ping", "Unfa", "https://www.freesound.org/people/unfa/sounds/215415/"],
+        ["laser carving", "Jmayoff", "http://freesound.org/people/jmayoff/sounds/253446/"],
+        ["new mift", "Jobro", "http://freesound.org/people/jobro/sounds/60445/"],
+        ["boost", "Chipfork", "http://freesound.org/people/chipfork/sounds/72639/"],
+        ["minfinity", "Qubodup", "http://freesound.org/people/qubodup/sounds/174366/"],
+        ["score up", "GabrielAraujo", "http://freesound.org/people/GabrielAraujo/sounds/242501/"],
+        ["score down", "Noirenex", "http://freesound.org/people/noirenex/sounds/159399/"],
+        ["trumpet", "MTG", "https://freesound.org/people/MTG/packs/20232/"],
+        ["fiddle/ violin", "Ldk1609", "https://freesound.org/people/ldk1609/packs/3578/"],
+        ["Casual Clarinet (pack)", "MTG", "https://freesound.org/people/MTG/packs/20227/"],
+        ["Cloth", "MattRuthSound", "https://freesound.org/people/MattRuthSound/sounds/561574/"],
+    ];
+    var html = '';
+    for (var i = 0; i < data.length; i++) {
+        var sound = data[i][0], creator = data[i][1], url = data[i][2];
+        var isPack = sound.indexOf('(pack)') >= 0;
+        html += '<a href="' + url + '" target="_blank">' +
+            sound.capitalize() + ' ' +
+            (isPack ? 'by' : 'mix includes a sound by') +
+            ' ' + creator.capitalize() + '</a>. ';
+    }
+    return html;
+}
+
+String.prototype.capitalize = function () {
+    return this.replace(/^./, function (char) {
+        return char.toUpperCase();
+    });
+};
+
+function expandEntryIfHashLink() { 
+    if (window.location.hash) {
+        var id = window.location.hash.substr(1);
+
+        var infoElm = document.getElementById(id + 'Answer');
+        if (infoElm) { infoElm.style.display = 'block'; }
+
+        var expanderElm = document.getElementById(id + '_expander');
+        if (expanderElm) { expanderElm.style.display = 'none'; }
+    }
+}
+
+expandEntryIfHashLink();
+
+</script>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>

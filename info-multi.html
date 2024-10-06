@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  - The Multi type</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1>
+
+<p>
+<img src="/static/media/multi-illustration.png" alt="" style="float: left; margin-right: 15px"/>
+<strong class="important">A Multi</strong> allows one person, or several people joining together, to move things on a given setup.
+This can be anything you can think of: tabletop or dice games, playing cards, an array of creatures flying above a nest, or any
+use you imagine.
+You can click on an item to change its state or trigger its behavior, and drag an item to move it within the Multi.
+Static compositions with no movable parts can also be created.
+<p>
+
+<p>As Multi creator, you can edit the static layer as well as the movable items.
+Everybody else joining the Multi later can then move around and change the state of movable items, and others who opened the Multi
+at that placement location will see the movements.
+</p>
+
+<p><strong>To create a Multi</strong>, login, hit the Create button in an area where you can edit, switch to the Holder type category, and hit Change.
+The first cell will be the Multi as it's shown placed in the world, and the second is the optional wallpaper background.
+Most other things can be prepared later by walking over the Multi and activating it. Once active, click the Multi name link at the
+bottom to start editing. You can now move in items from your side panel and drag them into position.
+As soon as you hit Done, your Multi will change for those who newly open it all around the world.
+</p>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/OxYpa0mNmpI?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h2><a name="shortcuts"></a>Shortcuts</h2>
+
+<ul>
+<li><strong>Ctrl+D:</strong> Duplicate item to right</li>
+<li><strong>Ctrl+Shift+D:</strong> Duplicate item to below</li>
+<li><strong>Ctrl+G:</strong> Toggle grid</li>
+<li><strong>Ctrl+Z:</strong> Undo a deletion, duplication or editing move</li>
+<li><strong>Ctrl+K:</strong> Toggle setting up static items</li>
+<li><strong>Ctrl+L:</strong> Toggle setting up movable items</li>
+</ul>
+
+<h2><a name="sections"></a>Sections</h2>
+
+<p>
+The Multi can be split up into private sections and a neutral section.
+The <strong>private sections</strong> can be used to e.g. only show a set of cards to the person of that section.
+The <strong>neutral section</strong> can hide everything, and also be used for shuffling.
+You can amend the section behavior and look by opening the Multi name menu and selecting "More".
+</p>
+
+<h2><a name="changingThings"></a>Changing Things</h2>
+
+<p>Changing Things will show their first cell in the public sections, and their second cell in the private ones.
+For instance, a playing card front could be drawn in the first cell, and the card back in the second.
+You can also add the drop sound for the Changing Thing by picking 'Add Sound' from the menu during creation
+(a Holder with a lot of sounds can be found in the second hut at Helptown). A single tap on a Changing Thing
+by participants will cause it to manually change its state (like turning a card back and forth).
+</p>
+
+
+<h2><a name="dynamics"></a>Dynamics</h2>
+
+<p><a href="/info-dynamic">Dynamics</a> can be used as items that have changing states.
+For instance, a movable dice item might have 6 sides.
+To trigger these states, use a range of two numbers at the end of your Dynamic name, e.g. "dice 1-6".
+A click on them on the Multi will switch to the next state, unless you pick the Dynamic attribute "no state+ change".
+You can now reference the state using a placeholder in text output:</p>
+
+<div class="dynamicSample"><pre>0s: cell 1 show, text [state]
+</pre></div>
+
+<p>The following <a href="/info-dynamic#markers">markers</a> are available:</p>
+
+<table class="properTable">
+<tr><td style="width: 25%"><strong>state [any of 0 - 10]</strong></td><td>When the Dynamic is in the first state, e.g. "state 1"</td></tr>
+<tr><td style="width: 25%"><strong>odd state</br>even state</strong></td><td>When the Dynamic state number is odd, or even</td></tr>
+<tr><td style="width: 25%"><strong>negative state<br/>neutral state<br/>positive state</strong></td><td>When the state is negative (e.g. -2), neutral (0), or positive (e.g. 20)</td></tr>
+<tr><td style="width: 25%"><strong>private</strong></td><td>When the Dynamic is in someone else's private section (like the back of a card, the front only seen by the person of that section)</td></tr>
+<tr><td style="width: 25%"><strong>randomize</strong></td><td>When the Dynamic is either giving randomization (like a dice cup), or receiving randomizing (like a dice)</td></tr>
+<tr><td style="width: 25%"><strong>private randomize</strong></td><td>When the Dynamic is both in a private section and being randomized</td></tr>
+<tr><td style="width: 25%"><strong>moved</strong></td><td>When the Dynamic has been moved and placed down again</td></tr>
+</table>
+
+<p>To create a <strong>randomizer</strong>, like a dice cup, prepare a Dynamic, hit the "..." button, and tick its attribute "Randomizer". You can now have a special
+animation and sound for the "randomize" label if you want. When added to a Multi as static item, participants can now drag movable items over it. Static items can also react to clicks to randomize their own [state] value
+(this could be e.g. an item named "Roulette wheel 0-36").
+</p>
+
+<p>For instance, the following example would create a dice. The dice sides 1 to 6 would be drawn in the cells 1 to 6, and the item would be named "dice 1-6":</p>
+
+<div class="dynamicSample"><pre>0: CELL 1 SHOW
+
+STATE 1
+0: CELL 1 SHOW
+
+STATE 2
+0: CELL 2 SHOW
+
+STATE 3
+0: CELL 3 SHOW
+
+STATE 4
+0: CELL 4 SHOW
+
+STATE 5
+0: CELL 5 SHOW
+
+STATE 6
+0: CELL 6 SHOW
+
+RANDOMIZE
+0: CELL 1 SHOW
+0-1.25: CELLS ROTATE 360
+0.25: CELL 1 HIDE, CELL 5 SHOW
+0.5: CELL 5 HIDE, CELL 3 SHOW
+0.75: CELL 3 HIDE, CELL 2 SHOW
+1: CELL 2 HIDE, CELL 6 SHOW
+1.25: RESTART
+</pre></div>
+
+
+<h2><a name="wiggling"></a>Wiggling</h2>
+
+<p>When you right-click a Movable item during editing, you can set its Wiggle Speed and Wiggle Distance.
+This means when the item is dragged, it will wiggle. This can be used for a variety of purposes when you want to randomize the placement (for instance, in a game of darts).
+</p>
+
+
+<h2><a name="readables"></a>Readables</h2>
+
+<p>Readables have three different behaviors when placed on Multis (as static items):</p>
+
+<ul>
+<li><strong>In the main area</strong>, they can be opened to read them (like a help file on the rules of your Multi)</li>
+<li><strong>In one's own private section</strong>, they will open as privately editable text (this could be used as a score board, for instance)</li>
+<li><strong>In someone else's private section</strong>, they won't be openable for one</li>
+</ul>
+
+
+<h2><a name="moreTypes"></a>Writables, Mediums</h2>
+
+<p>Writables and Mediums can be included as static items. People can then open them by click or tap.
+</p>
+
+
+<h2><a name="environments"></a>Environments</h2>
+
+<p>You can place Environments on a Multi (say, of the Snow Cloud attribute). For ambient sounds, you can add
+an Environment set to the Soundscape attribute.</p>
+
+
+<h2><a name="events"></a>Events</h2>
+
+<ul>
+<li>Whenever someone opens a Multi, the <strong>Interacting</strong> event "someone activates" will be fired.</li>
+<li>Whenever someone does something on a Multi, <strong>body motions</strong> named "multi activity" will be triggered.</li>
+</ul>
+
+
+<h2><a name="values"></a>Values</h2>
+
+<p>In the More settings, you can enter a number for "Everyone's start value"... say 0, or 100.
+It will be shown next to one's name label if sections are activated.
+This could represent a score, one's money on a Roulette table, health of creatures or anything else you want it to be.
+With such a number set, you can now use speech commands like the following:</p>
+
+<ul>
+<li>set 20 Mary</li>
+<li>set -5 John</li>
+<li>Peter set 10</li>
+<li>plus 5 Dave</li>
+<li>Susan minus 50</li>
+<li>Jenny times 2</li>
+<li>Tom multiplied by 2</li>
+<li>Dave divided by 3</li>
+<li>plus 1 me</li>
+<li>plus 5 you <em>(if only two participants)</em></li>
+<li>reset everyone <em>(will set the number back to its start)</em></li>
+</ul>
+
+<p>Typing just the start of the name -- like "Tom" for someone named "Tommy&nbsp;Dragon" -- will also work.</p>
+
+
+<h2><a name="adding"></a>Adding people</h2>
+
+<p>
+When someone new views the Multi that's already viewed by someone else, whoever
+is at the Multi for the longest time can now add them. If that's you, you'll see an "Add" link over their body.
+When they're not added, they can view what everyone is doing, but not move items on the Multi
+themselves. You can also add or remove people from their profile.
+(Please note in some occasions, like when the maximum number of participants is reached, no new participants can be added.)
+</p>
+
+<p>
+You can test the behavior of Multis for several people yourself by opening an anonymous browser window and going to the area you're in, say manyland.com/exampletown, then
+having your main account and your anonymous account both open the same Multi.
+</p>
+
+
+<h2><a name="trademarks"></a>Trademarks</h2>
+
+<p>Please don't use trademarked game names as the name of your Multi, or anything else that may require licensing (such as copying distinct graphics; "Material prepared in connection with a game may be subject to copyright if it contains a sufficient amount of literary or pictorial expression").
+In the US, copyright <a href="http://www.copyright.gov/fls/fl108.html" target="_blank">does not cover</a> the idea for a game or the methods for playing it though,
+so you can be inspired by ideas or methods of existing games.
+</p>
+
+
+<h2><a name="cloning"></a>Cloning</h2>
+
+<p>
+When you drag a Multi of yours over the Create tab top or button, you will be asked and can decide to clone all of its contents too.
+This will create a separate copy you can later adjust.
+(When the Multi was set to be Clonable via the "..." button during creation, others can clone your Multi's contents as well.)
+</p>
+
+
+<h2><a name="examples"></a>More Examples</h2>
+
+<h3>Max</h3>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/lJmUOk7TntM?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>
+Above uses the "no state+ switch" attribute for the dice so that they can't be changed with a single click.
+We're using the "private randomize" marker for the dice.
+This Multi is available as clonable in the Item Repository 2's "Multis" thread at Base Boards Town.
+</p>
+
+
+<h3>Poker Dice</h3>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/aU03qEM9fV4?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>In above example, we are using participant sections, but ticked off the "mark sections" as they don't need to be emphasized (as all dice
+are always visible to every participant). The private sections' use here is to define who can open which scoreboard Readable.
+As with some other dice games, the dice use the "no state+ switch" attribute so they can't be click-changed.
+You can find this Multi too as clonable in the Item Repository 2's "Multis" thread at Base Boards Town.
+</p>
+
+
+<h3>Word Games</h3>
+
+<p><img src="/static/media/wordgames.jpg" alt=""/></p>
+
+<p>Above example can be found in the area <a href="/wordgames">Word Games</a>. It uses
+a "my turn" card people can pass on to the next person when they're done. The rules are included in game,
+and the table and its letters (roughly in quantity as the letter frequency in the English language)
+are clonable.
+</p>
+
+
+<h3>Roulette</h3>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/ctAt0Co80nU?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p>This Roulette table has a spinning mechanism that uses a Very Big Thing wheel background, a Dynamic spinning wheel (with the Randomizer attribute),
+and a movable Dynamic ball with the range "0-36" at the end of its name plus a text cell printing its [state].
+</p>
+
+
+<h3>Darts</h3>
+
+<p><img src="/static/media/darts.jpg" alt=""/></p>
+
+<p>For above above Darts game, the arrows were right-clicked during editing to define their Wiggle Speed (30) and Wiggle Distance (also 30).
+We're using the Changing Thing type for the arrows so we can define the drop sound by using Add Sound during creation, then picking from one of the
+available sounds (you can find Sounds holders at Helptown).
+</p>
+
+
+<div class="helpMore">
+<h2><a name="more"></a>More...</h2>
+
+<p>Got a question which isn't answered here, or new ideas and feedback?
+<a href="/support">Have a look here please</a>.</p>
+
+</div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>

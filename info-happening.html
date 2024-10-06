@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  Happening</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1>
+
+<p>
+<img src="/static/media/happening-illustration.png" alt="" style="float: left; margin-right: 15px"/><!-- This image wasn't archived by the Wayback Machine. -->
+<strong class="important">The Happening type</strong> lets you create a variety of visuals and more using JavaScript.
+There's different types of shapes like circles, rectangles, particles and more which you can freely setup and change
+over time. You can also draw all the cells of the item itself in various ways, and multiple times in one go.
+Happenings can be placed in the world and are then started when walking over, or triggered as personal boosts (not visible by others).
+</p>
+
+
+<h3><a name="code"></a>What Happening code looks like</h3>
+
+<p>To program Happenings, you need to know some JavaScript
+(there's many <a href="https://www.google.de/webhp#q=learn%20javascript" target="_blank">great resources</a> available).
+Here's a sample code structure:</p>
+
+<div class="javaScriptCode"><pre>// An example script
+
+var particles = [ { x: 0, y: -30, thickness: 5 } ];
+
+function update(my) {
+    particles[0].x += my.tick * 10;
+    
+    return {particles: particles};
+}
+</pre></div>
+
+<p>First near the top, we're setting a persistent particles array. 
+Now every Happening script has a main function called update, which is called multiple times a second.
+In it, you can now change the particles if you want.
+Movement and more should be multiplied by my.tick, which ensures constant speeds even at different frames per seconds.
+Finally, you'll return the particles and they will be drawn.
+Happenings run for up to 2 hours.
+</p>
+
+<p>To try this yourself, you can <a href="/">login</a>, hit the Create button, select Happening, then draw something and save.
+You can now place the block in a created area where you're listed as editor, and walk over it. Because you've kept the code
+field empty during saving, an editor box will now appear (you can also tick the attribute 'Offers Editing').</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9k1rw3TaADc" frameborder="0" allowfullscreen></iframe>
+
+<p class="infoTip">Tip: If you're looking for a good font, try our <a href="/static/media/doid.ttf">Doid.ttf</a>,
+which is a spin on Droid especially suited for programming. After saving locally and installing as font on your machine, you can
+adjust your browser settings to use this as default monospace font.
+</p>
+
+
+<h3><a name="data"></a>Shapes data you can return</h3>
+
+<p>You can prepare the following shapes data to return:</p>
+
+<div class="tree">
+
+<ul>
+    <li><strong>particles[]</strong> <span class="infoExample">// an array of up to 100 particles</span>
+        <ul>
+            <li>x <span class="infoExample">// the relative center x position from -1000 to 1000</span></li>
+            <li>y <span class="infoExample">// the relative center y position from -1000 to 1000</span></li>
+            <li>thickness <span class="infoExample">// optionally, the thickness from 1 to 10</span></li>
+            <li>rgba[] <span class="infoExample">// optionally, red-Green-Blue-Alpha, e.g. [0,255,0,1] for green</span></li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+        </ul>
+    </li>
+    
+    <li><strong>lines[]</strong> <span class="infoExample">// like others, an array of up to 100</span>
+        <ul>
+            <li>x1</li>
+            <li>y1</li>
+            <li>x2</li>
+            <li>y2</li>
+            <li>thickness</li>
+            <li>rgba[]</li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+        </ul>
+    </li>
+    
+    <li><strong>rectangles[]</strong>
+        <ul>
+            <li>x1</li>
+            <li>y1</li>
+            <li>x2</li>
+            <li>y2</li>
+            <li>thickness</li>
+            <li>rgba[]</li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+            <li>filled <span class="infoExample">// true or false</span></li>
+        </ul>
+    </li>
+    
+    <li><strong>polygons[]</strong>
+        <ul>
+            <li>points[] <span class="infoExample">// Up to 50 points, like {x: ..., y: ...}, {x: ..., y: ...}, ...</span></li>
+            <li>thickness</li>
+            <li>rgba[]</li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+            <li>filled <span class="infoExample">// true or false</span></li>
+        </ul>
+    </li>
+    
+    <li><strong>circles[]</strong>
+        <ul>
+            <li>x</li>
+            <li>y</li>
+            <li>radius</li>
+            <li>thickness</li>
+            <li>rgba[]</li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+            <li>filled <span class="infoExample">// true or false</span></li>
+        </ul>
+    </li>
+    
+    <li><strong>items[]</strong> <span class="infoExample">// An array of up to 100 items to draw cells from the item image</span>
+        <ul>
+            <li>x <span class="infoExample">// the center x</span></li>
+            <li>y <span class="infoExample">// the center y</span></li>
+            <li>cell <span class="infoExample">// the cell number of the item you want to draw, like 1 (default)</span></li>
+            <li>alpha <span class="infoExample">// the alpha opacity from 0-1</span></li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+            <li>rotation <span class="infoExample">// optionally, a rotation angle in degrees, like 180 to rotate upside down</span></li>
+            <li>flip {x: false, y: false} <span class="infoExample">// optionally, containing an x and y bool of whether to flip this</span></li>
+            <li>pivot {x: 10, y: 5} <span class="infoExample">// optionally, setting of the rotation center pivot</span></li>
+        </ul>
+    </li>
+    
+    <li><strong>texts[]</strong>
+        <ul>
+            <li>x</li>
+            <li>y</li>
+            <li>content <span class="infoExample">// a string like 'hello world' with a maximum of 250 characters</span></li>
+            <li>alpha <span class="infoExample">// the alpha opacity from 0-1</span></li>
+            <li>font <span class="infoExample">// optionally, you can use enumFont.whiteSmall (default), enumFont.white, enumFont.blackSmall, or enumFont.black</span></li>
+            <li>align <span class="infoExample">// optionally, you can use enumAlign.center (default), enumAlign.left, or enumAlign.right</span></li>
+            <li>mode <span class="infoExample">// optionally, a <a href="#mode">compositing mode</a></span></li>
+        </ul>
+    </li>
+
+    <li><strong>doPlaySound</strong> <span class="infoExample">// true/ false. This will play an associated sound (use Add Sound from the menu during creation), at most once per 2 seconds</span>
+    </li>
+    
+    <li><strong>back</strong> <span class="infoExample">// {particles: ..., lines: ..., ...} Holds shape data like above, but for the background (e.g. behind background walls)</span>
+    </li>
+    
+    <li><strong>front</strong> <span class="infoExample">// {particles: ..., lines: ..., ...} Holds shape data like above, but for the foreground (e.g. above solids)</span>
+    </li>
+    
+    <li><strong>itemAlpha</strong> <span class="infoExample">// optional, a value from 0-1 to set the opacity of the Happening block in the world (like maybe you want to hide it while the Happening script runs)</span>
+    
+    <li><strong>doEnd</strong> <span class="infoExample">// optional, you can set this to true to end the Happening</span>
+    </li>
+</ul>
+
+</div>
+
+<p class="infoTip">Tip: On desktop, you can pick an rgba color value during creation by selecting a palette index, then pressing i.
+</p>
+
+<p class="infoTip">Please note: Using a high number of shapes or items may make things slower.
+</p>
+
+
+<h3><a name="mode"></a>Compositing modes</h3>
+
+<p>On any shape, you can optionally use the <strong>mode</strong> parameter to determine how it will be drawn. The following values are available:</p>
+
+<ul>
+<li style="opacity: .5">enumMode.default</li>
+<li>enumMode.bright</li>
+<li>enumMode.dark</li>
+<li>enumMode.multiply</li>
+<li>enumMode.screen</li>
+<li>enumMode.overlay</li>
+<li>enumMode.difference</li>
+<li>enumMode.exclusion</li>
+<li>enumMode.hue</li>
+<li>enumMode.saturation</li>
+<li>enumMode.color</li>
+<li>enumMode.luminosity</li>
+</ul>
+
+
+<h3><a name="my"></a>Checking the surrounding</h3>
+
+<p>
+Happenings can optionally react to the specific surrounding blocks and entities. If your code is found to contain
+references to '.sight', 'my.x', 'my.y' and so on, then the following data is passed with the my object as well:</p>
+
+<div class="tree">
+my
+<ul>
+    <li><strong>sight</strong>
+        <ul>
+            <li><strong>placements</strong></li>
+            <li><strong>entities</strong></li>
+            <li><strong>scope</strong></li>
+        </ul>
+    </li>
+    <li><strong>x</strong></li>
+    <li><strong>y</strong></li>
+    <li><strong>width</strong></li>
+    <li><strong>height</strong></li>
+</ul>
+
+</div>
+
+<p>For details on these properties, please see <a href="/info-brain#my">the Brain type's explanations</a>.
+</p>
+
+
+<h3><a name="nativeFunctions"></a>Native functions</h3>
+
+<p>The following functions are available in addition to JavaScript's native functions:</p>
+
+<div class="javaScriptCode"><pre><span class="infoExample">// True or false, depending on a chance of 0 - 100%</span>
+chance(percent);
+
+<span class="infoExample">// Returns a random integer from minInt to maxInt</span>
+getRandomInt(minInt, maxInt);
+
+<span class="infoExample">// For use with the <a href="/info-changer">Changer</a>,
+// converts pixels from palette indexes to rgba:</span>
+convertToFullColor(creation);
+
+<span class="infoExample">// Returns a copy of the object so that
+// changes won't affect the original:</span>
+cloneObject(object);
+
+<span class="infoExample">// Limits a value into the numbers,
+// sets to minimum if not numeric:</span>
+toLimit(value, min, max);</pre></div>
+
+<p class="infoTip">Note: In Happenings, Math.random is overloaded with a seedable randomizer that will result in consistently same randomizations, dependent on the hour
+of the day, the item position and more.
+</p>
+
+
+<h3><a name="logging"></a>Logging</h3>
+
+<p>You can use the following functions to log debug information when the script editor is opened
+(you can pass as many parameters as you like):</p>
+
+<div class="javaScriptCode"><pre>log('label', someValue);
+
+logOnce(someValue); <span class="infoExample">// only logs once per run</span>
+
+logFresh(someValue); <span class="infoExample">// clears the log and logs something new</span>
+
+logFresh(); <span class="infoExample">// clears the log</span>
+</span></pre></div>
+
+
+<h2><a name="examples"></a>Examples</h2>
+
+<h3><a name="exampleShapes"></a>Example: Drawing a variety of shapes</h3>
+
+<p><img src="/static/media/happening-illustration-2.png" alt=""/></p><!-- This image wasn't archived by the Wayback Machine. -->
+
+<div class="javaScriptCode" style="overflow-y: scroll"><pre>var data;
+
+function update(my) { 
+    if (!data) { initializeData(); }
+
+    var line = data.lines[0];
+    if (line.y2 &lt;= 100) { line.y2 += 25 * my.tick; }
+    data.circles[0].radius += 2.5 * my.tick;
+    data.particles[0].x += 15 * my.tick;
+    data.particles[1].y -= 15 * my.tick;
+    data.particles[2].y -= 15 * my.tick;
+
+    return data;
+}
+
+function initializeData() {
+    data = {};
+    data.particles = [ {x: 0, y: -70, thickness: 5, rgba: [0,255,128,.5], mode: enumMode.bright}, {x: 0, y: -60} ];
+    data.lines = [ { x1: -50, y1: 50, x2: 50, y2: -50, rgba: [0,255,0,1], mode: enumMode.bright } ];
+    data.rectangles = [ { x1: 10, y1: -50, x2: 50, y2: -40, rgba: [255,0,255,1], filled: true } ];
+    data.items = [ {cell: 2, x: -10, y: 0, alpha: .75, flip: {x: true} } ];
+    data.polygons = [ { points: [ {x: 10, y: 10 - 30}, {x: 30, y: 20 - 30}, {x: 20, y: 50 - 30} ], rgba: [255,0,0,.8], filled: true, mode: enumMode.luminosity } ];
+    data.circles = [ { x: 0, y: -50, rgba: [0,255,255,.2], thickness: 3, radius: 30, filled: true } ];
+    for (var i = 0; i &lt; 30; i++) {
+        data.particles.push( { x: getRandomInt(-150, 150), y: getRandomInt(-100, 100), thickness: 10, rgba: [0,0,0,.5] } );
+    };
+}
+
+</pre></div>
+
+
+<h3><a name="exampleBackFront"></a>Example: Using the Back and Front layers</h3>
+
+<p>In this example, all layers (default plus back and front) are drawn to:</p>
+
+<div class="javaScriptCode"><pre>var particles = [ { x: -10, y: -30, thickness: 10 } ];
+var particlesFront = [ { x: -30, y: -30, rgba: [0,255,255,1], thickness: 10 } ];
+var particlesBack = [ { x: -10, y: -40, rgba: [0,255,0,1], thickness: 6 } ];
+
+function update(my) {
+    particlesBack[0].x -= my.tick * 20;
+    particles[0].x += my.tick * 10;
+    particlesFront[0].x -= my.tick * 10;
+    
+    return { particles: particles,
+            back: {particles: particlesBack},
+            front: {particles: particlesFront} };
+}</pre></div>
+
+
+<h3><a name="exampleManyParticles"></a>Example: Many particles</h3>
+
+<p>Here we are moving a variety of particles upwards:</p>
+
+<div class="javaScriptCode"><pre>var inited = false;
+var particles = [];
+var tick = 0;
+
+function update(my) { 
+    if (!inited) { init(); }
+    tick = my.tick;
+
+    moveParticles();
+
+    return {particles: particles}; 
+} 
+
+function moveParticles() {
+    for (var i = 0; i &lt; particles.length; i++) {
+        particles[i].y -= 50 * tick;
+    }
+}
+
+function init() {
+    for (var i = 0; i &lt; 100; i++) {
+        var particle = {};
+        particle.x = getRandomInt(-50, 50);
+        particle.y = getRandomInt(-50, 50);
+        particle.rgba = [getRandomInt(0,255), 0, 0, 1];
+        particles.push(particle);
+    }
+    
+    inited = true;
+}
+</pre></div>
+
+
+<h3><a name="exampleLinesInBackground"></a>Example: Lines in the background</h3>
+
+<p>The following fades in a wobbling net of lines in the background:</p>
+
+<div class="javaScriptCode"><pre>var lines = [];
+var alpha = 0;
+
+function update(my) {  
+    if (lines.length == 0) { initLines(); }
+    alpha += .005;
+    if (alpha &gt; 1) { alpha = 1; }
+    changeLines();
+    return { back: {lines: lines} };
+}
+
+function changeLines() {
+    var fuzzy = .25;
+    for (var i = 0; i &lt; lines.length; i++) {
+        var line = lines[i];
+        line.x1 += getRandomInt(-1, 1) * fuzzy;
+        line.y1 += getRandomInt(-1, 1) * fuzzy;
+        line.x2 += getRandomInt(-1, 1) * fuzzy;
+        line.y2 += getRandomInt(-1, 1) * fuzzy;
+        line.rgba = [255, 255, 255, alpha * .6];
+    }
+}
+
+function initLines() {
+    var fuzzy = 400;
+    for (var i = 0; i &lt; 100; i++) {
+        var line = {};
+        line.x1 = getRandomInt(-fuzzy, fuzzy);
+        line.y1 = getRandomInt(-fuzzy, fuzzy);
+        line.x2 = getRandomInt(-fuzzy, fuzzy);
+        line.y2 = getRandomInt(-fuzzy, fuzzy);
+        if ( chance(20) ) { line.thickness = 2; }
+        lines.push(line);
+    }
+   
+}
+</pre></div>
+
+
+<h3><a name="exampleMetalBalls"></a>Example: Electricity between metal balls</h3>
+
+<p>In this example, we're drawing electricity lines between objects around named 'metal ball' (this works best if you add an electricity sound to the Happening during creation):</p>
+
+<div class="javaScriptCode"><pre>var soundCounter = 0;
+
+function update(my) { 
+    var lines = [];
+    var doPlaySound = false;
+    
+    var balls = getPositionsByName(my, 'metal ball');
+    if (balls.length &gt;= 2) {
+        lines = getEletricLines(balls);
+    }
+    
+    if (++soundCounter &lt;= 1) {
+        doPlaySound = true;
+    }
+    return {lines: lines, doPlaySound: doPlaySound};
+}
+
+function getEletricLines(balls) {
+    var lines = [];
+    var maxLines = 100;
+    var tileSize = 19;
+    var fuzzy = 1;
+
+    for (var ballI = 0; ballI &lt; balls.length; ballI++) {
+        for (var i = 3; i &gt;= 1; i--) {
+            var offX = -tileSize, offY = -tileSize;
+
+            var ball1 = balls[ballI];            
+            var ball2 = ballI == balls.length - 1 ?
+                    balls[0] : balls[ballI + 1];
+            
+            var line = {
+                    x1: ball1.x + offX, y1: ball1.y + offY,
+                    x2: ball2.x + offX, y2: ball2.y + offY
+                    };
+            var alpha = getRandomInt(1, 10) * .1;
+            line.rgba = [ 200, 200, getRandomInt(200,255), alpha ];
+            line.thickness = i * 1;
+            line.x1 += getRandomInt(-fuzzy, fuzzy);
+            line.y1 += getRandomInt(-fuzzy, fuzzy);
+            line.x2 += getRandomInt(-fuzzy, fuzzy);
+            line.y2 += getRandomInt(-fuzzy, fuzzy);
+            line.mode = enumMode.bright;
+            lines.push(line);
+            if (lines.length &gt; maxLines) { return lines; }
+        }
+    }
+    return lines;
+}
+
+function getPositionsByName(my, name) {
+    var placements = my.sight.placements;
+    var scope = my.sight.scope;
+    var centerX = my.x;
+    var centerY = my.y;
+    
+    var positions = [];
+    var scope = 10;
+    for (var y = -scope; y &lt;= scope; y++) { 
+        for (var x = -scope; x &lt;= scope; x++) {
+            var block = placements[x + scope][y + scope];
+            if (block &amp;&amp; block.name == name) {
+                positions.push(
+                    {x: block.x - centerX,
+                     y: block.y - centerY}
+                    );
+            }
+        }
+    }
+    return positions;
+}
+</pre></div>
+
+
+<div class="helpMore">
+<h3><a name="more"></a>More...</h3>
+
+<p>Also check out the <a href="/info">main introductory help</a> and the <a href="/info-interacting">Interacting help</a>.
+Got a question which isn't answered here, or new ideas and feedback? <a href="/support">Have a look here please</a>.</p>
+
+</div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manyland  - The Dynamic type</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+    @import url(//fonts.googleapis.com/css?family=VT323);
+    @import url(//fonts.googleapis.com/css?family=Press+Start+2P);
+
+    body {
+        background-color: black;
+        color: white;
+        background-image: url(/static/media/background-zoomed.png);
+        margin: 0;
+        margin-bottom: 80px;
+        font-family: 'VT323', monospace;
+    }
+    </style>
+</head>
+<body id="body">
+
+<style>
+
+.inlineHtmlHelp {
+    font-family: 'VT323', monospace;
+}
+
+.inlineHtmlHelp {
+    text-align: left;
+    padding-right: 40px;
+}
+
+.inlineHtmlHelp p,
+.inlineHtmlHelp li {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.isFullAccount .ifNotLoggedIn {
+    display: none;
+}
+
+h1 {
+    border-bottom: 2px solid #533;
+    padding-bottom: 4px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #422;
+    padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid rgb(184,154,139);
+    padding-top: 50px;
+}
+
+h2.followsH1 {
+    margin-top: 0;
+    border-top: none;
+}
+
+.titleWord {
+}
+
+h2 a {
+    display: block;
+    height: 20px;
+}
+
+h2 a.anchor {
+    display: inline;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: white;
+    color: #755;
+    display: block;
+}
+
+#body .content {
+    background-color: rgb(208,188,178);
+    position: relative;
+    width: 92%;
+    max-width: 780px;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+a {
+    color: #755;
+}
+
+.chartPosition {
+    margin-bottom: 5px;
+}
+
+.additionalInfo {
+    color: #fff;
+    position: relative;
+    width: 220px;
+    float: right;
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+p, ul, li {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+.twitterName {
+    text-transform: none;
+}
+
+.twitter {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.nonEmphasized a,
+a.nonEmphasized {
+    color: #555;
+    text-decoration: none;
+}
+
+.smallerParagraph {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.fullImage {
+    text-align: center;
+    width: 100%;
+}
+
+iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 780px;
+    height: 439px;
+    display: block;
+}
+
+#soundCredits {
+    display: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.places strong {
+    font-size: 110%;
+}
+
+#moreNews {
+    display: none;
+}
+
+#showMoreNews {
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.interactingSample,
+.dynamicSample {
+    width: 90%;
+}
+
+.interactingSample pre,
+.dynamicSample pre,
+.htmlSample pre {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    background-color: #444;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.dynamicSample pre {
+    color: #000;
+    background-color: #ddd;
+}
+
+.htmlSample pre {
+    font-size: 110%;
+    font-family: monospace;
+    text-transform: none;
+}
+
+.interactingSample strong {
+    font-weight: normal;
+    color: #ffa;
+}
+
+.dynamicSample strong {
+    font-weight: normal;
+    color: #080;
+}
+
+h3 {
+    color: #322;
+    font-size: 26px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #555;
+}
+
+.footnote {
+    opacity: .7;
+}
+
+.important {
+    font-size: 110%;
+}
+
+p.extraSpace {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 24px;
+    opacity: .8;
+    margin-top: 50px;
+}
+
+.properTable {
+    border-collapse: collapse;
+}
+
+.properTable td,
+.properTable th {
+    font-size: 150%;
+    border: 2px solid rgba(0,0,0,.3);
+    padding: 10px;
+}
+
+.properTable th {
+    background-color: rgb(185,155,140);
+}
+
+.properTable td.interactingSampleCell {
+    font-size: 70%;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    line-height: 1.9em;
+}
+
+.timeConverterTable {
+    margin-top: 30px;
+    font-size: 125%;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.timeConverterTable th,
+.timeConverterTable td {
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+    padding: 3px;
+}
+
+.timeConverterTable th,
+.timeConverterNow {
+    background-color: #fff;
+}
+
+.timeConverterTable td {
+    text-align: center;
+}
+
+td.checkmark {
+    font-size: 110%;
+    color: rgb(50,100,50);
+}
+
+.helpMore {
+    opacity: .6;
+}
+
+#adToggler {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#adToggler input {
+    font-family: 'VT323', monospace;
+    font-size: 100%;
+}
+
+.supportAnswer {
+    width: 90%;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.supportQuestion {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    color: #755;
+}
+
+.javaScriptCode,
+.tree {
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 120%;
+    padding: 10px;
+}
+
+.tree, .tree ul, .tree li {
+     position: relative;
+     font-family: monospace;
+     font-size: 16px;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 32px;
+}
+
+.tree li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.tree li::before, .tree li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+.tree li::before {
+    border-top: 1px solid #000;
+    top: 9px;
+    width: 8px;
+    height: 0;
+}
+
+.tree li.separator::before {
+    border-top: none;
+}
+
+.tree li::after {
+    border-left: 1px solid #000;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.tree ul > li:last-child::after {
+    height: 8px;
+}
+
+.infoExample {
+    opacity: .6;
+}
+
+.infoTip {
+    opacity: .75;
+    font-style: italic;
+}
+
+label {
+    text-decoration: underline;
+}
+
+.inlineHtmlHelp h2,
+.inlineHtmlHelp h3,
+.inlineHtmlHelp h4 {
+    margin-top: 80px;
+    padding: 10px;
+    background-color: white;
+    line-height: 1.3em;
+    font-size: 20px;
+    border-top: 0;
+}
+
+.inlineHtmlHelp p {
+    text-transform: none !important;
+}
+
+.inlineHtmlHelp .interactingSample,
+.inlineHtmlHelp .interactingSample {
+    margin-left: 20px;
+}
+
+.inlineHtmlHelp h2 {
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.inlineHtmlHelp li {
+    text-transform: none;
+}
+
+.backerNames {
+    color: rgb(100,100,0);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.backerName {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.backerName img {
+    padding-right: 5px;
+}
+
+.steam p {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase !important;
+    font-size: 100%;
+}
+
+</style>
+
+
+
+<div class="content">
+
+<h1><a href="/"><img src="/static/media/logo-large.png" alt="Manyland"/></a></h1>
+
+<p><strong class="important">A Dynamic</strong> can be used to animate something in a variety of ways.
+For every Dynamic, you provide a way the animation should behave, for instance:
+</p>
+
+<div class="dynamicSample"><pre>0s: cell 1 show
+1.5s: cell 1 opacity .8, cell 2 opacity 0.5
+2-5s: cell 1 down 5, rotate 20
+6s: restart
+</pre></div>
+
+<p>The left part indicates the time in seconds something should happen. It can be any number from 0 to 15, or a time range like 2-5s meaning stretched from seconds 2 to 5.
+(Note Dynamics in <a href="/info-holder">Holders</a> have no limit of 15 seconds.)
+For instance, if you write "2-5s: cell 1 down 5", it means that cell number 1 smoothly moves down 5 pixels over the course of second 2 to 5 (commands which can't span over time will be set at the beginning of the time frame). Note if you want you can leave out the "s".</p>
+
+<p>All cells you reference need to be added using the "+" button at the top during creation. The cells are drawn on top of each other in the order from 1 to 9, but you can change the z-index to determine how they will layer (see below <a href="#commands">commands</a> overview). By default,
+at the beginning and after the restart, all cells are back to their normal position, hidden, and otherwise reset.</p>
+
+<p>Multiple commands per second are separated by a comma. You can add several commands referencing the same mentioned cell by omitting the cell name on successive commands in that line.</p>
+
+<p>You can add new lines and space indention to make multiple commands more readable (the comma then becomes optional). The following acts exactly the same as above Dynamic sample:</p>
+
+<div class="dynamicSample"><pre>0: cell 1 show
+
+1.5: cell 1 opacity .8,
+     cell 2 opacity 0.5
+
+2-5:
+cell 1 down 5
+rotate 20
+
+6: restart</pre></div>
+
+<p>(You still need to keep each command in one line, but you can add newlines between successions of numbers, like when using the Shape command.)</p>
+
+<p>Timing can also be provided relative to the last value by using "+", like this (also note you can write e.g. "0.5" as ".5"):
+<div class="dynamicSample">
+<pre>+0.5: cell 1 show
++.5: cell 2 show
++0.5-+2.5: cell 3 show
++0.5: restart
+</pre></div>
+
+<div style="height: 60px"></div>
+
+<h3><a name="commands"></a>Commands overview</h3>
+
+<table class="properTable">
+<tr><th colspan="3"><th style="font-size: 110%">can span over time?</th></tr>
+
+<tr><td style="width: 20%"><strong>cells</strong></td><td>...</td><td colspan="2">References all cells, e.g. "cells hide" will hide cell 1 to 9</td></tr>
+<tr><td><strong>cell [n]</strong></td><td>...</td><td colspan="2">References a single cell, e.g. "cell 2 opacity 0"</td></tr>
+<tr><td><strong>cells [n]+[n]<br/>
+        cell [n]+[n]</strong></td><td>...</td><td colspan="2">References multiple specific cells, e.g. "cells 1+3+4 up 10" (you can write either "cell" or "cells", but can't put spaces around the "+")</td></tr>
+
+<tr><td>...</td><td style="width: 25%"><strong>up [n]</strong></td><td>Moves this cell n pixels up, e.g. "cell 1 up 3"</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>down [n]</strong></td><td>Moves this cell n pixels down, e.g. "cell 1 down 2"</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>left [n]</strong></td><td>Moves this cell n pixels left, e.g. "cell 1 left 3"</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>right [n]</strong></td><td>Moves this cell n pixels right, e.g. "cell 1 right 2"</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>position [x y]</strong></td><td>Sets the absolute position, like "cell 1 position -50 -50"</td><td class="checkmark">&#10004;</td></tr>
+
+
+<tr><td>...</td><td><strong>opacity [n]</strong></td><td>Sets the opacity for a cell, from 0 to 1, e.g. "cell 2 opacity 0.5" would show this cell overlaying at half transparency</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>hide</strong></td><td>Hide shows the cell at full opacity, e.g. "cell 2 hide" (which would equal the "cell 2 opacity 0" command)</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>show</strong></td><td>Shows the cell at full opacity, e.g. "cell 2 show" (equal to "cell 2 opacity 1")</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>rotate [n]</strong></td><td>Rotates this cell in clockwise direction by an additional n degrees, e.g. with "cell 2 rotate 20", 60 degrees would now be 80. Use negative values to rotate counterclockwise, e.g. "cell 1 rotate -90". Use the "pivot" command to set the center around which is rotated</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>rotation [n]</strong></td><td>Same as above, but sets the absolute instead of relative rotation degrees.</td><td class="checkmark">&#10004;</td></tr>
+<tr><td>...</td><td><strong>light [red green blue]</strong></td><td>Lights the environment with the provided colors, like "light 255 0 0" (the light opacity is the cell opacity)</td><td class="checkmark">&#10004;</td></tr>
+
+<tr><td>...</td><td><strong>pivot [x y]</strong></td><td>Sets the absolute rotation center for a cell, e.g. "cell 1 pivot 2 2" would set the rotation near the top left of the cell. Dynamics have a maximum size of 29x29 pixels. (The default pivot is at the center of the full 29x29 size, 14.5 14.5, and the bottom block center within it would be at 14.5 19.5). On desktop, you can get the cursor's pixel coordinates on the canvas by pressing P.</td><td>-</td></tr>
+<tr><td>...</td><td><strong>flip horizontal</strong></td><td>Mirrors the cell horizontally, e.g. "cell 2 flip horizontal". A second flip later reverts things back.</td><td>-</td></tr>
+<tr><td>...</td><td><strong>flip vertical</strong></td><td>Mirrors the cell vertically, e.g. "cell 2 flip vertical"</td><td>-</td></tr>
+<tr><td>...</td><td><strong>accelerate down [n]</strong></td><td>Sets the acceleration of downwards velocity, e.g. for gravity of particles you may want to use an up movement over time combined with a one time "cell 1 accelerate down .005" (note this value and overall velocity are capped)</td><td>-</td></tr>
+<tr><td>...</td><td><strong>accelerate up [n]</strong></td><td>Accelerates upwards, e.g. "cell 1 accelerate up .005"</td><td>-</td></tr>
+<tr><td>...</td><td><strong>accelerate left [n]</strong></td><td>Accelerates leftwards, e.g. "cell 1 accelerate left .005"</td><td>-</td></tr>
+<tr><td>...</td><td><strong>accelerate right [n]</strong></td><td>Accelerates rightwards, e.g. "cell 1 accelerate right .005"</td><td>-</td></tr>
+<tr><td>...</td><td><strong>crop [x1 y1 x2 y2]</strong></td><td>Crops the drawn image using this top left and bottom right corner of a rectangle (relative to the top left corner of your creation canvas). Press the key P during creation to see the currently hovered pixel coordinates. Note cropped cells will not be drawn if the system runs on very low frame rates.</td><td>-</td></tr>
+<tr><td>...</td><td><strong>z-index [n]</strong></td><td>Defines at which layer, from back to front, this will be drawn, e.g. "cell 5 z-index 1" would set cell 5 to be drawn in the back, overlaid by other cells. The z-index cannot exceed your number of cells.</td><td>-</td></tr>
+<tr><td>...</td><td><strong>bright</strong></td><td>This will draw the cell in a different, brighter overlay method which lets the colors shine. For instance, you can use "cell 3 bright".</td><td>-</td></tr>
+<tr><td>...</td><td><strong>unbright</strong></td><td>This resets the "bright" command and reverts to normal overlaying</td><td>-</td></tr>
+
+<tr><th colspan="4"><a name="text"></a>Text</th></tr>
+
+<tr><td>...</td><td><strong>text [some text]</strong></td><td>Sets this text, e.g. "hello world". It will be center-aligned at the pivot, without cell rotation and flip. For line breaks use "[break]", for commas "\,", and for colons "\:". Please note text won't show in all locations.</td><td>-</td></tr>
+<tr><td>...</td><td><strong>font [keywords]</strong></td><td>Sets the font for the text command for this cell. Use the keywords "white" or "black", and optionally, "small". E.g. "white" or "small black" ("small white" is default if no font is picked).</td><td>-</td></tr>
+<tr><td>...</td><td><strong>align [left/ center/ right]</strong></td><td>Aligns the text, e.g. "align left". The default is "center".</td><td>-</td></tr>
+<tr><td colspan="2"><strong>say [some text]</strong></td><td>Makes the Dynamic say this (for up to 100 characters). Use "\," for commas. Please note speech won't show in all locations.</td><td>-</td></tr>
+
+<tr><th colspan="4"><a name="grabbing"></a>Grabbing People</th></tr>
+
+<tr><td>...</td><td><strong>grab</strong></td><td>For Dynamics using the Starts on Touch attribute, this grabs the person and attaches it to this cell's position and rotation. Grabs need to be initiated in second 0. (Note having a Wearable with the "Grab Resistant" attribute disables grabbing.)</td><td>-</td></tr>
+<tr><td>...</td><td><strong>ungrab</strong></td><td>This reverts the grab command and lets go of the person again</td><td>-</td></tr>
+
+<tr><th colspan="4"><a name="timing"></a>Global Timing</th></tr>
+
+<tr><td>...</td><td><strong>seconds angle</strong></td><td>Ties the angle of this cell to a rotation resembling the seconds hand of an analog clock</td><td>&nbsp;</td></tr>
+<tr><td>...</td><td><strong>seconds angle in steps</strong></td><td>Same as above, but ticks in 1-second steps instead of a constant rotation</td><td>&nbsp;</td></tr>
+<tr><td>...</td><td><strong>minutes angle</strong></td><td>Ties the angle of this cell to a rotation resembling the minutes hand of an analog clock</td><td>&nbsp;</td></tr>
+<tr><td>...</td><td><strong>minutes angle in steps</strong></td><td>Same as above, but ticks in 1-minute steps instead of a constant rotation</td><td>&nbsp;</td></tr>
+<tr><td>...</td><td><strong>hours angle</strong></td><td>Ties the angle of this cell to a rotation resembling the hours hand of an analog clock</td><td>&nbsp;</td></tr>
+<tr><td>...</td><td><strong>hours angle in steps</strong></td><td>Same as above, but ticks in 1-hour steps instead of a constant rotation</td><td>&nbsp;</td></tr>
+
+<tr><th colspan="4"><a name="shape"></a>Drawing Polygons &amp; Circles</th></tr>
+
+<tr><td>...</td><td>
+    <strong>shape [x y&nbsp; x y&nbsp;  x y ...]</strong>
+</td><td>
+    The points of a polygon to paint in x y x y ... order (from 3-100 points with values of up to 600 for each x
+    and y, and up to 1 decimal place). The 0 0 position is in the upper left of the canvas when you draw the Dynamic.
+    <br/><br/>
+    Hit P on desktop to see the current coordinates when hovering over the drawing canvas.
+    You can also click in the world while the Dynamic text editor is open to paste the
+    current relative coordinates. Use Shift+Arrows to move the live preview.
+    <br/><br/>
+    See the fill and gradient commands below for more, as well as the <a href="#shapeExample">full example</a>.
+    <em>Shapes where no value exceeds 50 can be used in more contexts, like as attachments.</em>
+</td><td>-</td></tr>
+<tr><td>...</td><td><strong>circle [x y radius]</strong></td><td>Draws a circle. <em>Circles where no value exceeds 50 can be used in more contexts, like as attachments.</em></td><td>-</td></tr>
+<tr><td>...</td><td><strong>fill [dark/ bright] [r g b a]</strong></td><td>The rgba (red green blue alpha) values for the shape fill color (see above for the shape command). Each of rgb ranges from 0-255, and alpha from 0.0-1.0. You can optionally add the <em>dark</em> keyword for shadow-like and <em>bright</em> for light-like overlay effects. (Note <em>dark/ bright</em> may be ignored on some mobile devices to improve speed.)</td><td>-</td></tr>
+
+<tr><td rowspan="3">...</td><td><strong>gradient [x1 y1&nbsp; x2 y2&nbsp; r g b a]</strong></td><td>To create a linear color gradient, provide the start x y followed by end x y of the gradient line, followed by the rgba values (as above).</td><td>-</td></tr>
+<tr><td><strong>gradient [x y radius&nbsp; r g b a]</strong></td><td>To create a radial gradient instead, provide the center x y and the radius, again followed by the rgba values.</td><td>-</td></tr>
+<tr><td><strong>gradient [x1 y1 radius1&nbsp; x2 y2 radius2&nbsp; r g b a]</strong></td><td>To create a gradient of two separate center and radii, provide the first center x y and radius, then the second, followed by the rgba values.</td><td>-</td></tr>
+
+<tr><td>...</td><td><strong>outline [size&nbsp; r g b a]</strong></td><td>Use this to give polygon shapes and circles an outline of the given line width (in the current pixel scale, and up to 50) and color.</td><td>-</td></tr>
+
+<tr><th colspan="4"><a name="moreCommands"></a>More</th></tr>
+
+<tr><td colspan="2"><strong>remove</strong></td><td>Removes the Dynamic if it's worn as attachment. E.g. "3s: remove"</td><td>-</td></tr>
+<tr><td colspan="2"><strong>restart</strong></td><td>Will go back to second zero and start the animation over with resetted values, e.g. "6s: restart"</td><td>-</td></tr>
+<tr><td colspan="2"><strong>play sound</strong></td><td>Plays the <a href="/info-tips#addingSound">included Sound</a>, if available (it plays at most once per second)</td><td>-</td></tr>
+</table>
+
+
+<p><em>Tip: If you want to find the placement origin of a Dynamic where the cell positions are moved quite a bit,
+    you can use the Insight boost "Dynamic Origin".</em></p>
+
+<div style="height: 60px"></div>
+
+<h3><a name="placeholders"></a>Placeholders</h3>
+
+<p>You can use the following placeholders in texts for the <strong>text</strong> and <strong>say</strong> commands:</p>
+
+<table class="properTable">
+<tr><td><strong>[date]</strong></td><td>Shows the current date in <a href="/info-tips#manylandTime">Manyland Time</a></td></tr>
+<tr><td><strong>[time]</strong></td><td>Shows the current time in Manyland Time</td></tr>
+<tr><td><strong>[name]</strong></td><td>Shows the name of the person currently closest to the Dynamic</td></tr>
+<tr><td><strong>[center&nbsp;distance]</strong></td><td>Shows the distance to an area's center in manymeter</td></tr>
+<tr><td><strong>[people]</strong></td><td>Shows the number of people nearby</td></tr>
+<tr><td><strong>[state]</strong></td><td>For use on <a href="info-multi">Multis</a></td></tr>
+<tr><td><strong>[holder&nbsp;page]</strong></td><td>If the Dynamic is inside a Holder, shows the current page number</td></tr>
+<tr><td><strong>[holder&nbsp;page&nbsp;count]</strong></td><td>If the Dynamic is inside a Holder, shows the current amount of pages (not including the last empty one)</td></tr>
+<tr><td><strong>[ad area]</strong></td><td>The currently advertised area, if any.</td></tr>
+<tr><td><strong>[ad text]</strong></td><td>The ad text of the currently advertised area, if any.</td></tr>
+</table>
+
+
+<h3><a name="startsOnTouch"></a>Starts on Touch attribute</h3>
+
+<p>When you hit "..." and tick the Starts on Touch attribute, the Dynamic will start only when one runs over it.
+Before that and after the animation ended, it will show its 0 seconds inited state.
+</p>
+
+<p>The Clonable attribute on the other hand allows someone else to copy this Dynamic into the creator to amend and save.</p>
+
+
+<h3><a name="behind"></a>The Behind attribute</h3>
+
+<p>Ticking the "Behind" attribute will make the Dynamic appear behind an Interacting which may have triggered it.</p>
+
+
+<h3><a name="attachable"></a>The Attachable, Follows and Closely Follows attributes</h3>
+
+<p>If you want to put on the Dynamic to walk around with it, tick any of these attributes via the "..." button:</p>
+
+<ul>
+<li><strong>Attachable</strong>: Attaches the Dynamic exactly onto the body (similar to a wearable)</li>
+<li><strong>Follows</strong>: Makes the Dynamic follow around (this could be e.g. a flying object following one)</li>
+<li><strong>Closely Follows</strong>: Makes the Dynamic follow around, but at closer distance (this could be e.g. a ground object following one)</li>
+</ul>
+
+<p>Using any of these attributes now also lets you add the Dynamic to the Motion bar, similar to how you can add Motions or Bodies to it.
+Just hit down while standing somewhere, then drag &amp; drop the created Dynamic into the top row.</p>
+
+<p>You can now also use this Dynamic via the "/gives ..." command in Interactings to have it be put on.
+You can remove it via "/removes dynamic", and check for it being put on by using "they have attached ..."
+</p>
+
+
+<h3><a name="textOnly"></a>Text-only Dynamics</h3>
+
+<p>Dynamic code not containing any colons will be interpreted as plain-text with font "white", so the following:</p>
+
+<div class="dynamicSample"><pre>HELLO WORLD, I'M JUST...
+TESTING</pre></div>
+
+<p>... equals:</p>
+
+<div class="dynamicSample" style="width: 100%; overflow-x: scroll"><pre>0: cell 1 opacity 1, font white, text hello world[comma] i'm just...[break]testing</pre></div>
+
+
+<h3><a name="markers"></a>Markers</h3>
+
+<p>Markers are different sections in a Dynamic which are triggered in certain contexts. For instance, the marker "move" is triggered when the Dynamic is attached to someone and they move*. Now only your Dynamic code written in that section is used, with everything else ignored. For instance:
+</p>
+
+<div class="dynamicSample" style="width: 100%"><pre>0: CELL 1 SHOW
+
+<strong>MOVE</strong>
+0: CELLS SHOW
+0-5: CELL 2 ROTATE 180
+
+<strong>RISE</strong>
+0: CELLS SHOW
+0-5: CELL 3 ROTATE 180</pre></div>
+
+
+<p class="footnote" style="font-style: italic">*To attach a Dynamic, use one of the attributes Attachable, Follows or Closely Follows, then drop the saved creation over yourself.</p>
+
+<p>The following markers are available (you can also write e.g. "moves" instead of "move"). Unless otherwise noted, they're for when attached to a body:</p>
+
+<table class="properTable">
+<tr><td style="width: 35%"><strong>move</strong></td><td>When moving left or right</td></tr>
+<tr><td style="width: 35%"><strong>action</strong></td><td>When space or the action button is pressed (requires the attribute Actionable)</td></tr>
+<tr><td style="width: 35%"><strong>rise</strong></td><td>When one rises, like in the upwards phase of a jump</td></tr>
+<tr><td style="width: 35%"><strong>fall</strong></td><td>When one falls, like in the downwards phase of a jump</td></tr>
+<tr><td style="width: 35%"><strong>start</strong></td><td>Once when the Dynamic starts, like when equipped</td></tr>
+<tr><td style="width: 35%"><strong>mounted&nbsp;rise</strong></td><td>When one goes up while in a mountable or flying mountable</td></tr>
+<tr><td style="width: 35%"><strong>mounted&nbsp;fall</strong></td><td>When one goes down while in a mountable or flying mountable</td></tr>
+<tr><td style="width: 35%"><strong>climb</strong></td><td>When one climbs a climbable</td></tr>
+<tr><td style="width: 35%"><strong>swim</strong></td><td>When one swims in liquid</td></tr>
+<tr><td style="width: 35%"><strong>create</strong></td><td>When one creates something</td></tr>
+<tr><td style="width: 35%"><strong>sit</strong></td><td>When one sits on something (to test, create a thing and name it e.g. "chair")</td></tr>
+<tr><td style="width: 35%"><strong>lie</strong></td><td>When one lies on something (to test, create a thing and name it e.g. "bed")</td></tr>
+
+<tr><td style="width: 35%"><strong>
+state [any of 0&nbsp;-&nbsp;10]<br/>
+odd&nbsp;state<br/>
+even&nbsp;state<br/>
+negative&nbsp;state<br/>
+private<br/>
+randomize<br/>
+private&nbsp;randomize</strong>
+</td>
+<td style="vertical-align: top">These are for use on <strong><a href="/info-multi#dynamics">Multis</a></strong></td></tr>
+
+<tr><td style="width: 35%"><strong>
+    profile main<br/>
+    profile body<br/>
+    profile name<br/>
+    profile album<br/>
+    profile mifts</strong>
+</td>
+<td style="vertical-align: top">These are for the different <strong>Profile pages</strong> when using the Profile Dynamic Boost. E.g. use the "profile mifts" marker
+    to display something specific just when the Mifts page shows.
+</td></tr>
+
+<tr><td style="width: 35%"><a name="timeMarkers"></a>
+<strong>every minute<br/>
+    every 2 minutes<br/>
+    every 3 minutes<br/>
+    every 4 minutes<br/>
+    every 5 minutes<br/>
+    every 10 minutes<br/>
+    every 15 minutes<br/>
+    every 30 minutes<br/>
+    every hour<br/>
+    every 3 hours<br/>
+    every 6 hours<br/>
+    every 12 hours<br/>
+    every day</strong>
+</td>
+<td style="vertical-align: top">
+    Use these time markers for <strong>placed dynamics</strong>.
+    They are relative to <a href="/info-tips#manylandTime">Manyland Time</a> (which is also universal time) starting at midnight,
+    so EVERY 12 HOURS, for instance, means noon and midnight. EVERY 15 MINUTES would mean e.g. 12:00, 12:15, 12:30 and so on for every hour of the day.
+    EVERY DAY equals midnight.
+    Rarer time span markers overrule more frequent ones, so if you use say EVERY MINUTE as well as EVERY HOUR, then at a full
+    hour only the latter is triggered.
+</td></tr>
+
+</table>
+
+
+<h3><a name="interactings"></a>Interactings listening to Dynamic activation</h3>
+
+<p>You can make an <a href="/info-interacting">Interacting</a> know if a "Starts on Touch" Dynamic is touched via the <em>activates</em> word. If your Dynamic is named say "Button", you can use either of these two methods:</p>
+
+<div class="interactingSample"><pre><strong>someone activates button:</strong> Beep!
+
+<strong>sees @button activates:</strong> Bling!</pre></div>
+
+
+<h3><a name="addingToInteracting"></a>Interactings triggering a Dynamic</h3>
+
+<p>You can create a Dynamic that will <a href="/info-interacting#motions">show in the place of an Interacting that triggers it</a>.
+For instance, the Interacting could be a static spinning wheel; once it's spun, it would call /SPINNING WHEEL (the name of the included Dynamic).
+For the Dynamic to also fully replace the Interacting during the time it runs, you can tick the Replaces attribute for it.
+You can use Interacting's <a href="/info-interacting#currentlyAndEnds">Currently and Ends</a> commands to check if the Dynamic is still running, and when it ended.
+</p>
+
+
+<h3><a name="comments"></a>Comments</h3>
+
+<p>If you want to add private text that won't be active, wrap it in "/* ... */" or precede it with "//":</p>
+
+<div class="interactingSample"><pre><strong>/*</strong> This is
+a multi-line comment <strong>*/</strong>
+
+<strong>//</strong> This is a single-line comment
+</pre></div>
+
+<p class="footnote">(Note "://" will be interpreted to be part of a URL, not a comment.)</p>
+
+
+<h3><a name="examples"></a>Examples</h3>
+
+<h4>A forward-playing 6-cells animation</h4>
+
+<div class="dynamicSample"><pre>0.0s: cell 1 show
+0.5s: cell 1 hide, cell 2 show
+1.0s: cell 2 hide, cell 3 show
+1.5s: cell 3 hide, cell 4 show
+2.0s: cell 4 hide, cell 5 show
+2.5s: cell 5 hide, cell 6 show
+3.0s: restart</pre></div>
+
+
+<h4>A block hovering up and down</h4>
+
+<div class="dynamicSample"><pre>0s: cell 1 show
+0-2s: cell 1 up 10
+2-4s: cell 1 down 10
+4s: restart</pre></div>
+
+<h4>A traffic light</h4>
+
+<img src="/static/media/traffic-light.png" alt=""/>
+
+<p>For this, we draw the black traffic light base in cell 1, the red light in cell 2, the orange light in cell 3, and the green light in cell 4.</p>
+
+<div class="dynamicSample"><pre>0S: CELL 1 SHOW, CELL 2 SHOW
+4S: CELL 3 SHOW
+6S: CELL 2 HIDE, CELL 3 HIDE, CELL 4 SHOW
+12S: CELL 4 HIDE, CELL 3 SHOW
+13S: CELL 3 HIDE, CELL 2 SHOW
+15S: RESTART</pre></div>
+
+<p>(Since 15 seconds is the limit in any case after which things will restart, the last line is not strictly needed.)</p>
+
+
+<h4>A smoking chimney</h4>
+
+<p>Here we draw the chimney in the first cell and the smoke in the second. The smoke puff will move up starting at second 3. We want it to show at full opacity until
+second 6, where it starts to fade out:</p>
+
+<div class="dynamicSample"><pre>0S: CELLS SHOW, CELL 1 Z-INDEX 2, CELL 2 Z-INDEX 1
+3-7S: CELL 2 UP 70
+6-7S: CELL 2 HIDE
+7S: RESTART</pre></div>
+
+
+<h4>A lumberjack wielding an axe</h4>
+
+<p>Here someone holds an axe and chops off wood. A wood splinter is shown flying when the axe hits.
+The first cell is the base body facing left, the second cell is the left arm holding an axe up, and the third cell is the
+wood splinter particle:
+</p>
+
+<div class="dynamicSample"><pre>0S: CELL 1 SHOW, CELL 2 SHOW, PIVOT 17 15
+0.5-0.75S: CELL 2 ROTATE -90, CELL 1 RIGHT 2
+0.75S: CELL 3 SHOW, ACCELERATE DOWN .02
+0.75-1.5S: CELL 3 UP 20, LEFT 5, OPACITY .25, CELL 1 LEFT 2
+1-1.5S: CELL 2 ROTATE 90
+1.5S: RESTART</pre></div>
+
+
+<h4>Creating a Spinning Wheel</h4>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/fD30Ow2q9eU?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h4>Creating a Prize Machine</h4>
+
+<div class="videoWrapper">
+<iframe width="700" height="394" src="https://www.youtube.com/embed/4mYxPhxRfEg?showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<h4>A Hammering Board</h4>
+
+<p><img src="/static/media/hammer-board-2.png" alt=""/></p>
+
+<p>This is an Interacting carnival attraction where your goal is to hammer the nail down in one strike. 
+Two different Dynamics are included, one for winning (where cell 2 goes down 5) and one for losing (where cell 2 just goes down 2).
+Cell 1 is the back of the table, cell 2 the nail, cell 4 the front of the table, and cell 5 a wood splinter.
+In addition a hammering Sound block is included.
+</p>
+
+<div class="dynamicSample" style="width: 100%"><pre>0: CELLS SHOW, PLAY SOUND
+0-.3: CELL 2 DOWN 5
+0.1-2: CELL 4 SHOW, UP 20, ACCELERATE DOWN .02, ROTATE 200, RIGHT 10
+3-4: CELL 2 UP 5
+4: RESTART</pre></div>
+
+<p><img src="/static/media/hammer-board.png" alt="" style="width: 100%"/></p>
+
+<p>This is the <a href="/info-interacting">Interacting</a> code. "Hammer Board" and "Hammer Board Lose" are the names of the included Dynamics:</p>
+
+<div class="interactingSample"><pre>TOUCHES HAMMER: /HAMMER BOARD LOSE
+
+TOUCHES HAMMER AND IS [CHANCE 50]: {YAY!} /HAMMER BOARD</pre></div>
+
+
+<h4><a name="shapeExample"></a>A Spotlight using the Shape command</h4>
+
+<p>Shapes are polygons with optional gradients. For instance, we can create a rotating spotlight-like effect by using:
+</p>
+
+<div class="dynamicSample" style="width: 100%"><pre style="overflow: scroll">0: CELL 1 SHOW, PIVOT 14.5 28.5, SHAPE 10 10  19 10  19 -90  10 -90, FILL 255 255 0 0.5, GRADIENT 0 0  0 -90  255 255 0 0
+0-3: CELL 1 ROTATE 90
+3-6: CELL 1 ROTATE -90
+6: RESTART</pre></div>
+
+<p>Write "fill bright" instead of "fill" for an even more light-like overlay.</p>
+
+<p><img src="/static/media/spotlight-example.png" alt=""/></p>
+
+
+<div class="helpMore">
+<h3><a name="more"></a>More...</h3>
+
+<p>Also check out the <a href="/info">main introductory help</a> and the <a href="/info-interacting">Interactings help</a>.
+Got a question which isn't answered here, or new ideas and feedback? <a href="/support">Have a look here please</a>.</p>
+
+
+</div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-60595-51']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+function handleOnLoad() {
+    if ( isFramed() ) {
+        var bodyElm = document.getElementById('body');
+        if (bodyElm) {
+            bodyElm.style.backgroundImage = 'none';
+            bodyElm.style.backgroundColor = 'rgb(208,188,178)';
+        }
+    }
+}
+
+function isFramed() {
+    return window != window.top;
+}
+
+window.onload = handleOnLoad;
+</script>
+
+</body>
+</html>
