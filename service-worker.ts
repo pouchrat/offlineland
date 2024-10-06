@@ -2071,10 +2071,6 @@ const handleFetchEvent = async (event: FetchEvent): Promise<Response> => {
                 const res = await fetch("/exporter.html?cachebust=" + Date.now());
                 return res;
             }
-            if (url.pathname === "/info-steam-on-browser" || url.pathname === "/info-steam-on-browser.html") {
-                const res = await fetch("/info-steam-on-browser.html?cachebust=" + Date.now());
-                return res;
-            }
             if (url.pathname === "/static/offlineland/style.css") {
                 const res = await fetch("/static/offlineland/style.css?cachebust=" + Date.now());
                 return res;
@@ -2139,8 +2135,11 @@ const handleFetchEvent = async (event: FetchEvent): Promise<Response> => {
 
 
             // Special pages (TODO)
-            if ( url.pathname.startsWith("/info")
-            || url.pathname.startsWith("/support")
+            if ( url.pathname.startsWith("/info") ) {
+                const res = url.pathname.lastIndexOf(".") > -1 ? await fetch(url.pathname.slice(0,url.pathname.lastIndexOf(".")) + ".html?cachebust=" + Date.now()) : await fetch(url.pathname + ".html?cachebust=" + Date.now());
+                return res;
+            }
+            if ( url.pathname.startsWith("/support")
             || url.pathname.startsWith("/intermission")
             ) {
                 return new Response("Not implemented sorry", { status: 500 })
